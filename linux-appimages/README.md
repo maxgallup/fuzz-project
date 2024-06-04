@@ -68,6 +68,13 @@ Target linux office and messenger app-images  were found from [https://appimageh
 
 
 
+### failed:
+* okular
+* saber
+* cherrytree
+* appyflow
+* sciteo
+* recollectr
 
 
 
