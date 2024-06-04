@@ -1,0 +1,1238 @@
+acreom:
+total 14M
+drwxr-xr-x. 1 root root  284 Jun  4 21:48 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:48 libappindicator.so.1
+-rwxr-xr-x. 1 root root 247K Jun  4 21:48 libEGL.so
+-rwxr-xr-x. 1 root root 2.8M Jun  4 21:48 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:48 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 6.3M Jun  4 21:48 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:48 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:48 libnotify.so.4
+-rwxr-xr-x. 1 root root 4.4M Jun  4 21:48 libvk_swiftshader.so
+-rw-r--r--. 1 root root  15K Jun  4 21:48 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:48 libXtst.so.6
+
+allusion:
+total 14M
+drwxr-xr-x. 1 root root  284 Jun  4 21:46 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:46 libappindicator.so.1
+-rwxr-xr-x. 1 root root 245K Jun  4 21:46 libEGL.so
+-rwxr-xr-x. 1 root root 2.9M Jun  4 21:46 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:46 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 6.2M Jun  4 21:46 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:46 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:46 libnotify.so.4
+-rwxr-xr-x. 1 root root 4.2M Jun  4 21:46 libvk_swiftshader.so
+-rw-r--r--. 1 root root  15K Jun  4 21:46 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:46 libXtst.so.6
+
+audapolis:
+total 15M
+drwxr-xr-x. 1 root root  284 Jun  4 21:48 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:48 libappindicator.so.1
+-rwxr-xr-x. 1 root root 229K Jun  4 21:48 libEGL.so
+-rwxr-xr-x. 1 root root 2.8M Jun  4 21:48 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:48 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 6.9M Jun  4 21:48 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:48 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:48 libnotify.so.4
+-rwxr-xr-x. 1 root root 4.0M Jun  4 21:48 libvk_swiftshader.so
+-rw-r--r--. 1 root root  15K Jun  4 21:48 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:48 libXtst.so.6
+
+beavernotes:
+total 14M
+drwxr-xr-x. 1 root root  284 Jun  4 21:47 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:47 libappindicator.so.1
+-rwxr-xr-x. 1 root root 244K Jun  4 21:47 libEGL.so
+-rwxr-xr-x. 1 root root 2.8M Jun  4 21:47 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:47 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 6.3M Jun  4 21:47 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:47 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:47 libnotify.so.4
+-rwxr-xr-x. 1 root root 4.1M Jun  4 21:47 libvk_swiftshader.so
+-rw-r--r--. 1 root root  15K Jun  4 21:47 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:47 libXtst.so.6
+
+bookmanager:
+total 25M
+drwxr-xr-x. 1 root root  222 Jun  4 21:44 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:44 libappindicator.so.1
+-rwxr-xr-x. 1 root root 2.8M Jun  4 21:44 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:44 libgconf-2.so.4
+-rw-r--r--. 1 root root  60K Jun  4 21:44 libindicator.so.7
+-rwxr-xr-x. 1 root root  22M Jun  4 21:44 libnode.so
+-rw-r--r--. 1 root root  31K Jun  4 21:44 libnotify.so.4
+-rw-r--r--. 1 root root  15K Jun  4 21:44 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:44 libXtst.so.6
+
+calibre:
+total 0
+drwxr-xr-x. 1 root root   0 Jun  4 21:39 .
+drwxr-xr-x. 1 root root 680 Jun  4 21:39 ..
+
+chatbox:
+total 14M
+drwxr-xr-x. 1 root root  284 Jun  4 21:46 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:46 libappindicator.so.1
+-rwxr-xr-x. 1 root root 247K Jun  4 21:46 libEGL.so
+-rwxr-xr-x. 1 root root 2.9M Jun  4 21:46 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:46 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 6.3M Jun  4 21:46 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:46 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:46 libnotify.so.4
+-rwxr-xr-x. 1 root root 4.3M Jun  4 21:46 libvk_swiftshader.so
+-rw-r--r--. 1 root root  15K Jun  4 21:46 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:46 libXtst.so.6
+
+deeptags:
+total 64M
+drwxr-xr-x. 1 root root 1.4K Jun  4 21:42 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root 100K Jun  4 21:42 libbsd.so.0
+-rw-r--r--. 1 root root 341K Jun  4 21:42 libdbus-1.so.3
+-rw-r--r--. 1 root root 1.2M Jun  4 21:42 libgcrypt.so.20
+-rw-r--r--. 1 root root 1.3M Jun  4 21:42 libglib-2.0.so.0
+-rw-r--r--. 1 root root 315K Jun  4 21:42 libgssapi_krb5.so.2
+-rw-r--r--. 1 root root  18K Jun  4 21:42 libgthread-2.0.so.0
+-rwxr-xr-x. 1 root root  24M Jun  4 21:42 libicudata.so.56
+-rwxr-xr-x. 1 root root 2.6M Jun  4 21:42 libicui18n.so.56
+-rwxr-xr-x. 1 root root 1.8M Jun  4 21:42 libicuuc.so.56
+-rw-r--r--. 1 root root 193K Jun  4 21:42 libk5crypto.so.3
+-rw-r--r--. 1 root root  27K Jun  4 21:42 libkeyutils.so.1
+-rw-r--r--. 1 root root 909K Jun  4 21:42 libkrb5.so.3
+-rw-r--r--. 1 root root  61K Jun  4 21:42 libkrb5support.so.0
+-rw-r--r--. 1 root root 132K Jun  4 21:42 liblz4.so.1
+-rw-r--r--. 1 root root 165K Jun  4 21:42 liblzma.so.5
+-rw-r--r--. 1 root root 458K Jun  4 21:42 libpcre.so.3
+-rw-r--r--. 1 root root 229K Jun  4 21:42 libpng16.so.16
+-rwxr-xr-x. 1 root root  37K Jun  4 21:42 libQt5Concurrent.so.5
+-rwxr-xr-x. 1 root root 6.8M Jun  4 21:42 libQt5Core.so.5
+-rwxr-xr-x. 1 root root 736K Jun  4 21:42 libQt5DBus.so.5
+-rwxr-xr-x. 1 root root 8.4M Jun  4 21:42 libQt5Gui.so.5
+-rwxr-xr-x. 1 root root 2.2M Jun  4 21:42 libQt5Network.so.5
+-rwxr-xr-x. 1 root root 446K Jun  4 21:42 libQt5Svg.so.5
+-rwxr-xr-x. 1 root root 7.8M Jun  4 21:42 libQt5Widgets.so.5
+-rwxr-xr-x. 1 root root 1.8M Jun  4 21:42 libQt5XcbQpa.so.5
+-rw-r--r--. 1 root root 718K Jun  4 21:42 libsystemd.so.0
+-rw-r--r--. 1 root root  22K Jun  4 21:42 libXau.so.6
+-rw-r--r--. 1 root root 136K Jun  4 21:42 libxcb-glx.so.0
+-rw-r--r--. 1 root root  29K Jun  4 21:42 libxcb-icccm.so.4
+-rw-r--r--. 1 root root  22K Jun  4 21:42 libxcb-image.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:42 libxcb-keysyms.so.1
+-rw-r--r--. 1 root root  87K Jun  4 21:42 libxcb-randr.so.0
+-rw-r--r--. 1 root root  67K Jun  4 21:42 libxcb-render.so.0
+-rw-r--r--. 1 root root  27K Jun  4 21:42 libxcb-render-util.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:42 libxcb-shape.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:42 libxcb-shm.so.0
+-rw-r--r--. 1 root root  40K Jun  4 21:42 libxcb-sync.so.1
+-rw-r--r--. 1 root root  27K Jun  4 21:42 libxcb-util.so.1
+-rw-r--r--. 1 root root  42K Jun  4 21:42 libxcb-xfixes.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:42 libxcb-xinerama.so.0
+-rw-r--r--. 1 root root 139K Jun  4 21:42 libxcb-xkb.so.1
+-rw-r--r--. 1 root root  30K Jun  4 21:42 libXdmcp.so.6
+-rw-r--r--. 1 root root  86K Jun  4 21:42 libXext.so.6
+-rw-r--r--. 1 root root 265K Jun  4 21:42 libxkbcommon.so.0
+-rw-r--r--. 1 root root  46K Jun  4 21:42 libxkbcommon-x11.so.0
+
+densify:
+total 0
+drwxr-xr-x. 1 root root   0 Jun  4 21:39 .
+drwxr-xr-x. 1 root root 680 Jun  4 21:39 ..
+
+glabels:
+total 66M
+drwxr-xr-x. 1 root root 2.0K Jun  4 21:44 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  73K Jun  4 21:44 libavahi-client.so.3
+-rw-r--r--. 1 root root  52K Jun  4 21:44 libavahi-common.so.3
+-rw-r--r--. 1 root root  84K Jun  4 21:44 libbsd.so.0
+-rw-r--r--. 1 root root 574K Jun  4 21:44 libcups.so.2
+-rw-r--r--. 1 root root 325K Jun  4 21:44 libdbus-1.so.3
+-rw-r--r--. 1 root root  73K Jun  4 21:44 libdouble-conversion.so.1
+-rw-r--r--. 1 root root  83K Jun  4 21:44 libEGL.so.1
+-rw-r--r--. 1 root root  35K Jun  4 21:44 libffi.so.6
+-rw-r--r--. 1 root root 1.2M Jun  4 21:44 libgcrypt.so.20
+-rw-r--r--. 1 root root 602K Jun  4 21:44 libGLdispatch.so.0
+-rw-r--r--. 1 root root  71K Jun  4 21:44 libGLX.so.0
+-rw-r--r--. 1 root root 528K Jun  4 21:44 libgmp.so.10
+-rw-r--r--. 1 root root 1.5M Jun  4 21:44 libgnutls.so.30
+-rw-r--r--. 1 root root 183K Jun  4 21:44 libgraphite2.so.3
+-rw-r--r--. 1 root root 310K Jun  4 21:44 libgssapi_krb5.so.2
+-rw-r--r--. 1 root root 217K Jun  4 21:44 libhogweed.so.4
+-rw-r--r--. 1 root root  26M Jun  4 21:44 libicudata.so.60
+-rw-r--r--. 1 root root 3.1M Jun  4 21:44 libicui18n.so.60
+-rw-r--r--. 1 root root 1.9M Jun  4 21:44 libicuuc.so.60
+-rw-r--r--. 1 root root 119K Jun  4 21:44 libidn2.so.0
+-rw-r--r--. 1 root root 420K Jun  4 21:44 libjpeg.so.8
+-rw-r--r--. 1 root root 200K Jun  4 21:44 libk5crypto.so.3
+-rw-r--r--. 1 root root 880K Jun  4 21:44 libkrb5.so.3
+-rw-r--r--. 1 root root  48K Jun  4 21:44 libkrb5support.so.0
+-rw-r--r--. 1 root root 116K Jun  4 21:44 liblz4.so.1
+-rw-r--r--. 1 root root 156K Jun  4 21:44 liblzma.so.5
+-rw-r--r--. 1 root root 227K Jun  4 21:44 libnettle.so.6
+-rw-r--r--. 1 root root 458K Jun  4 21:44 libpcre.so.3
+-rw-r--r--. 1 root root 207K Jun  4 21:44 libpng16.so.16
+-rw-r--r--. 1 root root  52K Jun  4 21:44 libqrencode.so.3
+-rw-r--r--. 1 root root 7.5M Jun  4 21:44 libQt5Core.so.5
+-rw-r--r--. 1 root root 584K Jun  4 21:44 libQt5DBus.so.5
+-rw-r--r--. 1 root root 5.8M Jun  4 21:44 libQt5Gui.so.5
+-rw-r--r--. 1 root root 492K Jun  4 21:44 libQt5PrintSupport.so.5
+-rw-r--r--. 1 root root 381K Jun  4 21:44 libQt5Svg.so.5
+-rw-r--r--. 1 root root 6.7M Jun  4 21:44 libQt5Widgets.so.5
+-rw-r--r--. 1 root root 1.1M Jun  4 21:44 libQt5XcbQpa.so.5
+-rw-r--r--. 1 root root 263K Jun  4 21:44 libQt5Xml.so.5
+-rw-r--r--. 1 root root 542K Jun  4 21:44 libsystemd.so.0
+-rw-r--r--. 1 root root  79K Jun  4 21:44 libtasn1.so.6
+-rw-r--r--. 1 root root 1.6M Jun  4 21:44 libunistring.so.2
+-rw-r--r--. 1 root root 9.0K Jun  4 21:44 libX11-xcb.so.1
+-rw-r--r--. 1 root root  18K Jun  4 21:44 libXau.so.6
+-rw-r--r--. 1 root root 128K Jun  4 21:44 libxcb-glx.so.0
+-rw-r--r--. 1 root root  24K Jun  4 21:44 libxcb-icccm.so.4
+-rw-r--r--. 1 root root  22K Jun  4 21:44 libxcb-image.so.0
+-rw-r--r--. 1 root root  14K Jun  4 21:44 libxcb-keysyms.so.1
+-rw-r--r--. 1 root root  77K Jun  4 21:44 libxcb-randr.so.0
+-rw-r--r--. 1 root root  62K Jun  4 21:44 libxcb-render.so.0
+-rw-r--r--. 1 root root  19K Jun  4 21:44 libxcb-render-util.so.0
+-rw-r--r--. 1 root root  19K Jun  4 21:44 libxcb-shape.so.0
+-rw-r--r--. 1 root root  14K Jun  4 21:44 libxcb-shm.so.0
+-rw-r--r--. 1 root root  32K Jun  4 21:44 libxcb-sync.so.1
+-rw-r--r--. 1 root root  27K Jun  4 21:44 libxcb-util.so.1
+-rw-r--r--. 1 root root  38K Jun  4 21:44 libxcb-xfixes.so.0
+-rw-r--r--. 1 root root  14K Jun  4 21:44 libxcb-xinerama.so.0
+-rw-r--r--. 1 root root 132K Jun  4 21:44 libxcb-xkb.so.1
+-rw-r--r--. 1 root root  26K Jun  4 21:44 libXdmcp.so.6
+-rw-r--r--. 1 root root  77K Jun  4 21:44 libXext.so.6
+-rw-r--r--. 1 root root  68K Jun  4 21:44 libXi.so.6
+-rw-r--r--. 1 root root 256K Jun  4 21:44 libxkbcommon.so.0
+-rw-r--r--. 1 root root  36K Jun  4 21:44 libxkbcommon-x11.so.0
+-rw-r--r--. 1 root root 668K Jun  4 21:44 libzint.so.2.6
+
+joplin:
+total 14M
+drwxr-xr-x. 1 root root  284 Jun  4 21:48 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:48 libappindicator.so.1
+-rwxr-xr-x. 1 root root 247K Jun  4 21:48 libEGL.so
+-rwxr-xr-x. 1 root root 2.8M Jun  4 21:48 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:48 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 6.3M Jun  4 21:48 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:48 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:48 libnotify.so.4
+-rwxr-xr-x. 1 root root 4.4M Jun  4 21:48 libvk_swiftshader.so
+-rw-r--r--. 1 root root  15K Jun  4 21:48 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:48 libXtst.so.6
+
+katvan:
+total 70M
+drwxr-xr-x. 1 root root 1.6K Jun  4 21:42 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root 100K Jun  4 21:42 libbsd.so.0
+-rw-r--r--. 1 root root 341K Jun  4 21:42 libdbus-1.so.3
+-rw-r--r--. 1 root root  47K Jun  4 21:42 libffi.so.7
+-rw-r--r--. 1 root root 1.2M Jun  4 21:42 libgcrypt.so.20
+-rw-r--r--. 1 root root 1.3M Jun  4 21:42 libglib-2.0.so.0
+-rw-r--r--. 1 root root  22K Jun  4 21:42 libgmodule-2.0.so.0
+-rw-r--r--. 1 root root 400K Jun  4 21:42 libgobject-2.0.so.0
+-rw-r--r--. 1 root root 315K Jun  4 21:42 libgssapi_krb5.so.2
+-rw-r--r--. 1 root root  18K Jun  4 21:42 libgthread-2.0.so.0
+-rw-r--r--. 1 root root 456K Jun  4 21:42 libhunspell-1.7.so.0
+-rwxr-xr-x. 1 root root  24M Jun  4 21:42 libicudata.so.56
+-rwxr-xr-x. 1 root root 3.3M Jun  4 21:42 libicui18n.so.56
+-rwxr-xr-x. 1 root root 2.0M Jun  4 21:42 libicuuc.so.56
+-rw-r--r--. 1 root root 193K Jun  4 21:42 libk5crypto.so.3
+-rw-r--r--. 1 root root  27K Jun  4 21:42 libkeyutils.so.1
+-rw-r--r--. 1 root root 909K Jun  4 21:42 libkrb5.so.3
+-rw-r--r--. 1 root root  61K Jun  4 21:42 libkrb5support.so.0
+-rw-r--r--. 1 root root 132K Jun  4 21:42 liblz4.so.1
+-rw-r--r--. 1 root root 165K Jun  4 21:42 liblzma.so.5
+-rw-r--r--. 1 root root 458K Jun  4 21:42 libpcre.so.3
+-rw-r--r--. 1 root root 229K Jun  4 21:42 libpng16.so.16
+-rwxr-xr-x. 1 root root 6.6M Jun  4 21:42 libQt6Core.so.6
+-rwxr-xr-x. 1 root root 797K Jun  4 21:42 libQt6DBus.so.6
+-rwxr-xr-x. 1 root root 9.8M Jun  4 21:42 libQt6Gui.so.6
+-rwxr-xr-x. 1 root root 1.7M Jun  4 21:42 libQt6Network.so.6
+-rwxr-xr-x. 1 root root 640K Jun  4 21:42 libQt6OpenGL.so.6
+-rwxr-xr-x. 1 root root 5.1M Jun  4 21:42 libQt6Pdf.so.6
+-rwxr-xr-x. 1 root root  64K Jun  4 21:42 libQt6PdfWidgets.so.6
+-rwxr-xr-x. 1 root root 383K Jun  4 21:42 libQt6Svg.so.6
+-rwxr-xr-x. 1 root root 7.3M Jun  4 21:42 libQt6Widgets.so.6
+-rwxr-xr-x. 1 root root 704K Jun  4 21:42 libQt6XcbQpa.so.6
+-rw-r--r--. 1 root root 718K Jun  4 21:42 libsystemd.so.0
+-rw-r--r--. 1 root root  22K Jun  4 21:42 libXau.so.6
+-rw-r--r--. 1 root root  27K Jun  4 21:42 libxcb-cursor.so.0
+-rw-r--r--. 1 root root 136K Jun  4 21:42 libxcb-glx.so.0
+-rw-r--r--. 1 root root  29K Jun  4 21:42 libxcb-icccm.so.4
+-rw-r--r--. 1 root root  22K Jun  4 21:42 libxcb-image.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:42 libxcb-keysyms.so.1
+-rw-r--r--. 1 root root  87K Jun  4 21:42 libxcb-randr.so.0
+-rw-r--r--. 1 root root  67K Jun  4 21:42 libxcb-render.so.0
+-rw-r--r--. 1 root root  27K Jun  4 21:42 libxcb-render-util.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:42 libxcb-shape.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:42 libxcb-shm.so.0
+-rw-r--r--. 1 root root  40K Jun  4 21:42 libxcb-sync.so.1
+-rw-r--r--. 1 root root  27K Jun  4 21:42 libxcb-util.so.1
+-rw-r--r--. 1 root root  42K Jun  4 21:42 libxcb-xfixes.so.0
+-rw-r--r--. 1 root root 139K Jun  4 21:42 libxcb-xkb.so.1
+-rw-r--r--. 1 root root  30K Jun  4 21:42 libXdmcp.so.6
+-rw-r--r--. 1 root root 265K Jun  4 21:42 libxkbcommon.so.0
+-rw-r--r--. 1 root root  46K Jun  4 21:42 libxkbcommon-x11.so.0
+
+kitsas:
+total 271M
+drwxr-xr-x. 1 root root 3.5K Jun  4 21:48 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root 710K Jun  4 21:48 libasn1.so.8
+-rw-r--r--. 1 root root  77K Jun  4 21:48 libavahi-client.so.3
+-rw-r--r--. 1 root root  57K Jun  4 21:48 libavahi-common.so.3
+-rw-r--r--. 1 root root 100K Jun  4 21:48 libbsd.so.0
+-rw-r--r--. 1 root root  78K Jun  4 21:48 libbz2.so.1.0
+-rw-r--r--. 1 root root 3.0M Jun  4 21:48 libcrypto.so.1.1
+-rw-r--r--. 1 root root 202K Jun  4 21:48 libcrypt.so.1
+-rw-r--r--. 1 root root 635K Jun  4 21:48 libcups.so.2
+-rw-r--r--. 1 root root 341K Jun  4 21:48 libdbus-1.so.3
+-rw-r--r--. 1 root root  47K Jun  4 21:48 libffi.so.7
+-rw-r--r--. 1 root root 1.2M Jun  4 21:48 libgcrypt.so.20
+-rw-r--r--. 1 root root 1.3M Jun  4 21:48 libglib-2.0.so.0
+-rw-r--r--. 1 root root  22K Jun  4 21:48 libgmodule-2.0.so.0
+-rw-r--r--. 1 root root 1.9M Jun  4 21:48 libgnutls.so.30
+-rw-r--r--. 1 root root 400K Jun  4 21:48 libgobject-2.0.so.0
+-rw-r--r--. 1 root root 315K Jun  4 21:48 libgssapi_krb5.so.2
+-rw-r--r--. 1 root root 286K Jun  4 21:48 libgssapi.so.3
+-rw-r--r--. 1 root root  18K Jun  4 21:48 libgthread-2.0.so.0
+-rw-r--r--. 1 root root 231K Jun  4 21:48 libhcrypto.so.4
+-rw-r--r--. 1 root root  72K Jun  4 21:48 libheimbase.so.1
+-rw-r--r--. 1 root root  47K Jun  4 21:48 libheimntlm.so.0
+-rw-r--r--. 1 root root 227K Jun  4 21:48 libhogweed.so.5
+-rw-r--r--. 1 root root 327K Jun  4 21:48 libhx509.so.5
+-rwxr-xr-x. 1 root root  24M Jun  4 21:48 libicudata.so.56
+-rwxr-xr-x. 1 root root 3.3M Jun  4 21:48 libicui18n.so.56
+-rwxr-xr-x. 1 root root 2.0M Jun  4 21:48 libicuuc.so.56
+-rw-r--r--. 1 root root 130K Jun  4 21:48 libidn2.so.0
+-rw-r--r--. 1 root root 193K Jun  4 21:48 libk5crypto.so.3
+-rw-r--r--. 1 root root  27K Jun  4 21:48 libkeyutils.so.1
+-rw-r--r--. 1 root root 617K Jun  4 21:48 libkrb5.so.26
+-rw-r--r--. 1 root root 909K Jun  4 21:48 libkrb5.so.3
+-rw-r--r--. 1 root root  61K Jun  4 21:48 libkrb5support.so.0
+-rw-r--r--. 1 root root  69K Jun  4 21:48 liblber-2.4.so.2
+-rw-r--r--. 1 root root 351K Jun  4 21:48 libldap_r-2.4.so.2
+-rw-r--r--. 1 root root  43K Jun  4 21:48 libltdl.so.7
+-rw-r--r--. 1 root root 132K Jun  4 21:48 liblz4.so.1
+-rw-r--r--. 1 root root 165K Jun  4 21:48 liblzma.so.5
+-rw-r--r--. 1 root root 7.2M Jun  4 21:48 libmysqlclient.so.21
+-rw-r--r--. 1 root root 242K Jun  4 21:48 libnettle.so.7
+-rw-r--r--. 1 root root 261K Jun  4 21:48 libnspr4.so
+-rw-r--r--. 1 root root 1.4M Jun  4 21:48 libnss3.so
+-rw-r--r--. 1 root root 603K Jun  4 21:48 libnssckbi.so
+-rw-r--r--. 1 root root 210K Jun  4 21:48 libnssutil3.so
+-rw-r--r--. 1 root root 450K Jun  4 21:48 libodbc.so.2
+-rw-r--r--. 1 root root 1.3M Jun  4 21:48 libp11-kit.so.0
+-rw-r--r--. 1 root root 458K Jun  4 21:48 libpcre.so.3
+-rw-r--r--. 1 root root  26K Jun  4 21:48 libplc4.so
+-rw-r--r--. 1 root root  18K Jun  4 21:48 libplds4.so
+-rw-r--r--. 1 root root 229K Jun  4 21:48 libpng16.so.16
+-rw-r--r--. 1 root root 324K Jun  4 21:48 libpq.so.5
+-rwxr-xr-x. 1 root root 376K Jun  4 21:48 libQt6Core5Compat.so.6
+-rwxr-xr-x. 1 root root 6.6M Jun  4 21:48 libQt6Core.so.6
+-rwxr-xr-x. 1 root root 784K Jun  4 21:48 libQt6DBus.so.6
+-rwxr-xr-x. 1 root root 9.8M Jun  4 21:48 libQt6Gui.so.6
+-rwxr-xr-x. 1 root root 1.7M Jun  4 21:48 libQt6Network.so.6
+-rwxr-xr-x. 1 root root 640K Jun  4 21:48 libQt6OpenGL.so.6
+-rwxr-xr-x. 1 root root 5.1M Jun  4 21:48 libQt6Pdf.so.6
+-rwxr-xr-x. 1 root root  64K Jun  4 21:48 libQt6PdfWidgets.so.6
+-rwxr-xr-x. 1 root root 617K Jun  4 21:48 libQt6Positioning.so.6
+-rwxr-xr-x. 1 root root 492K Jun  4 21:48 libQt6PrintSupport.so.6
+-rwxr-xr-x. 1 root root 820K Jun  4 21:48 libQt6QmlModels.so.6
+-rwxr-xr-x. 1 root root 5.6M Jun  4 21:48 libQt6Qml.so.6
+-rwxr-xr-x. 1 root root 6.6M Jun  4 21:48 libQt6Quick.so.6
+-rwxr-xr-x. 1 root root 126K Jun  4 21:48 libQt6QuickWidgets.so.6
+-rwxr-xr-x. 1 root root 129K Jun  4 21:48 libQt6SerialPort.so.6
+-rwxr-xr-x. 1 root root 321K Jun  4 21:48 libQt6Sql.so.6
+-rwxr-xr-x. 1 root root 383K Jun  4 21:48 libQt6Svg.so.6
+-rwxr-xr-x. 1 root root  55K Jun  4 21:48 libQt6SvgWidgets.so.6
+-rwxr-xr-x. 1 root root 527K Jun  4 21:48 libQt6VirtualKeyboard.so.6
+-rwxr-xr-x. 1 root root 262K Jun  4 21:48 libQt6WebChannel.so.6
+-rwxr-xr-x. 1 root root 160M Jun  4 21:48 libQt6WebEngineCore.so.6
+-rwxr-xr-x. 1 root root 154K Jun  4 21:48 libQt6WebEngineWidgets.so.6
+-rwxr-xr-x. 1 root root 7.3M Jun  4 21:48 libQt6Widgets.so.6
+-rwxr-xr-x. 1 root root 704K Jun  4 21:48 libQt6XcbQpa.so.6
+-rw-r--r--. 1 root root 102K Jun  4 21:48 libroken.so.18
+-rw-r--r--. 1 root root 116K Jun  4 21:48 libsasl2.so.2
+-rw-r--r--. 1 root root 205K Jun  4 21:48 libsmime3.so
+-rw-r--r--. 1 root root 376K Jun  4 21:48 libsoftokn3.so
+-rw-r--r--. 1 root root 1.2M Jun  4 21:48 libsqlite3.so.0
+-rw-r--r--. 1 root root 612K Jun  4 21:48 libssl.so.1.1
+-rw-r--r--. 1 root root 718K Jun  4 21:48 libsystemd.so.0
+-rw-r--r--. 1 root root  87K Jun  4 21:48 libtasn1.so.6
+-rw-r--r--. 1 root root 1.6M Jun  4 21:48 libunistring.so.2
+-rw-r--r--. 1 root root 166K Jun  4 21:48 libwind.so.0
+-rw-r--r--. 1 root root  22K Jun  4 21:48 libXau.so.6
+-rw-r--r--. 1 root root  27K Jun  4 21:48 libxcb-cursor.so.0
+-rw-r--r--. 1 root root 136K Jun  4 21:48 libxcb-glx.so.0
+-rw-r--r--. 1 root root  29K Jun  4 21:48 libxcb-icccm.so.4
+-rw-r--r--. 1 root root  22K Jun  4 21:48 libxcb-image.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:48 libxcb-keysyms.so.1
+-rw-r--r--. 1 root root  87K Jun  4 21:48 libxcb-randr.so.0
+-rw-r--r--. 1 root root  67K Jun  4 21:48 libxcb-render.so.0
+-rw-r--r--. 1 root root  27K Jun  4 21:48 libxcb-render-util.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:48 libxcb-shape.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:48 libxcb-shm.so.0
+-rw-r--r--. 1 root root  40K Jun  4 21:48 libxcb-sync.so.1
+-rw-r--r--. 1 root root  27K Jun  4 21:48 libxcb-util.so.1
+-rw-r--r--. 1 root root  42K Jun  4 21:48 libxcb-xfixes.so.0
+-rw-r--r--. 1 root root 139K Jun  4 21:48 libxcb-xkb.so.1
+-rw-r--r--. 1 root root  18K Jun  4 21:48 libXcomposite.so.1
+-rw-r--r--. 1 root root  18K Jun  4 21:48 libXdamage.so.1
+-rw-r--r--. 1 root root  30K Jun  4 21:48 libXdmcp.so.6
+-rw-r--r--. 1 root root  86K Jun  4 21:48 libXext.so.6
+-rw-r--r--. 1 root root  31K Jun  4 21:48 libXfixes.so.3
+-rw-r--r--. 1 root root  72K Jun  4 21:48 libXi.so.6
+-rw-r--r--. 1 root root 265K Jun  4 21:48 libxkbcommon.so.0
+-rw-r--r--. 1 root root  46K Jun  4 21:48 libxkbcommon-x11.so.0
+-rw-r--r--. 1 root root 156K Jun  4 21:48 libxkbfile.so.1
+-rw-r--r--. 1 root root  52K Jun  4 21:48 libXrandr.so.2
+-rw-r--r--. 1 root root  43K Jun  4 21:48 libXrender.so.1
+-rw-r--r--. 1 root root 9.1K Jun  4 21:48 libxshmfence.so.1
+-rw-r--r--. 1 root root  26K Jun  4 21:48 libXtst.so.6
+-rw-r--r--. 1 root root 109K Jun  4 21:48 libzip.so.5
+
+knowte:
+total 14M
+drwxr-xr-x. 1 root root  284 Jun  4 21:47 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:47 libappindicator.so.1
+-rwxr-xr-x. 1 root root 232K Jun  4 21:47 libEGL.so
+-rwxr-xr-x. 1 root root 2.8M Jun  4 21:47 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:47 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 5.9M Jun  4 21:47 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:47 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:47 libnotify.so.4
+-rwxr-xr-x. 1 root root 3.9M Jun  4 21:47 libvk_swiftshader.so
+-rw-r--r--. 1 root root  15K Jun  4 21:47 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:47 libXtst.so.6
+
+koreader:
+total 0
+drwxr-xr-x. 1 root root   0 Jun  4 21:39 .
+drwxr-xr-x. 1 root root 680 Jun  4 21:39 ..
+
+logseq:
+total 14M
+drwxr-xr-x. 1 root root  284 Jun  4 21:48 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:48 libappindicator.so.1
+-rwxr-xr-x. 1 root root 247K Jun  4 21:48 libEGL.so
+-rwxr-xr-x. 1 root root 2.8M Jun  4 21:48 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:48 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 6.4M Jun  4 21:48 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:48 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:48 libnotify.so.4
+-rwxr-xr-x. 1 root root 4.1M Jun  4 21:48 libvk_swiftshader.so
+-rw-r--r--. 1 root root  15K Jun  4 21:48 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:48 libXtst.so.6
+
+lyricistant:
+total 14M
+drwxr-xr-x. 1 root root  284 Jun  4 21:46 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:46 libappindicator.so.1
+-rwxr-xr-x. 1 root root 248K Jun  4 21:46 libEGL.so
+-rwxr-xr-x. 1 root root 2.6M Jun  4 21:46 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:46 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 6.5M Jun  4 21:46 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:46 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:46 libnotify.so.4
+-rwxr-xr-x. 1 root root 4.2M Jun  4 21:46 libvk_swiftshader.so
+-rw-r--r--. 1 root root  15K Jun  4 21:46 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:46 libXtst.so.6
+
+markmind:
+total 28M
+drwxr-xr-x. 1 root root  284 Jun  4 21:44 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:44 libappindicator.so.1
+-rwxr-xr-x. 1 root root 234K Jun  4 21:44 libEGL.so
+-rwxr-xr-x. 1 root root 2.9M Jun  4 21:44 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:44 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 8.6M Jun  4 21:44 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:44 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:44 libnotify.so.4
+-rwxr-xr-x. 1 root root  16M Jun  4 21:44 libvk_swiftshader.so
+-rw-r--r--. 1 root root  15K Jun  4 21:44 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:44 libXtst.so.6
+
+mupdf:
+total 8.6M
+drwxr-xr-x. 1 root root  738 Jun  4 21:43 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root 159K Jun  4 21:43 libatk-1.0.so.0
+-rw-r--r--. 1 root root 1.1M Jun  4 21:43 libcairo.so.2
+-rw-r--r--. 1 root root  34K Jun  4 21:43 libdatrie.so.1
+-rw-r--r--. 1 root root  35K Jun  4 21:43 libffi.so.6
+-rw-r--r--. 1 root root 756K Jun  4 21:43 libgdk-x11-2.0.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:43 libgmodule-2.0.so.0
+-rw-r--r--. 1 root root 155K Jun  4 21:43 libgraphite2.so.3
+-rw-r--r--. 1 root root 4.5M Jun  4 21:43 libgtk-x11-2.0.so.0
+-rw-r--r--. 1 root root 454K Jun  4 21:43 libpcre.so.3
+-rw-r--r--. 1 root root 678K Jun  4 21:43 libpixman-1.so.0
+-rw-r--r--. 1 root root 154K Jun  4 21:43 libpng12.so.0
+-rw-r--r--. 1 root root 135K Jun  4 21:43 libselinux.so.1
+-rw-r--r--. 1 root root  18K Jun  4 21:43 libXau.so.6
+-rw-r--r--. 1 root root  46K Jun  4 21:43 libxcb-render.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:43 libxcb-shm.so.0
+-rw-r--r--. 1 root root  14K Jun  4 21:43 libXcomposite.so.1
+-rw-r--r--. 1 root root  44K Jun  4 21:43 libXcursor.so.1
+-rw-r--r--. 1 root root  14K Jun  4 21:43 libXdamage.so.1
+-rw-r--r--. 1 root root  26K Jun  4 21:43 libXdmcp.so.6
+-rw-r--r--. 1 root root  77K Jun  4 21:43 libXext.so.6
+-rw-r--r--. 1 root root  27K Jun  4 21:43 libXfixes.so.3
+-rw-r--r--. 1 root root  14K Jun  4 21:43 libXinerama.so.1
+-rw-r--r--. 1 root root  68K Jun  4 21:43 libXi.so.6
+-rw-r--r--. 1 root root  47K Jun  4 21:43 libXrandr.so.2
+-rw-r--r--. 1 root root  43K Jun  4 21:43 libXrender.so.1
+
+nightpdf:
+total 14M
+drwxr-xr-x. 1 root root  284 Jun  4 21:47 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:47 libappindicator.so.1
+-rwxr-xr-x. 1 root root 248K Jun  4 21:47 libEGL.so
+-rwxr-xr-x. 1 root root 2.6M Jun  4 21:47 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:47 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 6.5M Jun  4 21:47 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:47 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:47 libnotify.so.4
+-rwxr-xr-x. 1 root root 4.2M Jun  4 21:47 libvk_swiftshader.so
+-rw-r--r--. 1 root root  15K Jun  4 21:47 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:47 libXtst.so.6
+
+notable:
+total 12M
+drwxr-xr-x. 1 root root  244 Jun  4 21:45 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:45 libappindicator.so.1
+-rwxr-xr-x. 1 root root 243K Jun  4 21:45 libEGL.so
+-rwxr-xr-x. 1 root root 2.9M Jun  4 21:45 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:45 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 8.0M Jun  4 21:45 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:45 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:45 libnotify.so.4
+-rw-r--r--. 1 root root  15K Jun  4 21:45 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:45 libXtst.so.6
+
+notemaster:
+total 12M
+drwxr-xr-x. 1 root root  244 Jun  4 21:46 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:46 libappindicator.so.1
+-rwxr-xr-x. 1 root root 243K Jun  4 21:46 libEGL.so
+-rwxr-xr-x. 1 root root 2.9M Jun  4 21:46 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:46 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 8.0M Jun  4 21:46 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:46 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:46 libnotify.so.4
+-rw-r--r--. 1 root root  15K Jun  4 21:46 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:46 libXtst.so.6
+
+notepadnext:
+total 71M
+drwxr-xr-x. 1 root root 1.8K Jun  4 21:43 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  77K Jun  4 21:43 libavahi-client.so.3
+-rw-r--r--. 1 root root  57K Jun  4 21:43 libavahi-common.so.3
+-rw-r--r--. 1 root root 100K Jun  4 21:43 libbsd.so.0
+-rw-r--r--. 1 root root 635K Jun  4 21:43 libcups.so.2
+-rw-r--r--. 1 root root 341K Jun  4 21:43 libdbus-1.so.3
+-rw-r--r--. 1 root root  47K Jun  4 21:43 libffi.so.7
+-rw-r--r--. 1 root root 1.2M Jun  4 21:43 libgcrypt.so.20
+-rw-r--r--. 1 root root 1.3M Jun  4 21:43 libglib-2.0.so.0
+-rw-r--r--. 1 root root 1.9M Jun  4 21:43 libgnutls.so.30
+-rw-r--r--. 1 root root 315K Jun  4 21:43 libgssapi_krb5.so.2
+-rw-r--r--. 1 root root  18K Jun  4 21:43 libgthread-2.0.so.0
+-rw-r--r--. 1 root root 227K Jun  4 21:43 libhogweed.so.5
+-rwxr-xr-x. 1 root root  24M Jun  4 21:43 libicudata.so.56
+-rwxr-xr-x. 1 root root 3.3M Jun  4 21:43 libicui18n.so.56
+-rwxr-xr-x. 1 root root 2.0M Jun  4 21:43 libicuuc.so.56
+-rw-r--r--. 1 root root 130K Jun  4 21:43 libidn2.so.0
+-rw-r--r--. 1 root root 193K Jun  4 21:43 libk5crypto.so.3
+-rw-r--r--. 1 root root  27K Jun  4 21:43 libkeyutils.so.1
+-rw-r--r--. 1 root root 909K Jun  4 21:43 libkrb5.so.3
+-rw-r--r--. 1 root root  61K Jun  4 21:43 libkrb5support.so.0
+-rw-r--r--. 1 root root 132K Jun  4 21:43 liblz4.so.1
+-rw-r--r--. 1 root root 165K Jun  4 21:43 liblzma.so.5
+-rw-r--r--. 1 root root 242K Jun  4 21:43 libnettle.so.7
+-rw-r--r--. 1 root root 1.3M Jun  4 21:43 libp11-kit.so.0
+-rw-r--r--. 1 root root 458K Jun  4 21:43 libpcre.so.3
+-rw-r--r--. 1 root root 229K Jun  4 21:43 libpng16.so.16
+-rwxr-xr-x. 1 root root 376K Jun  4 21:43 libQt6Core5Compat.so.6
+-rwxr-xr-x. 1 root root 6.6M Jun  4 21:43 libQt6Core.so.6
+-rwxr-xr-x. 1 root root 797K Jun  4 21:43 libQt6DBus.so.6
+-rwxr-xr-x. 1 root root 9.8M Jun  4 21:43 libQt6Gui.so.6
+-rwxr-xr-x. 1 root root 1.7M Jun  4 21:43 libQt6Network.so.6
+-rwxr-xr-x. 1 root root 640K Jun  4 21:43 libQt6OpenGL.so.6
+-rwxr-xr-x. 1 root root 492K Jun  4 21:43 libQt6PrintSupport.so.6
+-rwxr-xr-x. 1 root root 383K Jun  4 21:43 libQt6Svg.so.6
+-rwxr-xr-x. 1 root root 7.3M Jun  4 21:43 libQt6Widgets.so.6
+-rwxr-xr-x. 1 root root 704K Jun  4 21:43 libQt6XcbQpa.so.6
+-rw-r--r--. 1 root root 718K Jun  4 21:43 libsystemd.so.0
+-rw-r--r--. 1 root root  87K Jun  4 21:43 libtasn1.so.6
+-rw-r--r--. 1 root root 1.6M Jun  4 21:43 libunistring.so.2
+-rw-r--r--. 1 root root  22K Jun  4 21:43 libXau.so.6
+-rw-r--r--. 1 root root  27K Jun  4 21:43 libxcb-cursor.so.0
+-rw-r--r--. 1 root root 136K Jun  4 21:43 libxcb-glx.so.0
+-rw-r--r--. 1 root root  29K Jun  4 21:43 libxcb-icccm.so.4
+-rw-r--r--. 1 root root  22K Jun  4 21:43 libxcb-image.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:43 libxcb-keysyms.so.1
+-rw-r--r--. 1 root root  87K Jun  4 21:43 libxcb-randr.so.0
+-rw-r--r--. 1 root root  67K Jun  4 21:43 libxcb-render.so.0
+-rw-r--r--. 1 root root  27K Jun  4 21:43 libxcb-render-util.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:43 libxcb-shape.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:43 libxcb-shm.so.0
+-rw-r--r--. 1 root root  40K Jun  4 21:43 libxcb-sync.so.1
+-rw-r--r--. 1 root root  27K Jun  4 21:43 libxcb-util.so.1
+-rw-r--r--. 1 root root  42K Jun  4 21:43 libxcb-xfixes.so.0
+-rw-r--r--. 1 root root 139K Jun  4 21:43 libxcb-xkb.so.1
+-rw-r--r--. 1 root root  30K Jun  4 21:43 libXdmcp.so.6
+-rw-r--r--. 1 root root 265K Jun  4 21:43 libxkbcommon.so.0
+-rw-r--r--. 1 root root  46K Jun  4 21:43 libxkbcommon-x11.so.0
+
+notesnook:
+total 14M
+drwxr-xr-x. 1 root root  284 Jun  4 21:47 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:47 libappindicator.so.1
+-rwxr-xr-x. 1 root root 247K Jun  4 21:47 libEGL.so
+-rwxr-xr-x. 1 root root 2.8M Jun  4 21:47 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:47 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 6.2M Jun  4 21:47 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:47 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:47 libnotify.so.4
+-rwxr-xr-x. 1 root root 4.1M Jun  4 21:47 libvk_swiftshader.so
+-rw-r--r--. 1 root root  15K Jun  4 21:47 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:47 libXtst.so.6
+
+novelwriter:
+total 11M
+drwxr-xr-x. 1 root root  510 Jun  4 21:44 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rwxr-xr-x. 1 root root  78K Jun  4 21:44 libbz2.so.1
+-rwxr-xr-x. 1 root root 3.1M Jun  4 21:44 libcrypto.so.1.1
+-rwxr-xr-x. 1 root root 139K Jun  4 21:44 libcrypt.so.1
+-rwxr-xr-x. 1 root root  42K Jun  4 21:44 libffi.so.6
+-rwxr-xr-x. 1 root root  22K Jun  4 21:44 libgdbm_compat.so.4
+-rwxr-xr-x. 1 root root  72K Jun  4 21:44 libgdbm.so.6
+-rwxr-xr-x. 1 root root 165K Jun  4 21:44 liblzma.so.5
+-rwxr-xr-x. 1 root root 268K Jun  4 21:44 libncursesw.so.6
+-rwxr-xr-x. 1 root root  23K Jun  4 21:44 libpanelw.so.6
+-rwxr-xr-x. 1 root root 232K Jun  4 21:44 libpng16.so.16
+-rwxr-xr-x. 1 root root 352K Jun  4 21:44 libreadline.so.7
+-rwxr-xr-x. 1 root root 1.4M Jun  4 21:44 libsqlite3.so.0
+-rwxr-xr-x. 1 root root 628K Jun  4 21:44 libssl.so.1.1
+-r-xr-xr-x. 1 root root 1.9M Jun  4 21:44 libtcl8.6.so
+-rwxr-xr-x. 1 root root 190K Jun  4 21:44 libtinfo.so.6
+-rwxr-xr-x. 1 root root 1.5M Jun  4 21:44 libtk8.6.so
+-rwxr-xr-x. 1 root root  23K Jun  4 21:44 libXau.so.6
+-rwxr-xr-x. 1 root root 101K Jun  4 21:44 libXft.so.2
+-rwxr-xr-x. 1 root root  55K Jun  4 21:44 libXrender.so.1
+
+openjournal:
+total 265M
+drwxr-xr-x. 1 root root 4.5K Jun  4 21:48 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  84K Jun  4 21:48 libapparmor.so.1
+-rw-r--r--. 1 root root 698K Jun  4 21:48 libasn1.so.8
+-rw-r--r--. 1 root root  26K Jun  4 21:48 libasyncns.so.0
+-rw-r--r--. 1 root root  77K Jun  4 21:48 libavahi-client.so.3
+-rw-r--r--. 1 root root  56K Jun  4 21:48 libavahi-common.so.3
+-rw-r--r--. 1 root root 138K Jun  4 21:48 libbrotlicommon.so.1
+-rw-r--r--. 1 root root  54K Jun  4 21:48 libbrotlidec.so.1
+-rw-r--r--. 1 root root 100K Jun  4 21:48 libbsd.so.0
+-rw-r--r--. 1 root root 3.0M Jun  4 21:48 libcrypto.so.1.1
+-rw-r--r--. 1 root root 202K Jun  4 21:48 libcrypt.so.1
+-rw-r--r--. 1 root root 631K Jun  4 21:48 libcups.so.2
+-rw-r--r--. 1 root root 582K Jun  4 21:48 libcurl-gnutls.so.4
+-rw-r--r--. 1 root root 337K Jun  4 21:48 libdbus-1.so.3
+-rw-r--r--. 1 root root  47K Jun  4 21:48 libffi.so.7
+-rw-r--r--. 1 root root 258K Jun  4 21:48 libFLAC.so.8
+-rw-r--r--. 1 root root 1.2M Jun  4 21:48 libgcrypt.so.20
+-rw-r--r--. 1 root root 1.2M Jun  4 21:48 libglib-2.0.so.0
+-rw-r--r--. 1 root root 1.9M Jun  4 21:48 libgnutls.so.30
+-rw-r--r--. 1 root root 395K Jun  4 21:48 libgobject-2.0.so.0
+-rw-r--r--. 1 root root 315K Jun  4 21:48 libgssapi_krb5.so.2
+-rw-r--r--. 1 root root 285K Jun  4 21:48 libgssapi.so.3
+-rw-r--r--. 1 root root  27K Jun  4 21:48 libgstallocators-1.0.so.0
+-rw-r--r--. 1 root root  74K Jun  4 21:48 libgstapp-1.0.so.0
+-rw-r--r--. 1 root root 514K Jun  4 21:48 libgstaudio-1.0.so.0
+-rw-r--r--. 1 root root 525K Jun  4 21:48 libgstbase-1.0.so.0
+-rw-r--r--. 1 root root 265K Jun  4 21:48 libgstpbutils-1.0.so.0
+-rw-r--r--. 1 root root 1.4M Jun  4 21:48 libgstreamer-1.0.so.0
+-rw-r--r--. 1 root root 258K Jun  4 21:48 libgsttag-1.0.so.0
+-rw-r--r--. 1 root root 727K Jun  4 21:48 libgstvideo-1.0.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:48 libgthread-2.0.so.0
+-rw-r--r--. 1 root root 229K Jun  4 21:48 libhcrypto.so.4
+-rw-r--r--. 1 root root  72K Jun  4 21:48 libheimbase.so.1
+-rw-r--r--. 1 root root  47K Jun  4 21:48 libheimntlm.so.0
+-rw-r--r--. 1 root root 226K Jun  4 21:48 libhogweed.so.5
+-rw-r--r--. 1 root root 325K Jun  4 21:48 libhx509.so.5
+-rwxr-xr-x. 1 root root  24M Jun  4 21:48 libicudata.so.56
+-rw-r--r--. 1 root root  27M Jun  4 21:48 libicudata.so.66
+-rwxr-xr-x. 1 root root 2.6M Jun  4 21:48 libicui18n.so.56
+-rwxr-xr-x. 1 root root 1.8M Jun  4 21:48 libicuuc.so.56
+-rw-r--r--. 1 root root 2.1M Jun  4 21:48 libicuuc.so.66
+-rw-r--r--. 1 root root 131K Jun  4 21:48 libidn2.so.0
+-rw-r--r--. 1 root root 192K Jun  4 21:48 libk5crypto.so.3
+-rw-r--r--. 1 root root  27K Jun  4 21:48 libkeyutils.so.1
+-rw-r--r--. 1 root root 612K Jun  4 21:48 libkrb5.so.26
+-rw-r--r--. 1 root root 905K Jun  4 21:48 libkrb5.so.3
+-rw-r--r--. 1 root root  60K Jun  4 21:48 libkrb5support.so.0
+-rw-r--r--. 1 root root  68K Jun  4 21:48 liblber-2.4.so.2
+-rw-r--r--. 1 root root 348K Jun  4 21:48 libldap_r-2.4.so.2
+-rw-r--r--. 1 root root  43K Jun  4 21:48 libltdl.so.7
+-rw-r--r--. 1 root root 132K Jun  4 21:48 liblz4.so.1
+-rw-r--r--. 1 root root 164K Jun  4 21:48 liblzma.so.5
+-rw-r--r--. 1 root root 523K Jun  4 21:48 libmpfr.so.6
+-rw-r--r--. 1 root root 240K Jun  4 21:48 libnettle.so.7
+-rw-r--r--. 1 root root 167K Jun  4 21:48 libnghttp2.so.14
+-rw-r--r--. 1 root root 109K Jun  4 21:48 libnsl.so.1
+-rw-r--r--. 1 root root 254K Jun  4 21:48 libnspr4.so
+-rw-r--r--. 1 root root 1.4M Jun  4 21:48 libnss3.so
+-rw-r--r--. 1 root root 208K Jun  4 21:48 libnssutil3.so
+-rwxr-xr-x. 1 root root 433K Jun  4 21:48 libodbc.so.2
+-rw-r--r--. 1 root root  51K Jun  4 21:48 libogg.so.0
+-rw-r--r--. 1 root root 533K Jun  4 21:48 liborc-0.4.so.0
+-rw-r--r--. 1 root root 459K Jun  4 21:48 libpcre.so.3
+-rw-r--r--. 1 root root  26K Jun  4 21:48 libplc4.so
+-rw-r--r--. 1 root root  18K Jun  4 21:48 libplds4.so
+-rw-r--r--. 1 root root 228K Jun  4 21:48 libpng16.so.16
+-rw-r--r--. 1 root root 348K Jun  4 21:48 libpq.so.5
+-rw-r--r--. 1 root root  75K Jun  4 21:48 libpsl.so.5
+-rw-r--r--. 1 root root 539K Jun  4 21:48 libpulsecommon-13.99.so
+-rw-r--r--. 1 root root  19K Jun  4 21:48 libpulse-mainloop-glib.so.0
+-rw-r--r--. 1 root root 336K Jun  4 21:48 libpulse.so.0
+-rw-r--r--. 1 root root 3.6M Jun  4 21:48 libqalculate.so.20
+-rwxr-xr-x. 1 root root 6.8M Jun  4 21:48 libQt5Core.so.5
+-rwxr-xr-x. 1 root root 736K Jun  4 21:48 libQt5DBus.so.5
+-rwxr-xr-x. 1 root root 932K Jun  4 21:48 libQt5EglFSDeviceIntegration.so.5
+-rwxr-xr-x. 1 root root 8.4M Jun  4 21:48 libQt5Gui.so.5
+-rwxr-xr-x. 1 root root 438K Jun  4 21:48 libQt5MultimediaGstTools.so.5
+-rwxr-xr-x. 1 root root 1.4M Jun  4 21:48 libQt5Multimedia.so.5
+-rwxr-xr-x. 1 root root 169K Jun  4 21:48 libQt5MultimediaWidgets.so.5
+-rwxr-xr-x. 1 root root 2.2M Jun  4 21:48 libQt5Network.so.5
+-rwxr-xr-x. 1 root root 457K Jun  4 21:48 libQt5OpenGL.so.5
+-rwxr-xr-x. 1 root root 809K Jun  4 21:48 libQt5Positioning.so.5
+-rwxr-xr-x. 1 root root 590K Jun  4 21:48 libQt5PrintSupport.so.5
+-rwxr-xr-x. 1 root root 695K Jun  4 21:48 libQt5QmlModels.so.5
+-rwxr-xr-x. 1 root root 5.6M Jun  4 21:48 libQt5Qml.so.5
+-rwxr-xr-x. 1 root root 6.8M Jun  4 21:48 libQt5Quick.so.5
+-rwxr-xr-x. 1 root root 107K Jun  4 21:48 libQt5QuickWidgets.so.5
+-rwxr-xr-x. 1 root root 130K Jun  4 21:48 libQt5SerialPort.so.5
+-rwxr-xr-x. 1 root root 356K Jun  4 21:48 libQt5Sql.so.5
+-rwxr-xr-x. 1 root root 446K Jun  4 21:48 libQt5Svg.so.5
+-rwxr-xr-x. 1 root root 1.8M Jun  4 21:48 libQt5WaylandClient.so.5
+-rwxr-xr-x. 1 root root 194K Jun  4 21:48 libQt5WebChannel.so.5
+-rwxr-xr-x. 1 root root 122M Jun  4 21:48 libQt5WebEngineCore.so.5
+-rwxr-xr-x. 1 root root 416K Jun  4 21:48 libQt5WebEngineWidgets.so.5
+-rwxr-xr-x. 1 root root 7.8M Jun  4 21:48 libQt5Widgets.so.5
+-rwxr-xr-x. 1 root root 1.8M Jun  4 21:48 libQt5XcbQpa.so.5
+-rw-r--r--. 1 root root 101K Jun  4 21:48 libroken.so.18
+-rw-r--r--. 1 root root 129K Jun  4 21:48 librtmp.so.1
+-rw-r--r--. 1 root root 116K Jun  4 21:48 libsasl2.so.2
+-rw-r--r--. 1 root root 204K Jun  4 21:48 libsmime3.so
+-rw-r--r--. 1 root root 501K Jun  4 21:48 libsndfile.so.1
+-rw-r--r--. 1 root root 1.2M Jun  4 21:48 libsqlite3.so.0
+-rw-r--r--. 1 root root 450K Jun  4 21:48 libssh.so.4
+-rw-r--r--. 1 root root 609K Jun  4 21:48 libssl.so.1.1
+-rw-r--r--. 1 root root 714K Jun  4 21:48 libsystemd.so.0
+-rw-r--r--. 1 root root  87K Jun  4 21:48 libtasn1.so.6
+-rw-r--r--. 1 root root 1.6M Jun  4 21:48 libunistring.so.2
+-rw-r--r--. 1 root root 682K Jun  4 21:48 libvorbisenc.so.2
+-rw-r--r--. 1 root root 184K Jun  4 21:48 libvorbis.so.0
+-rw-r--r--. 1 root root  68K Jun  4 21:48 libwayland-client.so.0
+-rw-r--r--. 1 root root  42K Jun  4 21:48 libwayland-cursor.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:48 libwayland-egl.so.1
+-rw-r--r--. 1 root root 166K Jun  4 21:48 libwind.so.0
+-rw-r--r--. 1 root root  47K Jun  4 21:48 libwrap.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:48 libX11-xcb.so.1
+-rw-r--r--. 1 root root  22K Jun  4 21:48 libXau.so.6
+-rw-r--r--. 1 root root 132K Jun  4 21:48 libxcb-glx.so.0
+-rw-r--r--. 1 root root  29K Jun  4 21:48 libxcb-icccm.so.4
+-rw-r--r--. 1 root root  22K Jun  4 21:48 libxcb-image.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:48 libxcb-keysyms.so.1
+-rw-r--r--. 1 root root  85K Jun  4 21:48 libxcb-randr.so.0
+-rw-r--r--. 1 root root  66K Jun  4 21:48 libxcb-render.so.0
+-rw-r--r--. 1 root root  27K Jun  4 21:48 libxcb-render-util.so.0
+-rw-r--r--. 1 root root  19K Jun  4 21:48 libxcb-shape.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:48 libxcb-shm.so.0
+-rw-r--r--. 1 root root  40K Jun  4 21:48 libxcb-sync.so.1
+-rw-r--r--. 1 root root  27K Jun  4 21:48 libxcb-util.so.1
+-rw-r--r--. 1 root root  42K Jun  4 21:48 libxcb-xfixes.so.0
+-rw-r--r--. 1 root root  19K Jun  4 21:48 libxcb-xinerama.so.0
+-rw-r--r--. 1 root root 136K Jun  4 21:48 libxcb-xkb.so.1
+-rw-r--r--. 1 root root  18K Jun  4 21:48 libXcomposite.so.1
+-rw-r--r--. 1 root root  52K Jun  4 21:48 libXcursor.so.1
+-rw-r--r--. 1 root root  18K Jun  4 21:48 libXdamage.so.1
+-rw-r--r--. 1 root root  31K Jun  4 21:48 libXdmcp.so.6
+-rw-r--r--. 1 root root  85K Jun  4 21:48 libXext.so.6
+-rw-r--r--. 1 root root  31K Jun  4 21:48 libXfixes.so.3
+-rw-r--r--. 1 root root  72K Jun  4 21:48 libXi.so.6
+-rw-r--r--. 1 root root 264K Jun  4 21:48 libxkbcommon.so.0
+-rw-r--r--. 1 root root  45K Jun  4 21:48 libxkbcommon-x11.so.0
+-rw-r--r--. 1 root root 1.8M Jun  4 21:48 libxml2.so.2
+-rw-r--r--. 1 root root  51K Jun  4 21:48 libXrandr.so.2
+-rw-r--r--. 1 root root  43K Jun  4 21:48 libXrender.so.1
+-rw-r--r--. 1 root root  27K Jun  4 21:48 libXtst.so.6
+
+passy:
+total 27M
+drwxr-xr-x. 1 root root 288 Jun  4 21:43 .
+drwxr-xr-x. 1 root root 680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root 13M Jun  4 21:43 libapp.so
+-rw-r--r--. 1 root root 51K Jun  4 21:43 libargon2.so
+-rw-r--r--. 1 root root 22K Jun  4 21:43 libdargon2_flutter_desktop_plugin.so
+-rw-r--r--. 1 root root 22K Jun  4 21:43 libemoji_picker_flutter_plugin.so
+-rw-r--r--. 1 root root 15M Jun  4 21:43 libflutter_linux_gtk.so
+-rw-r--r--. 1 root root 24K Jun  4 21:43 liburl_launcher_linux_plugin.so
+
+pdfquirk:
+total 44M
+drwxr-xr-x. 1 root root 1.7K Jun  4 21:41 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rwxr-xr-x. 1 root root 338K Jun  4 21:41 libblkid.so.1
+-rwxr-xr-x. 1 root root 122K Jun  4 21:41 libbz2.so.1
+-rw-r--r--. 1 root root  22K Jun  4 21:41 libcap.so.2
+-rwxr-xr-x. 1 root root 345K Jun  4 21:41 libdbus-1.so.3
+-rwxr-xr-x. 1 root root  61K Jun  4 21:41 libdouble-conversion.so.3
+-rwxr-xr-x. 1 root root 2.1M Jun  4 21:41 libfftw3.so.3
+-rwxr-xr-x. 1 root root 1.2M Jun  4 21:41 libgcrypt.so.20
+-rwxr-xr-x. 1 root root 155K Jun  4 21:41 libgraphite2.so.3
+-rwxr-xr-x. 1 root root 8.7K Jun  4 21:41 libicudata.so.suse65.1
+-rwxr-xr-x. 1 root root 3.5M Jun  4 21:41 libicui18n.so.suse65.1
+-rwxr-xr-x. 1 root root 2.1M Jun  4 21:41 libicuuc.so.suse65.1
+-rwxr-xr-x. 1 root root 424K Jun  4 21:41 libjpeg.so.8
+-rwxr-xr-x. 1 root root 373K Jun  4 21:41 liblcms2.so.2
+-rwxr-xr-x. 1 root root  64K Jun  4 21:41 liblqr-1.so.0
+-rwxr-xr-x. 1 root root  43K Jun  4 21:41 libltdl.so.7
+-rwxr-xr-x. 1 root root  88K Jun  4 21:41 liblz4.so.1
+-rwxr-xr-x. 1 root root 236K Jun  4 21:41 liblzma.so.5
+-rwxr-xr-x. 1 root root 2.6M Jun  4 21:41 libMagickCore-7.Q16HDRI.so.6
+-rwxr-xr-x. 1 root root 1.2M Jun  4 21:41 libMagickWand-7.Q16HDRI.so.6
+-rwxr-xr-x. 1 root root 386K Jun  4 21:41 libmount.so.1
+-rwxr-xr-x. 1 root root 480K Jun  4 21:41 libpcre2-16.so.0
+-rwxr-xr-x. 1 root root 550K Jun  4 21:41 libpcre.so.1
+-rwxr-xr-x. 1 root root 275K Jun  4 21:41 libpng16.so.16
+-rwxr-xr-x. 1 root root 7.7M Jun  4 21:41 libQt5Core.so.5
+-rwxr-xr-x. 1 root root 617K Jun  4 21:41 libQt5DBus.so.5
+-rwxr-xr-x. 1 root root 6.6M Jun  4 21:41 libQt5Gui.so.5
+-rwxr-xr-x. 1 root root 7.1M Jun  4 21:41 libQt5Widgets.so.5
+-rwxr-xr-x. 1 root root 1.6M Jun  4 21:41 libQt5XcbQpa.so.5
+-rwxr-xr-x. 1 root root 164K Jun  4 21:41 libselinux.so.1
+-rwxr-xr-x. 1 root root 614K Jun  4 21:41 libsystemd.so.0
+-rwxr-xr-x. 1 root root 9.1K Jun  4 21:41 libX11-xcb.so.1
+-rwxr-xr-x. 1 root root  18K Jun  4 21:41 libXau.so.6
+-rwxr-xr-x. 1 root root 132K Jun  4 21:41 libxcb-glx.so.0
+-rwxr-xr-x. 1 root root  24K Jun  4 21:41 libxcb-icccm.so.4
+-rwxr-xr-x. 1 root root  22K Jun  4 21:41 libxcb-image.so.0
+-rwxr-xr-x. 1 root root  14K Jun  4 21:41 libxcb-keysyms.so.1
+-rwxr-xr-x. 1 root root  81K Jun  4 21:41 libxcb-randr.so.0
+-rwxr-xr-x. 1 root root  66K Jun  4 21:41 libxcb-render.so.0
+-rwxr-xr-x. 1 root root  19K Jun  4 21:41 libxcb-render-util.so.0
+-rwxr-xr-x. 1 root root  19K Jun  4 21:41 libxcb-shape.so.0
+-rwxr-xr-x. 1 root root  18K Jun  4 21:41 libxcb-shm.so.0
+-rwxr-xr-x. 1 root root  32K Jun  4 21:41 libxcb-sync.so.1
+-rwxr-xr-x. 1 root root  27K Jun  4 21:41 libxcb-util.so.1
+-rwxr-xr-x. 1 root root  38K Jun  4 21:41 libxcb-xfixes.so.0
+-rwxr-xr-x. 1 root root  14K Jun  4 21:41 libxcb-xinerama.so.0
+-rwxr-xr-x. 1 root root 167K Jun  4 21:41 libxcb-xinput.so.0
+-rwxr-xr-x. 1 root root 136K Jun  4 21:41 libxcb-xkb.so.1
+-rwxr-xr-x. 1 root root  77K Jun  4 21:41 libXext.so.6
+-rwxr-xr-x. 1 root root 260K Jun  4 21:41 libxkbcommon.so.0
+-rwxr-xr-x. 1 root root  36K Jun  4 21:41 libxkbcommon-x11.so.0
+-rwxr-xr-x. 1 root root 1.5M Jun  4 21:41 libxml2.so.2
+-rwxr-xr-x. 1 root root  43K Jun  4 21:41 libXrender.so.1
+
+potatopresenter:
+total 99M
+drwxr-xr-x. 1 root root 3.8K Jun  4 21:43 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  35K Jun  4 21:43 libacl.so.1
+-rw-r--r--. 1 root root 3.1M Jun  4 21:43 libantlr4-runtime.so.4.7.2
+-rw-r--r--. 1 root root 686K Jun  4 21:43 libasn1.so.8
+-rw-r--r--. 1 root root  22K Jun  4 21:43 libattr.so.1
+-rw-r--r--. 1 root root  73K Jun  4 21:43 libavahi-client.so.3
+-rw-r--r--. 1 root root  52K Jun  4 21:43 libavahi-common.so.3
+-rw-r--r--. 1 root root  84K Jun  4 21:43 libbsd.so.0
+-rw-r--r--. 1 root root  70K Jun  4 21:43 libbz2.so.1.0
+-rw-r--r--. 1 root root  42K Jun  4 21:43 libcrypt.so.1
+-rw-r--r--. 1 root root 574K Jun  4 21:43 libcups.so.2
+-rw-r--r--. 1 root root 520K Jun  4 21:43 libcurl-gnutls.so.4
+-rw-r--r--. 1 root root 325K Jun  4 21:43 libdbus-1.so.3
+-rw-r--r--. 1 root root  22K Jun  4 21:43 libeditorconfig.so.0
+-rw-r--r--. 1 root root  40K Jun  4 21:43 libfam.so.0
+-rw-r--r--. 1 root root  35K Jun  4 21:43 libffi.so.6
+-rw-r--r--. 1 root root 1.2M Jun  4 21:43 libgcrypt.so.20
+-rw-r--r--. 1 root root 905K Jun  4 21:43 libgit2.so.26
+-rw-r--r--. 1 root root 1.5M Jun  4 21:43 libgnutls.so.30
+-rw-r--r--. 1 root root 183K Jun  4 21:43 libgraphite2.so.3
+-rw-r--r--. 1 root root 310K Jun  4 21:43 libgssapi_krb5.so.2
+-rw-r--r--. 1 root root 273K Jun  4 21:43 libgssapi.so.3
+-rw-r--r--. 1 root root 224K Jun  4 21:43 libhcrypto.so.4
+-rw-r--r--. 1 root root  64K Jun  4 21:43 libheimbase.so.1
+-rw-r--r--. 1 root root  39K Jun  4 21:43 libheimntlm.so.0
+-rw-r--r--. 1 root root 226K Jun  4 21:43 libhogweed.so.4
+-rw-r--r--. 1 root root  38K Jun  4 21:43 libhttp_parser.so.2.7.1
+-rw-r--r--. 1 root root 313K Jun  4 21:43 libhx509.so.5
+-rw-r--r--. 1 root root  26M Jun  4 21:43 libicudata.so.60
+-rw-r--r--. 1 root root 3.1M Jun  4 21:43 libicui18n.so.60
+-rw-r--r--. 1 root root 1.9M Jun  4 21:43 libicuuc.so.60
+-rw-r--r--. 1 root root 119K Jun  4 21:43 libidn2.so.0
+-rw-r--r--. 1 root root 420K Jun  4 21:43 libjpeg.so.8
+-rw-r--r--. 1 root root 200K Jun  4 21:43 libk5crypto.so.3
+-rw-r--r--. 1 root root  18K Jun  4 21:43 libkeyutils.so.1
+-rw-r--r--. 1 root root 244K Jun  4 21:43 libKF5Archive.so.5
+-rw-r--r--. 1 root root 704K Jun  4 21:43 libKF5Attica.so.5
+-rw-r--r--. 1 root root  99K Jun  4 21:43 libKF5Auth.so.5
+-rw-r--r--. 1 root root 243K Jun  4 21:43 libKF5Codecs.so.5
+-rw-r--r--. 1 root root 270K Jun  4 21:43 libKF5Completion.so.5
+-rw-r--r--. 1 root root 403K Jun  4 21:43 libKF5ConfigCore.so.5
+-rw-r--r--. 1 root root 150K Jun  4 21:43 libKF5ConfigGui.so.5
+-rw-r--r--. 1 root root 394K Jun  4 21:43 libKF5ConfigWidgets.so.5
+-rw-r--r--. 1 root root 621K Jun  4 21:43 libKF5CoreAddons.so.5
+-rw-r--r--. 1 root root  91K Jun  4 21:43 libKF5DBusAddons.so.5
+-rw-r--r--. 1 root root 143K Jun  4 21:43 libKF5GlobalAccel.so.5
+-rw-r--r--. 1 root root 118K Jun  4 21:43 libKF5GuiAddons.so.5
+-rw-r--r--. 1 root root 324K Jun  4 21:43 libKF5I18n.so.5
+-rw-r--r--. 1 root root 278K Jun  4 21:43 libKF5IconThemes.so.5
+-rw-r--r--. 1 root root 262K Jun  4 21:43 libKF5ItemViews.so.5
+-rw-r--r--. 1 root root 166K Jun  4 21:43 libKF5JobWidgets.so.5
+-rw-r--r--. 1 root root 1.6M Jun  4 21:43 libKF5KIOCore.so.5
+-rw-r--r--. 1 root root 1.4M Jun  4 21:43 libKF5KIOWidgets.so.5
+-rw-r--r--. 1 root root 452K Jun  4 21:43 libKF5Parts.so.5
+-rw-r--r--. 1 root root 706K Jun  4 21:43 libKF5Service.so.5
+-rw-r--r--. 1 root root 194K Jun  4 21:43 libKF5SonnetCore.so.5
+-rw-r--r--. 1 root root 193K Jun  4 21:43 libKF5SonnetUi.so.5
+-rw-r--r--. 1 root root 1.4M Jun  4 21:43 libKF5SyntaxHighlighting.so.5
+-rw-r--r--. 1 root root 3.8M Jun  4 21:43 libKF5TextEditor.so.5
+-rw-r--r--. 1 root root 301K Jun  4 21:43 libKF5TextWidgets.so.5
+-rw-r--r--. 1 root root 1.5M Jun  4 21:43 libKF5WidgetsAddons.so.5
+-rw-r--r--. 1 root root 335K Jun  4 21:43 libKF5WindowSystem.so.5
+-rw-r--r--. 1 root root 1.2M Jun  4 21:43 libKF5XmlGui.so.5
+-rw-r--r--. 1 root root 592K Jun  4 21:43 libkrb5.so.26
+-rw-r--r--. 1 root root 880K Jun  4 21:43 libkrb5.so.3
+-rw-r--r--. 1 root root  48K Jun  4 21:43 libkrb5support.so.0
+-rw-r--r--. 1 root root  60K Jun  4 21:43 liblber-2.4.so.2
+-rw-r--r--. 1 root root 336K Jun  4 21:43 libldap_r-2.4.so.2
+-rw-r--r--. 1 root root 116K Jun  4 21:43 liblz4.so.1
+-rw-r--r--. 1 root root 156K Jun  4 21:43 liblzma.so.5
+-rw-r--r--. 1 root root 227K Jun  4 21:43 libnettle.so.6
+-rw-r--r--. 1 root root 159K Jun  4 21:43 libnghttp2.so.14
+-rw-r--r--. 1 root root 458K Jun  4 21:43 libpcre.so.3
+-rw-r--r--. 1 root root 207K Jun  4 21:43 libpng16.so.16
+-rw-r--r--. 1 root root  58K Jun  4 21:43 libpsl.so.5
+-rw-r--r--. 1 root root 8.4M Jun  4 21:43 libQt5Core.so.5
+-rw-r--r--. 1 root root 570K Jun  4 21:43 libQt5DBus.so.5
+-rw-r--r--. 1 root root 6.9M Jun  4 21:43 libQt5Gui.so.5
+-rw-r--r--. 1 root root 1.7M Jun  4 21:43 libQt5Network.so.5
+-rw-r--r--. 1 root root 459K Jun  4 21:43 libQt5PrintSupport.so.5
+-rw-r--r--. 1 root root 4.6M Jun  4 21:43 libQt5Qml.so.5
+-rw-r--r--. 1 root root 350K Jun  4 21:43 libQt5Svg.so.5
+-rw-r--r--. 1 root root  55K Jun  4 21:43 libQt5TextToSpeech.so.5
+-rw-r--r--. 1 root root 6.5M Jun  4 21:43 libQt5Widgets.so.5
+-rw-r--r--. 1 root root  19K Jun  4 21:43 libQt5X11Extras.so.5
+-rw-r--r--. 1 root root 1.4M Jun  4 21:43 libQt5XcbQpa.so.5
+-rw-r--r--. 1 root root 256K Jun  4 21:43 libQt5Xml.so.5
+-rw-r--r--. 1 root root  93K Jun  4 21:43 libroken.so.18
+-rw-r--r--. 1 root root 117K Jun  4 21:43 librtmp.so.1
+-rw-r--r--. 1 root root 111K Jun  4 21:43 libsasl2.so.2
+-rw-r--r--. 1 root root 1.1M Jun  4 21:43 libsqlite3.so.0
+-rw-r--r--. 1 root root 182K Jun  4 21:43 libssh2.so.1
+-rw-r--r--. 1 root root 542K Jun  4 21:43 libsystemd.so.0
+-rw-r--r--. 1 root root  79K Jun  4 21:43 libtasn1.so.6
+-rw-r--r--. 1 root root 1.6M Jun  4 21:43 libunistring.so.2
+-rw-r--r--. 1 root root 166K Jun  4 21:43 libwind.so.0
+-rw-r--r--. 1 root root 9.0K Jun  4 21:43 libX11-xcb.so.1
+-rw-r--r--. 1 root root  18K Jun  4 21:43 libXau.so.6
+-rw-r--r--. 1 root root 128K Jun  4 21:43 libxcb-glx.so.0
+-rw-r--r--. 1 root root  24K Jun  4 21:43 libxcb-icccm.so.4
+-rw-r--r--. 1 root root  22K Jun  4 21:43 libxcb-image.so.0
+-rw-r--r--. 1 root root  14K Jun  4 21:43 libxcb-keysyms.so.1
+-rw-r--r--. 1 root root  77K Jun  4 21:43 libxcb-randr.so.0
+-rw-r--r--. 1 root root  62K Jun  4 21:43 libxcb-render.so.0
+-rw-r--r--. 1 root root  19K Jun  4 21:43 libxcb-render-util.so.0
+-rw-r--r--. 1 root root  19K Jun  4 21:43 libxcb-shape.so.0
+-rw-r--r--. 1 root root  14K Jun  4 21:43 libxcb-shm.so.0
+-rw-r--r--. 1 root root  32K Jun  4 21:43 libxcb-sync.so.1
+-rw-r--r--. 1 root root  27K Jun  4 21:43 libxcb-util.so.1
+-rw-r--r--. 1 root root  38K Jun  4 21:43 libxcb-xfixes.so.0
+-rw-r--r--. 1 root root  14K Jun  4 21:43 libxcb-xinerama.so.0
+-rw-r--r--. 1 root root 159K Jun  4 21:43 libxcb-xinput.so.0
+-rw-r--r--. 1 root root 132K Jun  4 21:43 libxcb-xkb.so.1
+-rw-r--r--. 1 root root  26K Jun  4 21:43 libXdmcp.so.6
+-rw-r--r--. 1 root root 256K Jun  4 21:43 libxkbcommon.so.0
+-rw-r--r--. 1 root root  36K Jun  4 21:43 libxkbcommon-x11.so.0
+
+pulsar:
+total 15M
+drwxr-xr-x. 1 root root  284 Jun  4 21:48 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:48 libappindicator.so.1
+-rwxr-xr-x. 1 root root 237K Jun  4 21:48 libEGL.so
+-rwxr-xr-x. 1 root root 3.0M Jun  4 21:48 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:48 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 7.0M Jun  4 21:48 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:48 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:48 libnotify.so.4
+-rwxr-xr-x. 1 root root 3.9M Jun  4 21:48 libvk_swiftshader.so
+-rw-r--r--. 1 root root  15K Jun  4 21:48 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:48 libXtst.so.6
+
+qownnotes:
+total 86M
+drwxr-xr-x. 1 root root 2.4K Jun  4 21:44 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root 710K Jun  4 21:44 libasn1.so.8
+-rw-r--r--. 1 root root  77K Jun  4 21:44 libavahi-client.so.3
+-rw-r--r--. 1 root root  57K Jun  4 21:44 libavahi-common.so.3
+-rw-r--r--. 1 root root 100K Jun  4 21:44 libbsd.so.0
+-rw-r--r--. 1 root root 3.0M Jun  4 21:44 libcrypto.so.1.1
+-rw-r--r--. 1 root root 202K Jun  4 21:44 libcrypt.so.1
+-rw-r--r--. 1 root root 635K Jun  4 21:44 libcups.so.2
+-rw-r--r--. 1 root root 341K Jun  4 21:44 libdbus-1.so.3
+-rw-r--r--. 1 root root  47K Jun  4 21:44 libffi.so.7
+-rw-r--r--. 1 root root 1.2M Jun  4 21:44 libgcrypt.so.20
+-rw-r--r--. 1 root root 1.3M Jun  4 21:44 libglib-2.0.so.0
+-rw-r--r--. 1 root root 1.9M Jun  4 21:44 libgnutls.so.30
+-rw-r--r--. 1 root root 315K Jun  4 21:44 libgssapi_krb5.so.2
+-rw-r--r--. 1 root root 286K Jun  4 21:44 libgssapi.so.3
+-rw-r--r--. 1 root root  18K Jun  4 21:44 libgthread-2.0.so.0
+-rw-r--r--. 1 root root 231K Jun  4 21:44 libhcrypto.so.4
+-rw-r--r--. 1 root root  72K Jun  4 21:44 libheimbase.so.1
+-rw-r--r--. 1 root root  47K Jun  4 21:44 libheimntlm.so.0
+-rw-r--r--. 1 root root 227K Jun  4 21:44 libhogweed.so.5
+-rw-r--r--. 1 root root 327K Jun  4 21:44 libhx509.so.5
+-rwxr-xr-x. 1 root root  24M Jun  4 21:44 libicudata.so.56
+-rwxr-xr-x. 1 root root 2.6M Jun  4 21:44 libicui18n.so.56
+-rwxr-xr-x. 1 root root 1.8M Jun  4 21:44 libicuuc.so.56
+-rw-r--r--. 1 root root 130K Jun  4 21:44 libidn2.so.0
+-rw-r--r--. 1 root root 193K Jun  4 21:44 libk5crypto.so.3
+-rw-r--r--. 1 root root  27K Jun  4 21:44 libkeyutils.so.1
+-rw-r--r--. 1 root root 617K Jun  4 21:44 libkrb5.so.26
+-rw-r--r--. 1 root root 909K Jun  4 21:44 libkrb5.so.3
+-rw-r--r--. 1 root root  61K Jun  4 21:44 libkrb5support.so.0
+-rw-r--r--. 1 root root  69K Jun  4 21:44 liblber-2.4.so.2
+-rw-r--r--. 1 root root 351K Jun  4 21:44 libldap_r-2.4.so.2
+-rw-r--r--. 1 root root  43K Jun  4 21:44 libltdl.so.7
+-rw-r--r--. 1 root root 132K Jun  4 21:44 liblz4.so.1
+-rw-r--r--. 1 root root 165K Jun  4 21:44 liblzma.so.5
+-rw-r--r--. 1 root root 242K Jun  4 21:44 libnettle.so.7
+-rwxr-xr-x. 1 root root 434K Jun  4 21:44 libodbc.so.2
+-rw-r--r--. 1 root root 1.3M Jun  4 21:44 libp11-kit.so.0
+-rw-r--r--. 1 root root 458K Jun  4 21:44 libpcre.so.3
+-rw-r--r--. 1 root root 229K Jun  4 21:44 libpng16.so.16
+-rw-r--r--. 1 root root 353K Jun  4 21:44 libpq.so.5
+-rwxr-xr-x. 1 root root 6.8M Jun  4 21:44 libQt5Core.so.5
+-rwxr-xr-x. 1 root root 736K Jun  4 21:44 libQt5DBus.so.5
+-rwxr-xr-x. 1 root root 8.4M Jun  4 21:44 libQt5Gui.so.5
+-rwxr-xr-x. 1 root root 2.2M Jun  4 21:44 libQt5Network.so.5
+-rwxr-xr-x. 1 root root 590K Jun  4 21:44 libQt5PrintSupport.so.5
+-rwxr-xr-x. 1 root root 5.6M Jun  4 21:44 libQt5Qml.so.5
+-rwxr-xr-x. 1 root root 356K Jun  4 21:44 libQt5Sql.so.5
+-rwxr-xr-x. 1 root root 446K Jun  4 21:44 libQt5Svg.so.5
+-rwxr-xr-x. 1 root root 272K Jun  4 21:44 libQt5WebSockets.so.5
+-rwxr-xr-x. 1 root root 7.8M Jun  4 21:44 libQt5Widgets.so.5
+-rwxr-xr-x. 1 root root  24K Jun  4 21:44 libQt5X11Extras.so.5
+-rwxr-xr-x. 1 root root 1.8M Jun  4 21:44 libQt5XcbQpa.so.5
+-rwxr-xr-x. 1 root root 327K Jun  4 21:44 libQt5Xml.so.5
+-rw-r--r--. 1 root root 102K Jun  4 21:44 libroken.so.18
+-rw-r--r--. 1 root root 116K Jun  4 21:44 libsasl2.so.2
+-rw-r--r--. 1 root root 1.2M Jun  4 21:44 libsqlite3.so.0
+-rw-r--r--. 1 root root 612K Jun  4 21:44 libssl.so.1.1
+-rw-r--r--. 1 root root 718K Jun  4 21:44 libsystemd.so.0
+-rw-r--r--. 1 root root  87K Jun  4 21:44 libtasn1.so.6
+-rw-r--r--. 1 root root 1.6M Jun  4 21:44 libunistring.so.2
+-rw-r--r--. 1 root root 166K Jun  4 21:44 libwind.so.0
+-rw-r--r--. 1 root root  22K Jun  4 21:44 libXau.so.6
+-rw-r--r--. 1 root root 136K Jun  4 21:44 libxcb-glx.so.0
+-rw-r--r--. 1 root root  29K Jun  4 21:44 libxcb-icccm.so.4
+-rw-r--r--. 1 root root  22K Jun  4 21:44 libxcb-image.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:44 libxcb-keysyms.so.1
+-rw-r--r--. 1 root root  87K Jun  4 21:44 libxcb-randr.so.0
+-rw-r--r--. 1 root root  67K Jun  4 21:44 libxcb-render.so.0
+-rw-r--r--. 1 root root  27K Jun  4 21:44 libxcb-render-util.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:44 libxcb-shape.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:44 libxcb-shm.so.0
+-rw-r--r--. 1 root root  40K Jun  4 21:44 libxcb-sync.so.1
+-rw-r--r--. 1 root root  27K Jun  4 21:44 libxcb-util.so.1
+-rw-r--r--. 1 root root  42K Jun  4 21:44 libxcb-xfixes.so.0
+-rw-r--r--. 1 root root  18K Jun  4 21:44 libxcb-xinerama.so.0
+-rw-r--r--. 1 root root 139K Jun  4 21:44 libxcb-xkb.so.1
+-rw-r--r--. 1 root root  30K Jun  4 21:44 libXdmcp.so.6
+-rw-r--r--. 1 root root  86K Jun  4 21:44 libXext.so.6
+-rw-r--r--. 1 root root 265K Jun  4 21:44 libxkbcommon.so.0
+-rw-r--r--. 1 root root  46K Jun  4 21:44 libxkbcommon-x11.so.0
+
+qpdf:
+total 13M
+drwxr-xr-x. 1 root root  308 Jun  4 21:40 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  35K Jun  4 21:40 libffi.so.6
+-rw-r--r--. 1 root root 1.5M Jun  4 21:40 libgnutls.so.30
+-rw-r--r--. 1 root root 226K Jun  4 21:40 libhogweed.so.4
+-rw-r--r--. 1 root root 119K Jun  4 21:40 libidn2.so.0
+-rw-r--r--. 1 root root 420K Jun  4 21:40 libjpeg.so.8
+-rw-r--r--. 1 root root 227K Jun  4 21:40 libnettle.so.6
+-rw-r--r--. 1 root root 1.2M Jun  4 21:40 libp11-kit.so.0
+-rw-r--r--. 1 root root 3.6M Jun  4 21:40 libqpdf.so.29
+-rw-r--r--. 1 root root 3.6M Jun  4 21:40 libqpdf.so.29.9.0
+-rw-r--r--. 1 root root  79K Jun  4 21:40 libtasn1.so.6
+-rw-r--r--. 1 root root 1.6M Jun  4 21:40 libunistring.so.2
+
+rainbowboard:
+total 15M
+drwxr-xr-x. 1 root root  284 Jun  4 21:46 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:46 libappindicator.so.1
+-rwxr-xr-x. 1 root root 237K Jun  4 21:46 libEGL.so
+-rwxr-xr-x. 1 root root 3.0M Jun  4 21:46 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:46 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 7.0M Jun  4 21:46 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:46 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:46 libnotify.so.4
+-rwxr-xr-x. 1 root root 3.9M Jun  4 21:46 libvk_swiftshader.so
+-rw-r--r--. 1 root root  15K Jun  4 21:46 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:46 libXtst.so.6
+
+session:
+total 14M
+drwxr-xr-x. 1 root root  284 Jun  4 21:47 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:47 libappindicator.so.1
+-rwxr-xr-x. 1 root root 246K Jun  4 21:47 libEGL.so
+-rwxr-xr-x. 1 root root 2.8M Jun  4 21:47 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:47 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 6.2M Jun  4 21:47 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:47 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:47 libnotify.so.4
+-rwxr-xr-x. 1 root root 4.4M Jun  4 21:47 libvk_swiftshader.so
+-rw-r--r--. 1 root root  15K Jun  4 21:47 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:47 libXtst.so.6
+
+standardnotes:
+total 14M
+drwxr-xr-x. 1 root root  284 Jun  4 21:47 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:47 libappindicator.so.1
+-rwxr-xr-x. 1 root root 232K Jun  4 21:47 libEGL.so
+-rwxr-xr-x. 1 root root 2.8M Jun  4 21:47 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:47 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 5.9M Jun  4 21:47 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:47 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:47 libnotify.so.4
+-rwxr-xr-x. 1 root root 3.9M Jun  4 21:47 libvk_swiftshader.so
+-rw-r--r--. 1 root root  15K Jun  4 21:47 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:47 libXtst.so.6
+
+storadit:
+total 14M
+drwxr-xr-x. 1 root root  284 Jun  4 21:46 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:46 libappindicator.so.1
+-rwxr-xr-x. 1 root root 231K Jun  4 21:46 libEGL.so
+-rwxr-xr-x. 1 root root 2.8M Jun  4 21:46 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:46 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 6.7M Jun  4 21:46 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:46 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:46 libnotify.so.4
+-rwxr-xr-x. 1 root root 3.9M Jun  4 21:46 libvk_swiftshader.so
+-rw-r--r--. 1 root root  15K Jun  4 21:46 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:46 libXtst.so.6
+
+taskizer:
+total 25M
+drwxr-xr-x. 1 root root  308 Jun  4 21:46 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:46 libappindicator.so.1
+-rwxr-xr-x. 1 root root 239K Jun  4 21:46 libEGL.so
+-rwxr-xr-x. 1 root root 3.0M Jun  4 21:46 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:46 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 8.6M Jun  4 21:46 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:46 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:46 libnotify.so.4
+-rwxr-xr-x. 1 root root 4.3M Jun  4 21:46 libvk_swiftshader.so
+-rwxr-xr-x. 1 root root 8.1M Jun  4 21:46 libvulkan.so
+-rw-r--r--. 1 root root  15K Jun  4 21:46 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:46 libXtst.so.6
+
+thorium:
+total 14M
+drwxr-xr-x. 1 root root  284 Jun  4 21:47 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:47 libappindicator.so.1
+-rwxr-xr-x. 1 root root 248K Jun  4 21:47 libEGL.so
+-rwxr-xr-x. 1 root root 2.6M Jun  4 21:47 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:47 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 6.5M Jun  4 21:47 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:47 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:47 libnotify.so.4
+-rwxr-xr-x. 1 root root 4.1M Jun  4 21:47 libvk_swiftshader.so
+-rw-r--r--. 1 root root  15K Jun  4 21:47 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:47 libXtst.so.6
+
+whiteboard:
+total 260K
+drwxr-xr-x. 1 root root  104 Jun  4 22:19 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root 188K Jun  4 22:19 libgconf-2.so.4
+-rw-r--r--. 1 root root  31K Jun  4 22:19 libnotify.so.4
+-rw-r--r--. 1 root root  15K Jun  4 22:19 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 22:19 libXtst.so.6
+
+xilinota:
+total 14M
+drwxr-xr-x. 1 root root  284 Jun  4 21:48 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:48 libappindicator.so.1
+-rwxr-xr-x. 1 root root 244K Jun  4 21:48 libEGL.so
+-rwxr-xr-x. 1 root root 2.8M Jun  4 21:48 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:48 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 6.3M Jun  4 21:48 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:48 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:48 libnotify.so.4
+-rwxr-xr-x. 1 root root 4.1M Jun  4 21:48 libvk_swiftshader.so
+-rw-r--r--. 1 root root  15K Jun  4 21:48 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:48 libXtst.so.6
+
+yaka:
+total 14M
+drwxr-xr-x. 1 root root  284 Jun  4 21:44 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:44 libappindicator.so.1
+-rwxr-xr-x. 1 root root 231K Jun  4 21:44 libEGL.so
+-rwxr-xr-x. 1 root root 2.8M Jun  4 21:44 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:44 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 6.7M Jun  4 21:44 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:44 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:44 libnotify.so.4
+-rwxr-xr-x. 1 root root 3.9M Jun  4 21:44 libvk_swiftshader.so
+-rw-r--r--. 1 root root  15K Jun  4 21:44 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:44 libXtst.so.6
+
+zettlr:
+total 14M
+drwxr-xr-x. 1 root root  284 Jun  4 21:31 .
+drwxr-xr-x. 1 root root  680 Jun  4 21:39 ..
+-rw-r--r--. 1 root root  51K Jun  4 21:39 libappindicator.so.1
+-rwxr-xr-x. 1 root root 247K Jun  4 21:39 libEGL.so
+-rwxr-xr-x. 1 root root 2.8M Jun  4 21:39 libffmpeg.so
+-rw-r--r--. 1 root root 188K Jun  4 21:39 libgconf-2.so.4
+-rwxr-xr-x. 1 root root 6.2M Jun  4 21:39 libGLESv2.so
+-rw-r--r--. 1 root root  60K Jun  4 21:39 libindicator.so.7
+-rw-r--r--. 1 root root  31K Jun  4 21:39 libnotify.so.4
+-rwxr-xr-x. 1 root root 4.1M Jun  4 21:39 libvk_swiftshader.so
+-rw-r--r--. 1 root root  15K Jun  4 21:39 libXss.so.1
+-rw-r--r--. 1 root root  23K Jun  4 21:39 libXtst.so.6
