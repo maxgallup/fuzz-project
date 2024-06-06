@@ -306,7 +306,65 @@ I don't think there is much here
 
 
 ## WeChat
+- Custom parsers for voice / music / video
+- Custom viewers
+- QQ Browser for viewing files
 
 ```
 frida -U -l .\test.js -f com.tencent.mm
 ```
+
+<details>
+<summary>Libraries:</summary>
+- libframework-connectivity-jni.so
+- libmmkv.so
+- libtrace-canary.so
+- libwechatnormsg.so
+- libtsmsc.so
+- libTPThirdParties-master.so
+- libTPFFmpeg-master.so
+- libTPCore-master.so
+- libcso.so
+- libGPUDetector.so
+- libcso.log.so
+- libwxperf-tkill.so
+- libmatrix-fd.so
+- libflutter.so
+- libmmv8.so
+- libmmskia.so
+- libhardcoder.so
+- libaff_biz.so
+- libmatrix-stack-tracer.so
+- libdart2cpp.so
+- libmmj2v8.so
+- libilink_network.so
+- libilink2.so
+- libwechatlv.so
+- libwcwss.so
+- libowl.so
+- libwechatcommon.so
+- libmmimgcodec.so
+- libreadMoney.so
+- libXNet.so
+- libopencv_world.so
+- libffengine.so
+- libfocusEngineJni.so
+- liblinebreak.so
+- libemojihelper.so
+- libwechatQrMod.so
+- libwechatWordDetectMod.so
+- libEVadEmbed.so
+- libDownloadProxy.so
+- libtxmapengine.so
+- libtencentlocsapp.so
+- libjnirtk.so
+- libNLog.so
+- libaudio_common.so
+- libFormatDetector.so
+- libcodec_factory.so
+- libqqmusic_decoder_jni.so
+- libc++_shared.so
+- libstlport_shared.so
+- libwechatxlog.so
+- libxffmpeg.so
+- libmatrix-mallctl.so
