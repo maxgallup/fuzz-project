@@ -303,3 +303,10 @@ for x86_64.
 
 Most of these libraries are developed by Facebook and are open source.
 I don't think there is much here
+
+
+## WeChat
+
+```
+frida -U -l .\test.js -f com.tencent.mm
+```
