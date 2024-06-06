@@ -53,3 +53,7 @@ The following is a list of notes for deciding on a target.
 
 
 
+### Adobe Acrobat
+    * Create a harness: Fuzz ttf input -> Alex script 
+    * Fuzz other parser?
+
