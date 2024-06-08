@@ -38,7 +38,7 @@ The following is a list of notes for deciding on a target.
     
 
 * android IMs
-    * LINE
+@    * LINE
 
 * linux IMs and office apps
 
@@ -57,3 +57,12 @@ The following is a list of notes for deciding on a target.
     * Create a harness: Fuzz ttf input -> Alex script 
     * Fuzz other parser?
 
+
+# Papers
+* https://www.cs.ru.nl/~erikpoll/papers/inefficiency.pdf
+* https://www.sciencedirect.com/science/article/pii/S0167404822003388?via%3Dihub
+* https://ieeexplore.ieee.org/ielx7/52/9407245/09166552.pdf?tag=1
+
+### Stateful Fuzzing
+* https://dl.acm.org/doi/pdf/10.1145/3648468
+* https://wcventure.github.io/FuzzingPaper/Paper/FSE17_Steelix.pdf
