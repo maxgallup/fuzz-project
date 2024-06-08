@@ -316,6 +316,7 @@ frida -U -l .\wechat.js -f com.tencent.mm
 
 <details>
 <summary>Libraries:</summary>
+
 - libframework-connectivity-jni.so
 - libmmkv.so
 - libtrace-canary.so
