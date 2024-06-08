@@ -66,3 +66,5 @@ The following is a list of notes for deciding on a target.
 ### Stateful Fuzzing
 * https://dl.acm.org/doi/pdf/10.1145/3648468
 * https://wcventure.github.io/FuzzingPaper/Paper/FSE17_Steelix.pdf
+* https://dl.acm.org/doi/10.1007/s10664-022-10233-3
+* https://dl.acm.org/doi/10.1145/3460319.3469077
