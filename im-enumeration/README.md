@@ -316,14 +316,13 @@ frida -U -l .\wechat.js -f com.tencent.mm
 
 <details>
 <summary>Libraries:</summary>
-## WeChat
 - libframework-connectivity-jni.so
 - libmmkv.so
 - libtrace-canary.so
 - libwechatnormsg.so
 - libtsmsc.so
 - libwechatcommon.so
-- libmmimgcodec.so
+- libmmimgcodec.so							Custom Library for Parsing Images
 - libmmv8.so								QQ Browser - https://chromium.googlesource.com/v8/v8
 - libflutter.so								Native Flutter Engine
 - libTPThirdParties-master.so
@@ -335,14 +334,14 @@ frida -U -l .\wechat.js -f com.tencent.mm
 - libwxperf-tkill.so
 - libmatrix-fd.so
 - libwechatlv.so
-- libmmskia.so
+- libmmskia.so								Custom Library for GUI
 - libGPUDetector.so
-- libhardcoder.so
-- libwcwss.so
+- libhardcoder.so							-
+- libwcwss.so								Custom Library for Web Sockets 
 - libaff_biz.so
-- libilink_network.so
+- libilink_network.so						-
 - libmatrix-stack-tracer.so
-- libilink2.so
+- libilink2.so								-
 - libowl.so
 - libemojihelper.so							Custom Library for Parsing Emojis	
 - liblinebreak.so							-
@@ -354,14 +353,14 @@ frida -U -l .\wechat.js -f com.tencent.mm
 - libfocusEngineJni.so
 - libreadMoney.so
 - libDownloadProxy.so						
-- libtxmapengine.so
+- libtxmapengine.so							Custom Library for GUI
 - libtencentlocsapp.so						Custom Library for Location Services
 - libjnirtk.so								Library for GPS - https://github.com/tomojitakasu/RTKLIB
-- libNLog.so
-- libaudio_common.so
+- libNLog.so								-
+- libaudio_common.so						Custom Library for Media Player
 - libFormatDetector.so
 - libcodec_factory.so
-- libqqmusic_decoder_jni.so
+- libqqmusic_decoder_jni.so					Custom Library for Parsing Audio
 - libc++_shared.so							C++ Standard Library
 - libstlport_shared.so						C++ Standard Library
 - libwechatxlog.so							-

@@ -10,30 +10,6 @@ function traceLibrary(libName) {
     var libFullName = "lib" + libName + ".so";
     console.log("Loading " + libFullName);
     arr.push(libName);
-    var exports = Module.enumerateExports(libFullName);
-    for (var exp of exports) {
-      if (exp.type === 'function') {
-        if (!callCounters[exp.name]) {
-                      callCounters[exp.name] = 0;
-                  }
-        
-        // Intercept and log each call to the function
-        console.log("    " + exp.name);
-        try {
-          Interceptor.attach(exp.address, {
-            onEnter: function(args) {
-              if (callCounters[exp.name] < 10) {
-                console.log("Called " + exp.name + " in " + libFullName);
-                callCounters[exp.name]++;
-              }
-            }
-          });
-        }
-        catch (e) {
-          console.log("BRR " + e);
-        }
-      }
-    }  
   }
 }
 
