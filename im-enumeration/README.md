@@ -311,60 +311,60 @@ I don't think there is much here
 - QQ Browser for viewing files
 
 ```
-frida -U -l .\test.js -f com.tencent.mm
+frida -U -l .\wechat.js -f com.tencent.mm
 ```
 
 <details>
 <summary>Libraries:</summary>
+## WeChat
 - libframework-connectivity-jni.so
 - libmmkv.so
 - libtrace-canary.so
 - libwechatnormsg.so
 - libtsmsc.so
+- libwechatcommon.so
+- libmmimgcodec.so
+- libmmv8.so								QQ Browser - https://chromium.googlesource.com/v8/v8
+- libflutter.so								Native Flutter Engine
 - libTPThirdParties-master.so
 - libTPFFmpeg-master.so
-- libTPCore-master.so
 - libcso.so
-- libGPUDetector.so
+- libdart2cpp.so
+- libTPCore-master.so
 - libcso.log.so
 - libwxperf-tkill.so
 - libmatrix-fd.so
-- libflutter.so
-- libmmv8.so
-- libmmskia.so
-- libhardcoder.so
-- libaff_biz.so
-- libmatrix-stack-tracer.so
-- libdart2cpp.so
-- libmmj2v8.so
-- libilink_network.so
-- libilink2.so
 - libwechatlv.so
+- libmmskia.so
+- libGPUDetector.so
+- libhardcoder.so
 - libwcwss.so
+- libaff_biz.so
+- libilink_network.so
+- libmatrix-stack-tracer.so
+- libilink2.so
 - libowl.so
-- libwechatcommon.so
-- libmmimgcodec.so
-- libreadMoney.so
+- libemojihelper.so							Custom Library for Parsing Emojis	
+- liblinebreak.so							-
+- libwechatWordDetectMod.so					Custom Library for Word Detection in Images
+- libwechatQrMod.so							Custom Library for QR Code Creation / Detection
 - libXNet.so
-- libopencv_world.so
-- libffengine.so
+- libopencv_world.so						https://opencv.org/
+- libffengine.so							Custom Library for Fast Focus Engine
 - libfocusEngineJni.so
-- liblinebreak.so
-- libemojihelper.so
-- libwechatQrMod.so
-- libwechatWordDetectMod.so
-- libEVadEmbed.so
-- libDownloadProxy.so
+- libreadMoney.so
+- libDownloadProxy.so						
 - libtxmapengine.so
-- libtencentlocsapp.so
-- libjnirtk.so
+- libtencentlocsapp.so						Custom Library for Location Services
+- libjnirtk.so								Library for GPS - https://github.com/tomojitakasu/RTKLIB
 - libNLog.so
 - libaudio_common.so
 - libFormatDetector.so
 - libcodec_factory.so
 - libqqmusic_decoder_jni.so
-- libc++_shared.so
-- libstlport_shared.so
-- libwechatxlog.so
-- libxffmpeg.so
-- libmatrix-mallctl.so
+- libc++_shared.so							C++ Standard Library
+- libstlport_shared.so						C++ Standard Library
+- libwechatxlog.so							-
+- libxffmpeg.so 							https://ffmpeg.org/
+- libxlabeffect.so							Custom Library for Video Call Effects
+- libxeffect_xlog.so						-
