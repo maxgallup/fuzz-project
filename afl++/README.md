@@ -5,7 +5,7 @@
 The changes can be look at: https://github.com/AFLplusplus/AFLplusplus/compare/stable...meowmeowxw:AFLplusplus:ijon.
 
 I've changed the code of the frida mode to be able to instrument a binary with IJON functions.
-I've created the IJON functions inside instrument.c:
+I've created the IJON functions (Only the functions needed for IJON_SET) inside instrument.c:
 
 ```
 uint64_t ijon_simple_hash(uint64_t x) {}
@@ -97,6 +97,7 @@ Interceptor.attach(ptr('0x00401345'), {
         Afl.IjonMapSet(hash);
     }
 });
+Afl.done();
 ```
 
 Now it's possible to run the fuzzer with:
@@ -110,4 +111,17 @@ just move the afl.js file:
 
 ```
 mv afl.js afl1.js
+```
+
+At the moment the IjonMapSet function does not take in consideration the current
+address, because it's only called at that address. In theory we can call it with:
+
+```js
+Afl.IjonMapSet(addr ^ hash);
+```
+
+To have a behaviour more similar to the original IJON function:
+
+```c
+#define IJON_SET(x) ijon_map_set(ijon_hashstr(__LINE__,__FILE__)^(x))
 ```
