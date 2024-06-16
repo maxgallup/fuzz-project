@@ -10,8 +10,11 @@ Afl.print(`main: ${main}`);
 
 Interceptor.attach(ptr('0x00401345'), {
     onEnter: function(args) {
+        console.log("Hello world!\n");
+  
         // Read the value at rbp-0x224
         var rbp = this.context.rbp;
+        var context = this.context;
 
         // Calculate the address for rbp - 0x224 and rbp - 0x220
         var addr1 = rbp.sub(0x224);
@@ -23,9 +26,10 @@ Interceptor.attach(ptr('0x00401345'), {
 
         Afl.print(`Value at rbp-0x224: ${value1}`);
         Afl.print(`Value at rbp-0x220: ${value2}`);
-        var hash = Afl.IjonHashint(value1, value2);
+        
+        var hash = Afl.IJON.hashint(value1, value2);
         Afl.print(`Hash: ${hash}`);
-        Afl.IjonMapSet(hash);
+        Afl.IJON.map_set(context, hash);
     }
 });
 
