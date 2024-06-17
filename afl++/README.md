@@ -125,3 +125,18 @@ To have a behaviour more similar to the original IJON function:
 ```c
 #define IJON_SET(x) ijon_map_set(ijon_hashstr(__LINE__,__FILE__)^(x))
 ```
+
+IJON:
+```
+#define IJON_BITS(x) ((x==0)?{0}:__builtin_clz(x))
+#define IJON_INC(x) ijon_map_inc(ijon_hashstr(__LINE__,__FILE__)^(x))
+#define IJON_SET(x) ijon_map_set(ijon_hashstr(__LINE__,__FILE__)^(x))
+
+#define IJON_CTX(x) ({ uint32_t hash = hashstr(__LINE__,__FILE__); ijon_xor_state(hash); __typeof__(x) IJON_UNIQ_NAME() = (x); ijon_xor_state(hash); IJON_UNIQ_NAME(); })
+
+#define IJON_MAX(x) ijon_max(ijon_hashstr(__LINE__,__FILE__),(x))
+#define IJON_MIN(x) ijon_max(ijon_hashstr(__LINE__,__FILE__),0xffffffffffffffff-(x))
+#define IJON_CMP(x,y) IJON_INC(__builtin_popcount((x)^(y)))
+#define IJON_DIST(x,y) ijon_min(ijon_hashstr(__LINE__,__FILE__), _IJON_ABS_DIST(x,y))
+#define IJON_STRDIST(x,y) IJON_SET(ijon_hashint(ijon_hashstack(), ijon_strdist(x,y)))
+```
