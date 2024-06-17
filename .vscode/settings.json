@@ -1,0 +1,15 @@
+{
+  "files.associations": {
+    "*.idef": "c",
+    "coroutine": "c",
+    "locale": "c",
+    "memory": "c",
+    "optional": "c",
+    "system_error": "c",
+    "thread": "c",
+    "type_traits": "c",
+    "variant": "c",
+    "vector": "c",
+    "xstring": "c"
+  }
+}
