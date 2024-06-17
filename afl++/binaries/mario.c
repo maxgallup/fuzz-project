@@ -37,7 +37,8 @@ void win() {
 
 int main (int argc, char *argv[])
 {
-    int x, y;     //Player position
+    int x, y;    
+     //Player position
     int ox, oy;   //Old player position
     int i = 0;    //Iteration number
 #define ITERS 512
@@ -46,10 +47,12 @@ int main (int argc, char *argv[])
     y = 1;
     maze[y][x]='X';
     draw();
-    // read(0,program,ITERS);
+    read(0,program,ITERS);
 
     while(i < ITERS) {
-        read(0, &program[i], 1);
+
+        // Uncomment this for playing it live in a terminal
+        // read(0, &program[i], 1);
         maze[y][x]=' ';
 
         ox = x;    //Save old player position
@@ -70,8 +73,9 @@ int main (int argc, char *argv[])
             case 'd':
                 x++;
                 break;
-            case '\n':
-                continue;
+            // uncomment this to play live in the terminal
+            // case '\n':
+            //     continue;
             default:
                 printf("Wrong command!(only w,s,a,d accepted!)\n");
                 printf("You lose!\n");
