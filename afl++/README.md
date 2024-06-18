@@ -1,5 +1,20 @@
 # AFL++
 
+# Building and Running
+
+To build afl++ and frida export the AFL_PATH with the path to the root of the afl++ directory without a trailing slash.
+
+``` bash
+AFL_PATH=your_afl++_path make build
+```
+
+After its built run the `mario` or `maze` target:
+
+``` bash
+AFL_PATH=your_afl++_path make mario
+```
+
+
 ## Changes
 
 The changes can be look at: https://github.com/AFLplusplus/AFLplusplus/compare/stable...meowmeowxw:AFLplusplus:ijon.
@@ -140,3 +155,8 @@ IJON:
 #define IJON_DIST(x,y) ijon_min(ijon_hashstr(__LINE__,__FILE__), _IJON_ABS_DIST(x,y))
 #define IJON_STRDIST(x,y) IJON_SET(ijon_hashint(ijon_hashstack(), ijon_strdist(x,y)))
 ```
+
+
+
+
+
