@@ -59,7 +59,7 @@ int main (int argc, char *argv[])
         ox = x;    //Save old player position
         oy = y;
         
-        IJON_MAX(x);
+        ijon_max(y, x);
 
         switch (program[i]) {
             case 'w':

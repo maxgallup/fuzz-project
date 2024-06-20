@@ -34,7 +34,7 @@ build: make_dirs
 	@/root/afl-clang-fast ./src/mario-hard-ijon-set.c -o ./binaries/mario-hard-ijon-set
 
 
-test: build
+test:
 	@export AFL_SKIP_CPUFREQ=1 AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1; tmux new-session -d -s mario-easy-afl "/root/afl-fuzz -i mario-easy-afl_input_dir/ -o mario-easy-afl_output_dir/ -- ./binaries/mario-easy-afl"
 	@export AFL_SKIP_CPUFREQ=1 AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1; tmux new-session -d -s mario-easy-ijon-max "/root/afl-fuzz -i mario-easy-ijon-max_input_dir/ -o mario-easy-ijon-max_output_dir/ -- ./binaries/mario-easy-ijon-max"
 	@export AFL_SKIP_CPUFREQ=1 AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1; tmux new-session -d -s mario-easy-ijon-set "/root/afl-fuzz -i mario-easy-ijon-set_input_dir/ -o mario-easy-ijon-set_output_dir/ -- ./binaries/mario-easy-ijon-set"
@@ -52,4 +52,3 @@ test: build
 clean:
 	rm -rf *output_dir*
 	rm binaries/*
-
