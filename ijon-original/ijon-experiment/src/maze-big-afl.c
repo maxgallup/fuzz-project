@@ -50,7 +50,7 @@ main (int argc, char *argv[])
 #endif
 		ox = x;    //Save old player position
 		oy = y;
-    //transition(hashint(x,y));
+
 		switch (program[i])
 		{
 			case 'w':
