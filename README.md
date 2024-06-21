@@ -2,6 +2,14 @@
 * state fuzzing is needed because concolic execution is not powerful enough
 
 
+
+# Abstract
+Current state of the art coverage based fuzzers struggle to explore vulnerabilities linked to a program's internal state. Since they don't track program states, they have no way to mutate the input in a way that favors state exploration. Recent work in stateful fuzzing has shown that hooking into the program's in-memory state representation guides the fuzzer to target the program states and their transitions, ultimately leading to discovering previously undiscovered vulnerabilities. Since this previous work has hinged on the fact that source code is available for the hooking process, this project builds on top of that research by performing stateful fuzzing for binary only targets.
+
+
+
+
+
 # Program State Fuzzing without source
 * We use information from fuzzing a program to help us find the state variable and state enumeration
 * Then we can apply SGFuzz / IJON
