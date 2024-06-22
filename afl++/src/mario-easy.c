@@ -9,14 +9,14 @@
 #include <assert.h>
 #include <stdbool.h>
 
-#define H 7
-#define W 58
-char maze[H][W] = { "+--------------------------------------------------------+",
-                    "|    |                       TTTT                        |",
-                    "|--  |       |                                 T         |",
-                    "|    |       |   ---------+    TTTT  ----+    TTT       #|",
-                    "|         |  |           T|             T|   TTTTT    ||||",
-                    "+--------------------------------------------------------+" };
+#define H 6
+#define W 20
+char maze[H][W] = { "+------------------+",
+                    "|  T           TT  |",
+                    "|  T           TT  |",
+                    "|  T   T   TT      |",
+                    "|      T   TT     #|",
+                    "+------------------+" };
 void draw ()
 {
     int i, j;
@@ -37,14 +37,15 @@ void win() {
 
 int main (int argc, char *argv[])
 {
-    int x, y;    
+    int x, y;
+    int failed_attempts = 0;
      //Player position
     int ox, oy;   //Old player position
     int i = 0;    //Iteration number
 #define ITERS 512
     char program[ITERS];
     x = 1;
-    y = 1;
+    y = 4;
     maze[y][x]='X';
     draw();
     read(0,program,ITERS);
@@ -53,12 +54,10 @@ int main (int argc, char *argv[])
 
         // Uncomment this for playing it live in a terminal
         // read(0, &program[i], 1);
-        maze[y][x]=' ';
+        maze[y][x]=' '; 
 
         ox = x;    //Save old player position
         oy = y;
-        
-        
 
         switch (program[i]) {
             case 'w':
@@ -74,12 +73,14 @@ int main (int argc, char *argv[])
                 x++;
                 break;
             // uncomment this to play live in the terminal
-            // case '\n':
-            //     continue;
+            case '\n':
+                continue;
             default:
-                printf("Wrong command!(only w,s,a,d accepted!)\n");
-                printf("You lose!\n");
-                exit(-1);
+                failed_attempts++;
+                if (failed_attempts >= 5) {
+                    exit(-1);
+                }
+                continue;
         }
 
 

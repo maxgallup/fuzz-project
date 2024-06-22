@@ -10,14 +10,14 @@
 #include <stdbool.h>
 
 #define H 7
-#define W 11
-char maze[H][W] = { "+-+---+---+",
-                    "| |     |#|",
-                    "| | --+ | |",
-                    "| |   | | |",
-                    "| +-- | | |",
-                    "|     |   |",
-                    "+-----+---+" };
+#define W 33
+char maze[H][W] = { "+-+---+---++-+---+---++-+---+---+",
+                    "| |     | ||         |      |  #|",
+                    "| | --+ | ||   --+ | |   |    +-|",
+                    "| |   | | ||     | | |   ---| | |",
+                    "| +-- | |    +-- | | +--    | | |",
+                    "|     |      |   | |        |   |",
+                    "+-----+---++-----+---++-----+---+" };
 void draw ()
 {
 	int i, j;
@@ -50,7 +50,7 @@ main (int argc, char *argv[])
 #endif
 		ox = x;    //Save old player position
 		oy = y;
-    //transition(hashint(x,y));
+
 		switch (program[i])
 		{
 			case 'w':
