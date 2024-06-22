@@ -4,6 +4,12 @@ import os
 import json
 from datetime import datetime
 
+
+def sec_to_min(t):
+    if t < 0:
+        return t
+    return f"{int(int(t) / int(60))}m:{(int(t) % int(60))}s"
+
 # This program will return as JSON object of the 
 results = []
 for file in os.listdir(os.fsencode("./data")):
@@ -23,7 +29,7 @@ for file in os.listdir(os.fsencode("./data")):
 
                     start_time = int(lines[0].split(':')[1].strip())
                     end_time = int(lines[1].split(':')[1].strip())
-                    data['time'] = end_time - start_time
+                    data['time'] = sec_to_min(end_time - start_time)
 
                     data['execs'] = lines[4].split(':')[1].strip()
                     data['execs_per_sec'] = lines[5].split(':')[1].strip()
