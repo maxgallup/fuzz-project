@@ -1,4 +1,4 @@
-.PHONY: build test
+.PHONY: clean test
 
 
 test:
