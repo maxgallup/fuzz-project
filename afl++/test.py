@@ -73,8 +73,9 @@ def save_results():
             stat_file = f"./data/{t}/default/fuzzer_stats"
 
             try:
-                data = get_info(parse_file(stat_file))
-                results.append(data)
+                data = parse_file(stat_file)
+                if data['saved_crashes'] == '1':
+                    results.append(get_info(data))
             except:
                 pass
 
@@ -83,8 +84,9 @@ def save_results():
 
     res_filename = f"results/run-{datetime.today().strftime('%m-%d@%H-%M-%S')}.json"
 
-    with open(res_filename, 'w') as f:
-        json.dump(results, f)
+    if len(results) != 0:
+        with open(res_filename, 'w') as f:
+            json.dump(results, f)
 
 def make_dir(path):
     if not os.path.exists(path):
@@ -178,6 +180,7 @@ def main():
         for key, value in programs.items():
             if value >= TIMEOUT:
                 kill_fuzzer(key)
+                del programs[key]
 
         # Get the latest active set, since zombies may have been killed
         active_set = currently_running()
