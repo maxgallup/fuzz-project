@@ -2,13 +2,18 @@
 
 import os
 import subprocess
-import asyncio
-
+import time
+import os
+import json
+import multiprocessing
+from datetime import datetime
 
 BASIC_GAME_INPUT = "dddddddddddddddddddddd"
 DATA_DIR = "data"
 
-binaries = [
+
+NUM_CORES = multiprocessing.cpu_count() - 1
+prog_names = [
     'mario-easy',
     'mario-mid',
     'mario-hard',
@@ -16,11 +21,70 @@ binaries = [
     'maze-big',
 ]
 
+TIMEOUT = 600
+REFRESH = 30
+RUNS = 50
+TOTAL = len(prog_names) * RUNS
+
+binaries = []
+for prog in prog_names:
+    for i in range(RUNS):
+        binaries.append(f"{prog}{i}")
+
+
 in_dirs = [f"./{DATA_DIR}/{name}_idir" for name in binaries]
 out_dirs = [f"./{DATA_DIR}/{name}_odir" for name in binaries]
 
 procs = []
 
+def sec_to_min(t):
+    if t < 0:
+        return t
+    return f"{int(int(t) / int(60))}m:{(int(t) % int(60))}s"
+
+def parse_file(filename):
+    data = {}
+    with open(filename, "r") as f:
+        file_content = f.read()
+    for line in file_content.strip().split("\n"):
+        key, value = line.split(":")
+        data[key.strip()] = value.strip()
+    return data
+
+def get_info(data):
+    run_time_hms = sec_to_min(int(data["run_time"]))
+    binary = data["afl_banner"]
+    execs_per_sec = float(data['execs_per_sec'])
+    execs_done = data['execs_done']
+    return {
+        "run_time_hms": run_time_hms,
+        "binary": binary,
+        "execs_per_sec": execs_per_sec,
+        "execs_done": execs_done
+    }
+
+def save_results():
+    # This program will return as JSON object of the 
+    results = []
+    for file in os.listdir(os.fsencode("./data")):
+        filename = os.fsdecode(file)
+        if filename.endswith("odir"):
+            t = os.path.join(filename)
+            stat_file = f"./data/{t}/default/fuzzer_stats"
+
+            try:
+                data = get_info(parse_file(stat_file))
+                results.append(data)
+            except:
+                pass
+
+    if not os.path.exists("results"):
+            os.mkdir("results")
+
+    res_filename = f"results/run-{datetime.today().strftime('%m-%d@%H-%M-%S')}.json"
+
+    with open(res_filename, 'w') as f:
+        json.dump(results, f)
 
 def make_dir(path):
     if not os.path.exists(path):
@@ -42,26 +106,109 @@ def setup_dirs():
         make_dir(out_dir)
 
 
-async def run_fuzzers():
-    for i in range(len(in_dirs)):
 
-        cmd = f"bash -c 'export AFL_BENCH_UNTIL_CRASH=1 AFL_SKIP_CPUFREQ=1 AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1 AFL_FRIDA_JS_SCRIPT=./frida/{binaries[i]}.js; tmux new-session -d -s {binaries[i]} $AFL_PATH/afl-fuzz -O -i {in_dirs[i]} -o {out_dirs[i]} -- ./binaries/{binaries[i]} > /dev/null 2>&1'"
-        procs.append(await asyncio.create_subprocess_shell(cmd))
-        print(f'Started: {binaries[i]}...')
-
-    for (i, proc) in enumerate(procs):
-        await proc.wait()
+def stop_fuzzers():
+    cmd = ["tmux", "kill-server"]
+    subprocess.run(cmd)
 
 
+def currently_running():
+    cmd = ["tmux", "ls"]
+    res = subprocess.run(cmd, capture_output=True)
+    if res.stdout == b'':
+        return set()
+    else:
+        result_set = set()
+        for line in res.stdout.decode('utf-8').split('\n'):
+            if line != '':
+                result_set.add(line.split(':')[0].strip())
+        return result_set
 
-async def main():
+
+def start_fuzzer(name):
+    print(f"    starting {name}")
+    prog_name = ''
+    for prog in prog_names:
+        if prog in name:
+            prog_name = prog
+
+    cmd = ["bash", "-c", f"export AFL_BENCH_UNTIL_CRASH=1 AFL_SKIP_CPUFREQ=1 AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1 AFL_FRIDA_JS_SCRIPT=./frida/{prog_name}.js; tmux new-session -d -s {name} $AFL_PATH/afl-fuzz -O -i ./{DATA_DIR}/{name}_idir -o ./{DATA_DIR}/{name}_odir -- ./binaries/{prog_name} > /dev/null 2>&1"]
+
+    subprocess.run(cmd)
+
+
+
+def clean_dirs():
+    cmd = ["bash", "-c", "rm -rf ./data/*odir"]
+    subprocess.run(cmd)
+
+
+def kill_fuzzer(name):
+    print(f">>> Killing {name}...")
+    cmd = "bash", "-c", f"tmux kill-session -t {name}"
+    subprocess.run(cmd)
+
+
+def main():
+    # Input and output directories are necessary for each test
+    clean_dirs()
     setup_dirs()
-    await run_fuzzers()
-    
-    print('All fuzzers started. Use "tmux ls" to view names and "tmux attach-session -t <name> to attach."')
+
+    # Holds the set of currently running fuzzers (by name)
+    active_set = set()
+
+    # Holds (fuzzer name, running_time) so that we can fill fuzzers that take
+    # too long
+    programs = {}
+    start = 0
+
+    # We check if fuzzers have finished with a REFRESH interval and schedule new ones
+    # accordingly
+    while True:
+        active_set = currently_running()
+
+        # Update how long each program has been running for
+        for i in active_set:
+            if i in programs:
+                programs[i] += REFRESH
+            else:
+                programs[i] = REFRESH
+
+        # Kill fuzzers that run longer than TIMEOUT
+        for key, value in programs.items():
+            if value >= TIMEOUT:
+                kill_fuzzer(key)
+
+        # Get the latest active set, since zombies may have been killed
+        active_set = currently_running()
+
+        # We want to schedule at most the number of cores that we have available
+        free_slots = NUM_CORES - len(active_set)
+
+
+        # Exit if we have tested all binaries
+        if start >= len(binaries):
+            print("--- Testing Finished ---")
+            exit(0)
+
+        # Make sure we don't read out of bounds
+        until = start + free_slots
+        if until >= len(binaries):
+            until = len(binaries)
+
+        to_schedule = binaries[start : until]
+        start = start + free_slots
+
+        print(f">>> Going to schedule {len(to_schedule)} new fuzzers")
+
+        for p in to_schedule:
+            start_fuzzer(p)
+
+        time.sleep(REFRESH)
+        save_results()
+
 
 
 if __name__ == '__main__':
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(main())
+    main()
 
