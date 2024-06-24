@@ -1,0 +1,9 @@
+# environment variables:
+AFL_CUSTOM_INFO_PROGRAM=./binaries/svg2ass
+AFL_CUSTOM_INFO_PROGRAM_ARGV=
+AFL_CUSTOM_INFO_OUT=./svg2ass_output_dir/default
+AFL_FRIDA_JS_SCRIPT=./frida/svg2ass.js
+AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
+AFL_SKIP_CPUFREQ=1
+# command line:
+'/mnt/c/Users/alexb/Documents/GitHub/AFLplusplus/afl-fuzz' '-O' '-i' './svg2ass_input_dir' '-o' './svg2ass_output_dir' '--' './binaries/svg2ass'

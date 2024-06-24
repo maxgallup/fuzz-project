@@ -1,0 +1,7 @@
+# environment variables:
+AFL_CUSTOM_INFO_PROGRAM=../binaries/small
+AFL_CUSTOM_INFO_PROGRAM_ARGV=
+AFL_CUSTOM_INFO_OUT=./small_output_dir/default
+AFL_PATH=/mnt/c/Users/alexb/Documents/GitHub/AFLplusplus
+# command line:
+'/mnt/c/Users/alexb/Documents/GitHub/AFLplusplus/afl-fuzz' '-O' '-i' './small_input_dir' '-o' './small_output_dir' '--' '../binaries/small'

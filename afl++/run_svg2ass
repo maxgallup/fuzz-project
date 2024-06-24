@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# export AFL_DEBUG=1
+# export AFL_FRIDA_VERBOSE=1
+export AFL_SKIP_CPUFREQ=1
+export AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
+AFL_FRIDA_JS_SCRIPT=./frida/svg2ass.js $AFL_FUZZ -O -i ./svg2ass_input_dir -o ./svg2ass_output_dir -- ./binaries/svg2ass
+
