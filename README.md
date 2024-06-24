@@ -33,3 +33,8 @@ Our end goal is to apply state-of-the art stateful fuzzing techniques to closed 
 
 
 
+# Results
+![eps](./media/eps.png)
+![execs](./media/execs.png)
+![runtime](./media/runtime.png)
+
