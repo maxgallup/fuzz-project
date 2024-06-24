@@ -1,7 +1,7 @@
-
 #!/usr/bin/python
 
 import os
+import sys
 import subprocess
 import time
 import os
@@ -14,24 +14,20 @@ DATA_DIR = "data"
 
 
 NUM_CORES = multiprocessing.cpu_count() - 1
-
 prog_names = [
-    # 'mario-easy-afl', 
-    # 'mario-easy-ijon',
-    # 'mario-mid-afl', 
-    # 'mario-mid-ijon',
-    # 'mario-hard-afl', 
-    # 'mario-hard-ijon',
-    # 'maze-small-afl', 
-    # 'maze-small-ijon',
-    # 'maze-big-afl', 
-    'maze-big-ijon'
+    # 'mario-easy',
+    # 'mario-mid',
+    # 'mario-hard',
+    'maze-small',
+    'maze-big',
 ]
 
-TIMEOUT = 600
+TIMEOUT = 1200
 REFRESH = 30
 RUNS = 50
 TOTAL = len(prog_names) * RUNS
+
+afl_only = len(sys.argv) > 1
 
 binaries = []
 for prog in prog_names:
@@ -77,26 +73,12 @@ def save_results():
         filename = os.fsdecode(file)
         if filename.endswith("odir"):
             t = os.path.join(filename)
-            stat_file = f"./data/{t}/fuzzer_stats"
+            stat_file = f"./data/{t}/default/fuzzer_stats"
 
             try:
-                with open(stat_file, "r") as f:
-                    lines = f.readlines()
-                    for line in lines:
-                        if "unique_crashes    : 1" in line:
-
-                            data = {}
-
-                            data['binary'] = lines[24].split(':')[1].strip()
-
-                            start_time = int(lines[0].split(':')[1].strip())
-                            end_time = int(lines[1].split(':')[1].strip())
-                            data['run_time_hms'] = sec_to_min(end_time - start_time)
-
-                            data['execs_done'] = lines[4].split(':')[1].strip()
-                            data['execs_per_sec'] = lines[5].split(':')[1].strip()
-
-                            results.append(data)
+                data = parse_file(stat_file)
+                if data['saved_crashes'] == '1':
+                    results.append(get_info(data))
             except:
                 pass
 
@@ -128,10 +110,6 @@ def setup_dirs():
     for out_dir in out_dirs:
         make_dir(out_dir)
 
-def build_binaries():
-    print("Building binaries...")
-    for name in prog_names:
-        subprocess.run(['bash', '-c', f'/home/dev/afl-clang-fast ./src/{name}.c -o ./binaries/{name}'])
 
 
 def stop_fuzzers():
@@ -141,7 +119,7 @@ def stop_fuzzers():
 
 def currently_running():
     cmd = ["tmux", "ls"]
-    res = subprocess.run(cmd, stdout=subprocess.PIPE)
+    res = subprocess.run(cmd, capture_output=True)
     if res.stdout == b'':
         return set()
     else:
@@ -159,11 +137,13 @@ def start_fuzzer(name):
         if prog in name:
             prog_name = prog
 
-    cmd = ["bash", "-c", f"export AFL_BENCH_UNTIL_CRASH=1 AFL_SKIP_CPUFREQ=1 AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1; tmux new-session -d -s {name} /home/dev/afl-fuzz -i ./{DATA_DIR}/{name}_idir -o ./{DATA_DIR}/{name}_odir -- ./binaries/{prog_name}  > /dev/null 2>&1"]
+    cmd = ["bash", "-c", f"export AFL_BENCH_UNTIL_CRASH=1 AFL_SKIP_CPUFREQ=1 AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1 AFL_FRIDA_JS_SCRIPT=./frida/{prog_name}.js; tmux new-session -d -s {name} $AFL_PATH/afl-fuzz -O -i ./{DATA_DIR}/{name}_idir -o ./{DATA_DIR}/{name}_odir -- ./binaries/{prog_name} > /dev/null 2>&1"]
 
-    # export AFL_BENCH_UNTIL_CRASH=1 AFL_SKIP_CPUFREQ=1 AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1; tmux new-session -d -s mario-easy-afl0 /home/dev/afl-fuzz -i ./data/mario-easy-afl0_idir -o ./data/mario-easy-afl0_odir -- ./binaries/mario-easy-afl  > /dev/null 2>&1
+    if afl_only:
+        cmd = ["bash", "-c", f"export AFL_BENCH_UNTIL_CRASH=1 AFL_SKIP_CPUFREQ=1 AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1; tmux new-session -d -s {name} $AFL_PATH/afl-fuzz -O -i ./{DATA_DIR}/{name}_idir -o ./{DATA_DIR}/{name}_odir -- ./binaries/{prog_name} > /dev/null 2>&1"]
 
     subprocess.run(cmd)
+
 
 
 
@@ -182,7 +162,6 @@ def main():
     # Input and output directories are necessary for each test
     # clean_dirs()
     setup_dirs()
-    build_binaries()
 
     # Holds the set of currently running fuzzers (by name)
     active_set = set()
@@ -191,6 +170,8 @@ def main():
     # too long
     programs = {}
     start = 0
+
+    count = 0
 
     # We check if fuzzers have finished with a REFRESH interval and schedule new ones
     # accordingly
@@ -235,10 +216,20 @@ def main():
             start_fuzzer(p)
 
         time.sleep(REFRESH)
-        save_results()
+        count = count + 1
+        
+        # save results every 5 minutes
+        if REFRESH * count > 300:
+            save_results()
+            count = 0
 
 
 
 if __name__ == '__main__':
+    if afl_only:
+        print("Testing AFL only mode")
+    else:
+        print("Testing Our IJON mode")
+
     main()
 
