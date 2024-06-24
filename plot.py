@@ -36,15 +36,15 @@ def name_to_id(some_name):
 
 
 def load_results(dir_path):
-    # Get a list of files in the directory
-    files = os.listdir(dir_path)
+    # # Get a list of files in the directory
+    # files = os.listdir(dir_path)
+    # # Sort the files by modification time
+    # files.sort(key=lambda x: os.path.getmtime(os.path.join(dir_path, x)))
+    # # Open the most recently modified file
+    # most_recent_file = files[-1]
+    # df = pl.read_json(os.path.join(dir_path, most_recent_file))
 
-    # Sort the files by modification time
-    files.sort(key=lambda x: os.path.getmtime(os.path.join(dir_path, x)))
-
-    # Open the most recently modified file
-    most_recent_file = files[-1]
-    df = pl.read_json(os.path.join(dir_path, most_recent_file))
+    df = pl.read_json(dir_path)
 
     df = df.with_columns(pl.col('run_time_hms').map_elements(human_to_sec, return_dtype=float).alias('run_time'))
 
@@ -66,33 +66,36 @@ def load_results(dir_path):
 
 
 
-def plot_runtime(our_ijon, og_ijon):
+def plot_runtime(our_ijon, og_ijon, afl):
     fig = go.Figure()
 
     fig.add_trace(go.Bar(x=our_ijon['identifier'], y=our_ijon['run_time'], name='Our IJON', marker_color='red'))
     fig.add_trace(go.Bar(x=og_ijon['identifier'], y=og_ijon['run_time'], name='Original IJON', marker_color='blue'))
+    fig.add_trace(go.Bar(x=afl['identifier'], y=afl['run_time'], name='AFL++', marker_color='green'))
 
     # Customizing the layout
     fig.update_layout(title='Comparison of Average Runtimes', xaxis_title='Binary', yaxis_title='Average Runtime in Seconds', barmode='group', bargap=0.15, bargroupgap=0.1)
 
     fig.show()
 
-def plot_execs(our_ijon, og_ijon):
+def plot_execs(our_ijon, og_ijon, afl):
     fig = go.Figure()
 
     fig.add_trace(go.Bar(x=our_ijon['identifier'], y=our_ijon['execs_done'], name='Our IJON', marker_color='red'))
     fig.add_trace(go.Bar(x=og_ijon['identifier'], y=og_ijon['execs_done'], name='Original IJON', marker_color='blue'))
+    fig.add_trace(go.Bar(x=afl['identifier'], y=afl['execs_done'], name='AFL++', marker_color='green'))
 
     # Customizing the layout
     fig.update_layout(title='Comparison of Average Total Executions', xaxis_title='Binary', yaxis_title='Average Total Executions', barmode='group', bargap=0.15, bargroupgap=0.1)
 
     fig.show()
 
-def plot_eps(our_ijon, og_ijon):
+def plot_eps(our_ijon, og_ijon, afl):
     fig = go.Figure()
 
     fig.add_trace(go.Bar(x=our_ijon['identifier'], y=our_ijon['execs_per_sec'], name='Our IJON', marker_color='red'))
     fig.add_trace(go.Bar(x=og_ijon['identifier'], y=og_ijon['execs_per_sec'], name='Original IJON', marker_color='blue'))
+    fig.add_trace(go.Bar(x=afl['identifier'], y=afl['execs_per_sec'], name='AFL++', marker_color='green'))
 
     # Customizing the layout
     fig.update_layout(title='Comparison of Average Execs/Second', xaxis_title='Binary', yaxis_title='Average Execs/Second', barmode='group', bargap=0.15, bargroupgap=0.1)
@@ -103,12 +106,15 @@ def plot_eps(our_ijon, og_ijon):
 
 
 def main():
-    our_ijon = load_results("./afl++/results")
-    og_ijon = load_results("./ijon-original/ijon-experiment/results")
+    afl = load_results("./afl++/results/afl.json")
+    our_ijon = load_results("./afl++/results/our_ijon.json")
+    og_ijon = load_results("./ijon-original/ijon-experiment/results/original_ijon.json")
 
-    plot_runtime(our_ijon.to_pandas(), og_ijon.to_pandas())
-    plot_execs(our_ijon.to_pandas(), og_ijon.to_pandas())
-    plot_eps(our_ijon.to_pandas(), og_ijon.to_pandas())
+
+    # print(afl)
+    plot_runtime(our_ijon.to_pandas(), og_ijon.to_pandas(), afl.to_pandas())
+    plot_execs(our_ijon.to_pandas(), og_ijon.to_pandas(), afl.to_pandas())
+    plot_eps(our_ijon.to_pandas(), og_ijon.to_pandas(), afl.to_pandas())
 
 
 if __name__ == '__main__':
