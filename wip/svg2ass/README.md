@@ -65,6 +65,8 @@ The State Transition Graph (STG) of the program's `state` is:
 
 ![](./img/state-transition-graph-01.png)
 
+## Fuzzer Optimizations
+
 We don't have much to guide our stateful fuzzer towards interesting states,
 because there are only 5 states, and every svg image will go through these states.
 However, the state of the program does not depend only on the main state `state`,
@@ -80,11 +82,47 @@ For this reason if we look at the STG by including the node.type we will see:
 
 ![](./img/state-transition-graph-02.png)
 
-This is similar to the State Transition Tree that SGFuzz will build, that adhere to this rule:
+This is similar to the State Transition Tree that SGFuzz will build, that adheres to this rule:
 
 > If there are multiple state variables, a node’s parent or children nodes can represent values of different state variables.
 
 If we also add `node.name` we will see something more complex, because at every node.type we can have differents `node.name` possibilities, and for each different `node.name` the program
 will execute a different set of functions.
 For this reason, it makes to automatically capture these transitions.
+
+What we can do is to log each variable change in the main FSM loop and build a list:
+
+![](./img/transition-list.png)
+
+In this case we have taken in consideration `state`, `node.type`, `node.name`.
+
+Now we can create an hash value based on the last `N` elements of this list, and
+pass it to our IJON set implementation. The problem is that we don't want to overwrite
+(too many) values on the coverage map, so we want to limit the collisions.
+For this reason we can
+use a sum of the last `N` elements of this list and then hash the result, in this way we
+exploit the commumative property of the sum.
+Since the `node.name` property is user controllable we use a whitelist of possible
+values to not overload the list with junk values.
+
+Pseudocode:
+
+```py
+transition_list = []
+valid_node_names = ["svg", "g", "", "line", "rect", "circle", "ellipse", "path", "polyline", "polygon"]
+
+# addr: address inside the binary program
+# n: how many elements to consider from the transition_list to compute the hash
+hook_function(addr, n):
+    states, node_name, node_type = get_variables()
+    transition_list.append(node_type)
+    transition_list.append(state)
+    if node_name in valid_node_names:
+        transition_list.append(node_names)
+
+    hash_val = hash(sum(transition_list[-n:]))
+    ijon_set(addr, hash_val)
+```
+
+
 
