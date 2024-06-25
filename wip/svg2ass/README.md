@@ -99,9 +99,19 @@ In this case we have taken in consideration `state`, `node.type`, `node.name`.
 Now we can create an hash value based on the last `N` elements of this list, and
 pass it to our IJON set implementation. The problem is that we don't want to overwrite
 (too many) values on the coverage map, so we want to limit the collisions.
+
+At the moment the current implementation of the fuzzer is:
+
+![](./img/implementation.png)
+
 For this reason we can
 use a sum of the last `N` elements of this list and then hash the result, in this way we
 exploit the commumative property of the sum.
+
+In the future we could explore the use of an additional `State Map`, to be able to
+hash the state transition list without a commumative property and capture in a better
+way the transition of the system.
+
 Since the `node.name` property is user controllable we use a whitelist of possible
 values to not overload the list with junk values.
 
