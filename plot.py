@@ -6,15 +6,17 @@ import json
 import polars as pl
 import plotly.graph_objects as go
 import plotly.express as px
+import numpy as np
 
 
-prog_names = [
-    'mario-easy',
-    'mario-mid',
-    'mario-hard',
-    'maze-small',
-    'maze-big',
-]
+import matplotlib.pyplot as plt
+# prog_names = [
+#     'mario-easy',
+#     'mario-mid',
+#     'mario-hard',
+#     'maze-small',
+#     'maze-big',
+# ]
 
 def human_to_sec(human_string: str):
     minutes, seconds = human_string.split(":")
@@ -36,33 +38,57 @@ def name_to_id(some_name):
 
 
 def load_results(dir_path):
-    # # Get a list of files in the directory
-    # files = os.listdir(dir_path)
-    # # Sort the files by modification time
-    # files.sort(key=lambda x: os.path.getmtime(os.path.join(dir_path, x)))
-    # # Open the most recently modified file
-    # most_recent_file = files[-1]
-    # df = pl.read_json(os.path.join(dir_path, most_recent_file))
-
     df = pl.read_json(dir_path)
-
     df = df.with_columns(pl.col('run_time_hms').map_elements(human_to_sec, return_dtype=float).alias('run_time'))
 
-    df = df.with_columns(pl.col('binary').map_elements(name_to_id, return_dtype=str).alias('identifier'))
+    # df = df.with_columns(pl.col('binary').map_elements(name_to_id, return_dtype=str).alias('identifier'))
 
     df = df.with_columns(pl.col('execs_done').cast(pl.Float64))
     df = df.with_columns(pl.col('execs_per_sec').cast(pl.Float64))
 
-    df = df.group_by(pl.col('identifier')).agg(pl.col(['run_time', 'execs_per_sec', 'execs_done']).mean())
+    interested_cols = ['run_time', 'execs_per_sec', 'execs_done']
 
-    custom_order = {val: idx for idx, val in enumerate(prog_names)}
+    df_avg = df.group_by(pl.col('is_afl_only')).agg(pl.col(interested_cols).mean())
+
+    df_std = df.group_by(pl.col('is_afl_only')).agg(pl.col(interested_cols).std())
+
+    df_avg = df_avg.select(interested_cols).to_dict(as_series=False)
+
+
+    df_std = df_std.select(interested_cols).to_dict(as_series=False)
     
 
-    # Sorting the DataFrame
-    df = df.sort(pl.col("identifier").map_dict(custom_order), descending=[True])
+    for key in df_avg:
+        df_avg[key] = df_avg[key][0]
+    
+    for key in df_std:
+        df_std[key] = df_std[key][0]
+    
+
+
+
+    return df_avg, df_std
+
+
+
+def load_latest_results(dir_path):
+    files = os.listdir(dir_path)
+    # Sort the files by modification time
+    files.sort(key=lambda x: os.path.getmtime(os.path.join(dir_path, x)))
+    # Open the most recently modified file
+    most_recent_file = files[-1]
+    df = pl.read_json(os.path.join(dir_path, most_recent_file))
+
+    df = df.with_columns(pl.col('run_time_hms').map_elements(human_to_sec, return_dtype=float).alias('run_time'))
+
+    # df = df.with_columns(pl.col('binary').map_elements(name_to_id, return_dtype=str).alias('identifier'))
+
+    df = df.with_columns(pl.col('execs_done').cast(pl.Float64))
+    df = df.with_columns(pl.col('execs_per_sec').cast(pl.Float64))
+
+    df = df.group_by(pl.col('is_afl')).agg(pl.col(['run_time', 'execs_per_sec', 'execs_done']).mean())
 
     return df
-
 
 
 
@@ -105,16 +131,77 @@ def plot_eps(our_ijon, og_ijon, afl):
 
 
 
+def plot_stats(df):
+
+    fig = go.Figure()
+
+    fig.add_trace(go.Bar(x=our_ijon['identifier'], y=our_ijon['execs_per_sec'], name='Our IJON', marker_color='red'))
+    fig.add_trace(go.Bar(x=og_ijon['identifier'], y=og_ijon['execs_per_sec'], name='Original IJON', marker_color='blue'))
+    fig.add_trace(go.Bar(x=afl['identifier'], y=afl['execs_per_sec'], name='AFL++', marker_color='green'))
+
+    # Customizing the layout
+    fig.update_layout(title='Comparison of Average Execs/Second', xaxis_title='Binary', yaxis_title='Average Execs/Second', barmode='group', bargap=0.15, bargroupgap=0.1)
+
+    fig.show()
+
+
+
+def plot_data(average_infos, std_infos, average_set_infos, std_set_infos):
+    labels = ['run_time', 'execs_done', 'execs_per_sec']
+    infos_means = [average_infos['run_time'], average_infos['execs_done'], average_infos['execs_per_sec']]
+    infos_stds = [std_infos['run_time'], std_infos['execs_done'], std_infos['execs_per_sec']]
+    set_infos_means = [average_set_infos['run_time'], average_set_infos['execs_done'], average_set_infos['execs_per_sec']]
+    set_infos_stds = [std_set_infos['run_time'], std_set_infos['execs_done'], std_set_infos['execs_per_sec']]
+
+    print(labels)
+    print(infos_means)
+    print(infos_stds)
+
+
+
+    x = np.arange(len(labels))  # the label locations
+    width = 0.35  # the width of the bars
+
+    fig, ax = plt.subplots()
+    rects1 = ax.bar(x - width/2, infos_means, width, yerr=infos_stds, label='AFL++ Frida Mode', capsize=5)
+    rects2 = ax.bar(x + width/2, set_infos_means, width, yerr=set_infos_stds, label='AFL++ Frida Mode + IJON SET', capsize=5)
+
+    # Add some text for labels, title and custom x-axis tick labels, etc.
+    ax.set_xlabel('Metrics')
+    ax.set_ylabel('Values')
+    ax.set_title('Metrics')
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels)
+    ax.set_yscale('log')
+    ax.legend()
+
+    fig.tight_layout()
+
+    plt.show()
+
+
 def main():
-    afl = load_results("./afl++/results/afl.json")
-    our_ijon = load_results("./afl++/results/our_ijon.json")
-    og_ijon = load_results("./ijon-original/ijon-experiment/results/original_ijon.json")
+    # afl = load_results("./afl++/results/afl.json")
+    # our_ijon = load_results("./afl++/results/our_ijon.json")
+    # og_ijon = load_results("./ijon-original/ijon-experiment/results/original_ijon.json")
 
 
+    # data = load_latest_results('./wip/svg2ass/results/')
+    ijon_avg, ijon_std = load_results('./wip/svg2ass/results/ijon.json')
+    afl_avg, afl_std = load_results('./wip/svg2ass/results/afl.json')
+
+    average_infos = afl_avg
+    std_infos = afl_std
+
+    average_set_infos = ijon_avg
+    std_set_infos = ijon_std
+
+    plot_data(average_infos, std_infos, average_set_infos, std_set_infos)
     # print(afl)
-    plot_runtime(our_ijon.to_pandas(), og_ijon.to_pandas(), afl.to_pandas())
-    plot_execs(our_ijon.to_pandas(), og_ijon.to_pandas(), afl.to_pandas())
-    plot_eps(our_ijon.to_pandas(), og_ijon.to_pandas(), afl.to_pandas())
+
+    # plot_runtime(our_ijon.to_pandas(), og_ijon.to_pandas(), afl.to_pandas())
+    # plot_execs(our_ijon.to_pandas(), og_ijon.to_pandas(), afl.to_pandas())
+    # plot_eps(our_ijon.to_pandas(), og_ijon.to_pandas(), afl.to_pandas())
 
 
 if __name__ == '__main__':

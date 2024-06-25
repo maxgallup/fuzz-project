@@ -1,0 +1,235 @@
+#!/usr/bin/python
+
+import os
+import sys
+import subprocess
+import time
+import os
+import json
+import multiprocessing
+from datetime import datetime
+
+
+
+
+NUM_CORES = multiprocessing.cpu_count() - 1
+prog_names = [
+    'svg2ass_frida'
+]
+
+TIMEOUT = 1200
+REFRESH = 30
+RUNS = 50
+TOTAL = len(prog_names) * RUNS
+
+afl_only = False
+
+if sys.argv[-1] == "afl":
+    afl_only = True
+    print("Testing AFL only mode")
+
+binaries = []
+for prog in prog_names:
+    for i in range(RUNS):
+        if afl_only:
+            binaries.append(f"{prog}-afl-{i}")
+        else:
+            binaries.append(f"{prog}{i}")
+
+
+in_dirs = [f"./inputs/{name}" for name in binaries]
+out_dirs = [f"./outputs/{name}" for name in binaries]
+
+procs = []
+
+def sec_to_min(t):
+    if t < 0:
+        return t
+    return f"{int(int(t) / int(60))}m:{(int(t) % int(60))}s"
+
+def parse_file(filename):
+    data = {}
+    with open(filename, "r") as f:
+        file_content = f.read()
+    for line in file_content.strip().split("\n"):
+        key, value = line.split(":")
+        data[key.strip()] = value.strip()
+    return data
+
+def get_info(data, file):
+    is_afl = 'afl' in file.decode('utf-8')
+
+    run_time_hms = sec_to_min(int(data["run_time"]))
+    binary = data["afl_banner"]
+    execs_per_sec = float(data['execs_per_sec'])
+    execs_done = data['execs_done']
+    return {
+        "run_time_hms": run_time_hms,
+        "binary": binary,
+        "execs_per_sec": execs_per_sec,
+        "execs_done": execs_done,
+        "is_afl": is_afl
+    }
+
+def save_results():
+    # This program will return as JSON object of the 
+    results = []
+    for file in os.listdir(os.fsencode("./outputs")):
+        filename = os.fsdecode(file)
+        t = os.path.join(filename)
+        stat_file = f"./outputs/{t}/default/fuzzer_stats"
+
+        try:
+            data = parse_file(stat_file)
+            if float(data['saved_crashes']) > 0:
+                results.append(get_info(data, file))
+            else:
+                print(f"INFO: {file} didn't have any saved crashes")
+        except:
+            print(f"INFO: {file} didn't have a fuzzer_stats file")
+            pass
+
+    if not os.path.exists("results"):
+        os.mkdir("results")
+
+    res_filename = f"results/run-{datetime.today().strftime('%m-%d@%H-%M-%S')}.json"
+
+    if len(results) != 0:
+        with open(res_filename, 'w') as f:
+            json.dump(results, f)
+    else:
+        print("Nothing found in ./outputs/")
+
+if sys.argv[-1] == "save":
+    print("Only saving results...")
+    save_results()
+    exit(0)
+else:
+    print("Testing IJON mode")
+
+
+def make_dir(path):
+    if not os.path.exists(path):
+        os.mkdir(path)
+
+
+# idempotently setup all directories
+def setup_dirs():
+
+    # create output directories if they don't exist
+    print("Creating output directories")
+    for out_dir in out_dirs:
+        make_dir(out_dir)
+
+
+
+def stop_fuzzers():
+    cmd = ["tmux", "kill-server"]
+    subprocess.run(cmd)
+
+
+def currently_running():
+    cmd = ["tmux", "ls"]
+    res = subprocess.run(cmd, capture_output=True)
+    if res.stdout == b'':
+        return set()
+    else:
+        result_set = set()
+        for line in res.stdout.decode('utf-8').split('\n'):
+            if line != '':
+                result_set.add(line.split(':')[0].strip())
+        return result_set
+
+
+def start_fuzzer(name):
+    print(f"    starting {name}")
+    prog_name = ''
+    for prog in prog_names:
+        if prog in name:
+            prog_name = prog
+
+    cmd = ["bash", "-c", f"export AFL_BENCH_UNTIL_CRASH=1 AFL_SKIP_CPUFREQ=1 AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1 AFL_FRIDA_JS_SCRIPT=./frida/{prog_name}.js; tmux new-session -d -s {name} $AFL_PATH/afl-fuzz -O -i ./inputs/{prog_name} -o ./outputs/{name} -- ./binaries/{prog_name} > /dev/null 2>&1"]
+
+    if afl_only:
+        cmd = ["bash", "-c", f"export AFL_BENCH_UNTIL_CRASH=1 AFL_SKIP_CPUFREQ=1 AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1; tmux new-session -d -s {name} $AFL_PATH/afl-fuzz -O -i ./inputs/{prog_name} -o ./outputs/{name} -- ./binaries/{prog_name} > /dev/null 2>&1"]
+
+    subprocess.run(cmd)
+
+
+
+def kill_fuzzer(name):
+    print(f">>> Killing {name}...")
+    cmd = "bash", "-c", f"tmux kill-session -t {name}"
+    subprocess.run(cmd)
+
+
+def main():
+    # Input and output directories are necessary for each test
+    setup_dirs()
+
+    # Holds the set of currently running fuzzers (by name)
+    active_set = set()
+
+    # Holds (fuzzer name, running_time) so that we can fill fuzzers that take
+    # too long
+    programs = {}
+    start = 0
+
+    count = 0
+
+    # We check if fuzzers have finished with a REFRESH interval and schedule new ones
+    # accordingly
+    while True:
+        active_set = currently_running()
+
+        # Update how long each program has been running for
+        for i in active_set:
+            if i in programs:
+                programs[i] += REFRESH
+            else:
+                programs[i] = REFRESH
+
+        # Kill fuzzers that run longer than TIMEOUT
+        for key, value in programs.items():
+            if value >= TIMEOUT and (key in active_set):
+                kill_fuzzer(key)
+
+        # Get the latest active set, since zombies may have been killed
+        active_set = currently_running()
+
+        # We want to schedule at most the number of cores that we have available
+        free_slots = NUM_CORES - len(active_set)
+
+
+        # Exit if we have tested all binaries
+        if start >= len(binaries):
+            print("--- Testing Finished ---")
+            exit(0)
+
+        # Make sure we don't read out of bounds
+        until = start + free_slots
+        if until >= len(binaries):
+            until = len(binaries)
+
+        to_schedule = binaries[start : until]
+        start = start + free_slots
+
+        print(f">>> Going to schedule {len(to_schedule)} new fuzzers")
+
+        for p in to_schedule:
+            start_fuzzer(p)
+
+        time.sleep(REFRESH)
+        count = count + 1
+        
+        # save results every minute
+        if REFRESH * count > 120:
+            save_results()
+            count = 0
+
+
+
+if __name__ == '__main__':
+
+    main()
+
