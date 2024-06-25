@@ -10,13 +10,8 @@ import numpy as np
 
 
 import matplotlib.pyplot as plt
-# prog_names = [
-#     'mario-easy',
-#     'mario-mid',
-#     'mario-hard',
-#     'maze-small',
-#     'maze-big',
-# ]
+
+
 
 def human_to_sec(human_string: str):
     minutes, seconds = human_string.split(":")
@@ -30,65 +25,43 @@ def string_to_float(s):
     return float(s)
 
 
-def name_to_id(some_name):
-    for p in prog_names:
-        if p in some_name:
-            return p
-    return null
 
 
-def load_results(dir_path):
-    df = pl.read_json(dir_path)
-    df = df.with_columns(pl.col('run_time_hms').map_elements(human_to_sec, return_dtype=float).alias('run_time'))
 
-    # df = df.with_columns(pl.col('binary').map_elements(name_to_id, return_dtype=str).alias('identifier'))
+# def load_results(dir_path):
+#     df = pl.read_json(dir_path)
 
-    df = df.with_columns(pl.col('execs_done').cast(pl.Float64))
-    df = df.with_columns(pl.col('execs_per_sec').cast(pl.Float64))
+#     # df = df.with_columns(pl.col('binary').map_elements(name_to_id, return_dtype=str).alias('identifier'))
 
-    interested_cols = ['run_time', 'execs_per_sec', 'execs_done']
+#     df = df.with_columns(pl.col('execs_done').cast(pl.Float64))
+#     df = df.with_columns(pl.col('execs_per_sec').cast(pl.Float64))
 
-    df_avg = df.group_by(pl.col('is_afl_only')).agg(pl.col(interested_cols).mean())
+#     interested_cols = ['run_time', 'execs_per_sec', 'execs_done']
 
-    df_std = df.group_by(pl.col('is_afl_only')).agg(pl.col(interested_cols).std())
+#     df_avg = df.group_by(pl.col('is_afl_only')).agg(pl.col(interested_cols).mean())
 
-    df_avg = df_avg.select(interested_cols).to_dict(as_series=False)
+#     df_std = df.group_by(pl.col('is_afl_only')).agg(pl.col(interested_cols).std())
+
+#     df_avg = df_avg.select(interested_cols).to_dict(as_series=False)
 
 
-    df_std = df_std.select(interested_cols).to_dict(as_series=False)
+#     df_std = df_std.select(interested_cols).to_dict(as_series=False)
     
 
-    for key in df_avg:
-        df_avg[key] = df_avg[key][0]
+#     for key in df_avg:
+#         df_avg[key] = df_avg[key][0]
     
-    for key in df_std:
-        df_std[key] = df_std[key][0]
+#     for key in df_std:
+#         df_std[key] = df_std[key][0]
     
 
 
 
-    return df_avg, df_std
+#     return df_avg, df_std
 
 
 
-def load_latest_results(dir_path):
-    files = os.listdir(dir_path)
-    # Sort the files by modification time
-    files.sort(key=lambda x: os.path.getmtime(os.path.join(dir_path, x)))
-    # Open the most recently modified file
-    most_recent_file = files[-1]
-    df = pl.read_json(os.path.join(dir_path, most_recent_file))
 
-    df = df.with_columns(pl.col('run_time_hms').map_elements(human_to_sec, return_dtype=float).alias('run_time'))
-
-    # df = df.with_columns(pl.col('binary').map_elements(name_to_id, return_dtype=str).alias('identifier'))
-
-    df = df.with_columns(pl.col('execs_done').cast(pl.Float64))
-    df = df.with_columns(pl.col('execs_per_sec').cast(pl.Float64))
-
-    df = df.group_by(pl.col('is_afl')).agg(pl.col(['run_time', 'execs_per_sec', 'execs_done']).mean())
-
-    return df
 
 
 
@@ -180,23 +153,118 @@ def plot_data(average_infos, std_infos, average_set_infos, std_set_infos):
     plt.show()
 
 
+
+
+def load_latest_results(res_dir):
+    prog_names = [
+        'mario-easy',
+        'mario-mid',
+        'mario-hard',
+        'maze-small',
+        'maze-big'
+    ]
+    
+
+
+    def name_to_id(some_name):
+        for p in prog_names:
+            if p in some_name:
+                return p
+        return ""
+
+
+    def name_to_type(name):
+        if "afl" in name:
+            return "AFL"
+        if "ijon" in name:
+            return "IJON Original"
+        if "new" in name:
+            return "IJON New"
+
+
+    dir_path = f"./{res_dir}/results"
+    files = os.listdir(dir_path)
+    # Sort the files by modification time
+    files.sort(key=lambda x: os.path.getmtime(os.path.join(dir_path, x)))
+
+    if not files:
+        print("./results is empty!")
+        exit(1)
+
+    # Open the most recently modified file
+    most_recent_file = files[-1]
+
+    df = pl.read_json(os.path.join(dir_path, most_recent_file))
+
+    df = df.with_columns(pl.col('binary').map_elements(name_to_id, return_dtype=str).alias('identifier'))
+    
+    df = df.with_columns(pl.col('binary').map_elements(name_to_type, return_dtype=str).alias('type'))
+
+
+
+    df = df.with_columns(pl.col('execs_done').cast(pl.Float64))
+    df = df.with_columns(pl.col('execs_per_sec').cast(pl.Float64))
+    df = df.with_columns(pl.col('run_time').cast(pl.Float64))
+
+    interested_cols = ['run_time', 'execs_per_sec', 'execs_done']
+
+    df_avg = df.group_by(pl.col(['binary', 'identifier', 'type'])).agg(pl.col(interested_cols).mean())
+    df_std = df.group_by(pl.col(['binary', 'identifier', 'type'])).agg(pl.col(interested_cols).std())
+    df_len = df.group_by(pl.col(['binary', 'identifier', 'type'])).agg(pl.col(interested_cols).len())
+
+    return df_avg, df_std, df_len
+
+
+
+def plot_game_bar(df_avg, df_std, df_len, col_name):
+    fig = px.bar(df_avg, x="identifier", y=col_name, color=df_avg['type'], title="testing",
+    error_x=df_std['identifier'], error_y=df_std[col_name])
+
+    # Customizing the layout
+    fig.update_layout(title=f'Comparison of {col_name}', xaxis_title='Programs', yaxis_title=col_name, barmode='group', bargap=0.15, bargroupgap=0.1)
+
+    fig.show()
+
+
+def plot_games():
+
+    old_avg, old_std, old_len = load_latest_results("eval-old-ijon")
+    new_avg, new_std, new_len = load_latest_results("eval-new-ijon")
+
+    df_avg = pl.concat([old_avg, new_avg])
+    df_std = pl.concat([old_std, new_std])
+    df_len = pl.concat([old_len, new_len])
+
+    print(df_avg, df_std, df_len)
+
+    plot_game_bar(df_avg, df_std, df_len, 'run_time')
+
 def main():
+
+
+    plot_games()
+
+
+    # plot_svg()
+
+
+    
     # afl = load_results("./afl++/results/afl.json")
     # our_ijon = load_results("./afl++/results/our_ijon.json")
     # og_ijon = load_results("./ijon-original/ijon-experiment/results/original_ijon.json")
 
 
     # data = load_latest_results('./wip/svg2ass/results/')
-    ijon_avg, ijon_std = load_results('./wip/svg2ass/results/ijon.json')
-    afl_avg, afl_std = load_results('./wip/svg2ass/results/afl.json')
+    # ijon_avg, ijon_std = load_results('./wip/svg2ass/results/ijon.json')
+    # afl_avg, afl_std = load_results('./wip/svg2ass/results/afl.json')
 
-    average_infos = afl_avg
-    std_infos = afl_std
+    # average_infos = afl_avg
+    # std_infos = afl_std
 
-    average_set_infos = ijon_avg
-    std_set_infos = ijon_std
+    # average_set_infos = ijon_avg
+    # std_set_infos = ijon_std
 
-    plot_data(average_infos, std_infos, average_set_infos, std_set_infos)
+    # plot_data(average_infos, std_infos, average_set_infos, std_set_infos)
     # print(afl)
 
     # plot_runtime(our_ijon.to_pandas(), og_ijon.to_pandas(), afl.to_pandas())
