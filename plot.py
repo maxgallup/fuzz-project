@@ -1,11 +1,12 @@
-#!/usr/bin/python
 
 import os
 import json
 
 import polars as pl
+#!/usr/bin/python
 import plotly.graph_objects as go
 import plotly.express as px
+from plotly.subplots import make_subplots
 import plotly.io as pio
 import numpy as np
 
@@ -179,27 +180,78 @@ def load_latest_svg_results(res_dir):
 def plot_svg2ass():
     svg_avg, svg_std, svg_len = load_latest_svg_results("./eval-svg2ass/results")
 
-    fig = go.Figure()
+    print(svg_avg)
+    # fig = go.Figure()
+
+    fig = make_subplots(rows=1, cols=3)
+
+    def get_color(type_name):
+        if 'AFL' in type_name:
+            return 'red'
+        else:
+            return 'blue'
+
+
     for i, row in svg_avg.iterrows():
         fig.add_trace(go.Bar(
-            x=['Run Time (Seconds)', 'Total Execs', 'Execs per Second'],  # X-axis labels
-            y=[row['run_time'], row['execs_done'], row['execs_per_sec']],  # Y-values
-            name=row['identifier'],  # Name of the row for legend
+            x=['Run Time (Seconds)'],
+            y=[row['run_time']],
+            marker_color=get_color(row['type']),
             error_y=dict(
                 type='data',
                 symmetric=True,
-                array=[svg_std.loc[i, 'run_time'], svg_std.loc[i, 'execs_done'], svg_std.loc[i, 'execs_per_sec']]
-            )
-        ))
+                array=[svg_std.loc[i, 'run_time']]
+            ), showlegend=False
+        ),  row=1, col=1)
+    
+    for i, row in svg_avg.iterrows():
+        fig.add_trace(go.Bar(
+            x=['Total Executions'],
+            y=[row['execs_done']],
+            marker_color=get_color(row['type']),
+            error_y=dict(
+                type='data',
+                symmetric=True,
+                array=[svg_std.loc[i, 'execs_done']]
+            ), showlegend=False
+        ),  row=1, col=2)
+    
+    for i, row in svg_avg.iterrows():
+        fig.add_trace(go.Bar(
+            x=['Executions / Second'],
+            y=[row['execs_per_sec']],
+            marker_color=get_color(row['type']),
+            error_y=dict(
+                type='data',
+                symmetric=True,
+                array=[svg_std.loc[i, 'execs_per_sec']]
+            ), showlegend=False
+        ),  row=1, col=3)
 
-    fig.update_yaxes(type="log")
+    # fig.update_yaxes(type="log")
 
-    fig.update_layout(barmode='group', title_text='Comparison to standard AFL')
+    fig.add_annotation(
+        x=1.0,  # Same position as the first legend entry
+        y=1.16,  # Different vertical position for the second legend entry
+        showarrow=False,
+        text="<span style='color:red;'>AFL++ Frida</span><br><span style='color:blue;'>AFL++ Frida IJON-SET</span>",
+        font=dict(size=15),
+        bgcolor="white",
+        bordercolor="black",
+        borderwidth=0.2,
+        borderpad=4,
+        align="left",
+        xref="paper",
+        yref="paper"
+    )
+
+
+    fig.update_layout(barmode='group', title_text='Comparison to standard AFL++')
 
     pio.write_image(fig, f"./plots/svg2ass.png",scale=6, width=600, height=550)
     # fig.show()
 
 
 if __name__ == '__main__':
-    plot_games()
+    # plot_games()
     plot_svg2ass()
