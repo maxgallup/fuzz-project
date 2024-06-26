@@ -138,7 +138,7 @@ hook_function(addr, n):
 
 ### nxml.c parseMarkup Out-of-Bound Read Vulnerability
 
-The vulnerability occurs within the `parseMarkup` function when called with a parameter value for p set to "\x00" (i.e. the end of a string). In this case the function first checks [*1*] the null terminator if it is a namestart, which returns true, and then it loops over the characters following the null terminator thus leading to an out-of-bound read.
+The vulnerability occurs within the `parseMarkup` function when called with a parameter value for p set to "\x00" (i.e. the end of a string). In this case the function first checks [*1*] the null terminator if it is a namestart, which returns true, and then it loops over [*2*] the characters following the null terminator thus leading to an out-of-bound read.
 
 ```c
 static inline char *parseMarkup( char *p, nxmlNode_t *node )
@@ -154,14 +154,14 @@ static inline char *parseMarkup( char *p, nxmlNode_t *node )
                         ++m;
 ```
 
-To reach this function the state machine of the parser needs to be within the `ST_MARKUP` state. To reach that state with the desired payload string, the original input string must end in the character "<", as it will be replaced by the code seen below with a null terminator. 
+To reach this function the state machine of the parser needs to be within the `ST_MARKUP` state. To reach that state with the desired payload string, the original input string must end in the character "<", as it will be replaced by [*3*] the code seen below with a null terminator. 
 
-```
+```c
 int nxmlParse( char *buf, nxmlCb_t cb, void *usr )
 {
         // ...
         case ST_CONTENT:
-                        m = strchr( p, '<' );
+                        m = strchr( p, '<' ); // 3
                         if ( m )
                                 *m++ = '\0';
                         trim( p );
