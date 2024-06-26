@@ -16,7 +16,7 @@ for crash in $CRASH_DIR/id:*; do
     export ASAN_OPTIONS="log_path=${log_file}"
     echo $ASAN_OPTIONS;
     CMD="$BINARY < $crash";
-    $BINARY < $crash >/dev/null
+    $BINARY < $crash #>/dev/null
     counter=$((counter + 1))
 done
 

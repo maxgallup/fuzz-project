@@ -1,0 +1,54 @@
+=================================================================
+==226707==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x50b0000000a7 at pc 0x00000040ede2 bp 0x7ffc96f74c40 sp 0x7ffc96f74c30
+READ of size 1 at 0x50b0000000a7 thread T0
+    #0 0x40ede1 in parseMarkup /home/user/fuzz-project/wip/svg2ass/src/nxml.c:160
+    #1 0x40f875 in nxmlParse /home/user/fuzz-project/wip/svg2ass/src/nxml.c:263
+    #2 0x40bc9c in parse /home/user/fuzz-project/wip/svg2ass/src/svg2ass.c:1160
+    #3 0x40c6ec in main /home/user/fuzz-project/wip/svg2ass/src/svg2ass.c:1315
+    #4 0x7d67b282a1c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 08134323d00289185684a4cd177d202f39c2a5f3)
+    #5 0x7d67b282a28a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 08134323d00289185684a4cd177d202f39c2a5f3)
+    #6 0x402854 in _start (/home/user/fuzz-project/wip/svg2ass/binaries/svg2ass_sanitized+0x402854) (BuildId: ffbd89f14b4d5587dffc77b72b7792319023e16b)
+
+0x50b0000000a7 is located 0 bytes after 103-byte region [0x50b000000040,0x50b0000000a7)
+allocated by thread T0 here:
+    #0 0x7d67b2cfa918 in realloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:85
+    #1 0x40b841 in getFile /home/user/fuzz-project/wip/svg2ass/src/svg2ass.c:1133
+    #2 0x40b9e4 in parse /home/user/fuzz-project/wip/svg2ass/src/svg2ass.c:1148
+    #3 0x40c6ec in main /home/user/fuzz-project/wip/svg2ass/src/svg2ass.c:1315
+    #4 0x7d67b282a1c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 08134323d00289185684a4cd177d202f39c2a5f3)
+    #5 0x7d67b282a28a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 08134323d00289185684a4cd177d202f39c2a5f3)
+    #6 0x402854 in _start (/home/user/fuzz-project/wip/svg2ass/binaries/svg2ass_sanitized+0x402854) (BuildId: ffbd89f14b4d5587dffc77b72b7792319023e16b)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow /home/user/fuzz-project/wip/svg2ass/src/nxml.c:160 in parseMarkup
+Shadow bytes around the buggy address:
+  0x50affffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x50affffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x50afffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x50afffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x50b000000000: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+=>0x50b000000080: 00 00 00 00[07]fa fa fa fa fa fa fa fa fa fa fa
+  0x50b000000100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x50b000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x50b000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x50b000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x50b000000300: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==226707==ABORTING

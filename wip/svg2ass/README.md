@@ -134,5 +134,46 @@ hook_function(addr, n):
     ijon_set(addr, hash_val)
 ```
 
+## Crashes
 
+### nxml.c parseMarkup Out-of-Bound Read Vulnerability
+
+The vulnerability occurs within the `parseMarkup` function when called with a parameter value for p set to "\x00" (i.e. the end of a string). In this case the function first checks [*1*] the null terminator if it is a namestart, which returns true, and then it loops over the characters following the null terminator thus leading to an out-of-bound read.
+
+```c
+static inline char *parseMarkup( char *p, nxmlNode_t *node )
+{
+       char *m = p;
+       // ...
+    
+       if ( is_namestart( *m ) ) // match parent/self tag // 1
+       {
+                node->type = NXML_TYPE_PARENT;  // tentative!
+                node->name = m;
+                while ( is_namechar( *m ) ) // 2
+                        ++m;
+```
+
+To reach this function the state machine of the parser needs to be within the `ST_MARKUP` state. To reach that state with the desired payload string, the original input string must end in the character "<", as it will be replaced by the code seen below with a null terminator. 
+
+```
+int nxmlParse( char *buf, nxmlCb_t cb, void *usr )
+{
+        // ...
+        case ST_CONTENT:
+                        m = strchr( p, '<' );
+                        if ( m )
+                                *m++ = '\0';
+                        trim( p );
+                        if ( *p )
+                        {
+                                node.type = NXML_TYPE_CONTENT;
+                                node.name = p;
+                                res = cb( NXML_EVT_TEXT, &node, usr );
+                        }
+                        state = m ? ST_MARKUP : ST_END;
+                        break;
+```
+
+To trigger the out-of-bound read any input terminating in the "<" will work, such as `AAAAAAAA<`.
 

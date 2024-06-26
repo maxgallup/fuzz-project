@@ -146,12 +146,15 @@ static inline char *parseMarkup( char *p, nxmlNode_t *node )
 
 	node->type = NXML_TYPE_EMPTY;
 
+	printf("parseMarkup() p=%p (%s)\n", p, p);
+
 	if ( is_namestart( *m ) ) // match parent/self tag
 	{
 		node->type = NXML_TYPE_PARENT;	// tentative!
 		node->name = m;
-		while ( is_namechar( *m ) )
+		while ( is_namechar( *m ) ) 
 			++m;
+
 		e = m;
 		m = parseAttrib( m, node );
 		while ( *m && '>' != *m )
