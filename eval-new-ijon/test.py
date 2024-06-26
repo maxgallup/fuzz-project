@@ -9,8 +9,8 @@ import json
 import multiprocessing
 from datetime import datetime
 
-NUM_CORES = multiprocessing.cpu_count() - 1
-TIMEOUT = 1200
+NUM_CORES = multiprocessing.cpu_count()
+TIMEOUT = 2700
 REFRESH = 30
 RUNS = 50
 
@@ -50,6 +50,7 @@ def start_fuzzer(name):
     cmd = ["bash", "-c", f"export AFL_BENCH_UNTIL_CRASH=1 AFL_SKIP_CPUFREQ=1 AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1 AFL_FRIDA_JS_SCRIPT=./frida/{prog_name}.js; tmux new-session -d -s {name} $AFL_PATH/afl-fuzz -O -i ./inputs/{prog_name} -o ./outputs/{name} -- ./binaries/{prog_name} > /dev/null 2>&1"]
 
     if 'afl' in prog_name:
+        print("    >>> Vanilla AFL")
         cmd = ["bash", "-c", f"export AFL_BENCH_UNTIL_CRASH=1 AFL_SKIP_CPUFREQ=1 AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1; tmux new-session -d -s {name} $AFL_PATH/afl-fuzz -O -i ./inputs/{prog_name} -o ./outputs/{name} -- ./binaries/{prog_name} > /dev/null 2>&1"]
         
 
