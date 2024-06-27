@@ -1,0 +1,620 @@
+[
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 601.0,
+        "execs_done": 694559.0,
+        "execs_per_sec": 1155.32
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 722198.0,
+        "execs_per_sec": 1203.23
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 662660.0,
+        "execs_per_sec": 1103.44
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 601.0,
+        "execs_done": 725488.0,
+        "execs_per_sec": 1205.3
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 604.0,
+        "execs_done": 955428.0,
+        "execs_per_sec": 1579.85
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 607.0,
+        "execs_done": 666694.0,
+        "execs_per_sec": 1098.04
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 601.0,
+        "execs_done": 926127.0,
+        "execs_per_sec": 1538.6
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 602.0,
+        "execs_done": 898353.0,
+        "execs_per_sec": 1491.01
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 606.0,
+        "execs_done": 707704.0,
+        "execs_per_sec": 1166.77
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 890988.0,
+        "execs_per_sec": 1484.07
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 209.0,
+        "execs_done": 285461.0,
+        "execs_per_sec": 1361.54
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 679631.0,
+        "execs_per_sec": 1132.19
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 708015.0,
+        "execs_per_sec": 1178.8
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 717394.0,
+        "execs_per_sec": 1194.36
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 601.0,
+        "execs_done": 649283.0,
+        "execs_per_sec": 1078.58
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 607.0,
+        "execs_done": 686334.0,
+        "execs_per_sec": 1129.18
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 601.0,
+        "execs_done": 708451.0,
+        "execs_per_sec": 1178.21
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 761935.0,
+        "execs_per_sec": 1268.79
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 919201.0,
+        "execs_per_sec": 1531.14
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 610.0,
+        "execs_done": 706804.0,
+        "execs_per_sec": 1158.43
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 915585.0,
+        "execs_per_sec": 1524.23
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 698163.0,
+        "execs_per_sec": 1163.07
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 623.0,
+        "execs_done": 788190.0,
+        "execs_per_sec": 1264.43
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 706227.0,
+        "execs_per_sec": 1176.59
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 602.0,
+        "execs_done": 645078.0,
+        "execs_per_sec": 1070.0
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 606.0,
+        "execs_done": 673929.0,
+        "execs_per_sec": 1111.2
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 617.0,
+        "execs_done": 791500.0,
+        "execs_per_sec": 1281.12
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 872906.0,
+        "execs_per_sec": 1453.97
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 601.0,
+        "execs_done": 916815.0,
+        "execs_per_sec": 1525.4
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 726270.0,
+        "execs_per_sec": 1209.68
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 915366.0,
+        "execs_per_sec": 1524.58
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 605.0,
+        "execs_done": 688350.0,
+        "execs_per_sec": 1136.84
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 347.0,
+        "execs_done": 393700.0,
+        "execs_per_sec": 1132.97
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 602.0,
+        "execs_done": 646365.0,
+        "execs_per_sec": 1072.3
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 690327.0,
+        "execs_per_sec": 1149.44
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 687025.0,
+        "execs_per_sec": 1144.54
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 906513.0,
+        "execs_per_sec": 1508.71
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 694743.0,
+        "execs_per_sec": 1156.85
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 688681.0,
+        "execs_per_sec": 1147.27
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 720355.0,
+        "execs_per_sec": 1199.19
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 273.0,
+        "execs_done": 408460.0,
+        "execs_per_sec": 1495.73
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 601.0,
+        "execs_done": 666221.0,
+        "execs_per_sec": 1106.98
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 860360.0,
+        "execs_per_sec": 1433.4
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 605.0,
+        "execs_done": 764561.0,
+        "execs_per_sec": 1262.78
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 452.0,
+        "execs_done": 505853.0,
+        "execs_per_sec": 1118.43
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 607.0,
+        "execs_done": 688539.0,
+        "execs_per_sec": 1133.64
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 690031.0,
+        "execs_per_sec": 1148.58
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 601.0,
+        "execs_done": 949677.0,
+        "execs_per_sec": 1579.6
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 603.0,
+        "execs_done": 698285.0,
+        "execs_per_sec": 1157.38
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-afl",
+        "run_time": 600.0,
+        "execs_done": 634903.0,
+        "execs_per_sec": 1057.13
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 237.0,
+        "execs_done": 101883.0,
+        "execs_per_sec": 429.23
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 180.0,
+        "execs_done": 73062.0,
+        "execs_per_sec": 405.63
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 322.0,
+        "execs_done": 128208.0,
+        "execs_per_sec": 396.95
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 118.0,
+        "execs_done": 55811.0,
+        "execs_per_sec": 469.62
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 271.0,
+        "execs_done": 121300.0,
+        "execs_per_sec": 446.59
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 133.0,
+        "execs_done": 57916.0,
+        "execs_per_sec": 433.9
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 263.0,
+        "execs_done": 110306.0,
+        "execs_per_sec": 417.87
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 240.0,
+        "execs_done": 97430.0,
+        "execs_per_sec": 405.13
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 217.0,
+        "execs_done": 103287.0,
+        "execs_per_sec": 474.37
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 363.0,
+        "execs_done": 132873.0,
+        "execs_per_sec": 366.0
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 336.0,
+        "execs_done": 124670.0,
+        "execs_per_sec": 370.93
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 246.0,
+        "execs_done": 101436.0,
+        "execs_per_sec": 411.03
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 318.0,
+        "execs_done": 132242.0,
+        "execs_per_sec": 415.1
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 155.0,
+        "execs_done": 69694.0,
+        "execs_per_sec": 448.32
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 236.0,
+        "execs_done": 100291.0,
+        "execs_per_sec": 423.38
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 68.0,
+        "execs_done": 29887.0,
+        "execs_per_sec": 438.73
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 152.0,
+        "execs_done": 67021.0,
+        "execs_per_sec": 439.49
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 136.0,
+        "execs_done": 67121.0,
+        "execs_per_sec": 490.02
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 105.0,
+        "execs_done": 45688.0,
+        "execs_per_sec": 431.86
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 232.0,
+        "execs_done": 105323.0,
+        "execs_per_sec": 452.54
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 102.0,
+        "execs_done": 46866.0,
+        "execs_per_sec": 455.83
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 100.0,
+        "execs_done": 45598.0,
+        "execs_per_sec": 454.72
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 293.0,
+        "execs_done": 187400.0,
+        "execs_per_sec": 637.78
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 349.0,
+        "execs_done": 148867.0,
+        "execs_per_sec": 425.68
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 103.0,
+        "execs_done": 45289.0,
+        "execs_per_sec": 437.65
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 165.0,
+        "execs_done": 77975.0,
+        "execs_per_sec": 470.73
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 225.0,
+        "execs_done": 103960.0,
+        "execs_per_sec": 460.5
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 121.0,
+        "execs_done": 56558.0,
+        "execs_per_sec": 465.05
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 91.0,
+        "execs_done": 41111.0,
+        "execs_per_sec": 448.16
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 205.0,
+        "execs_done": 93877.0,
+        "execs_per_sec": 455.98
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 166.0,
+        "execs_done": 67202.0,
+        "execs_per_sec": 404.5
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 175.0,
+        "execs_done": 82140.0,
+        "execs_per_sec": 469.24
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 215.0,
+        "execs_done": 88574.0,
+        "execs_per_sec": 411.88
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 389.0,
+        "execs_done": 159170.0,
+        "execs_per_sec": 408.97
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 190.0,
+        "execs_done": 89293.0,
+        "execs_per_sec": 469.26
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 157.0,
+        "execs_done": 66540.0,
+        "execs_per_sec": 423.42
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 169.0,
+        "execs_done": 72753.0,
+        "execs_per_sec": 429.72
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 360.0,
+        "execs_done": 152606.0,
+        "execs_per_sec": 423.86
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 117.0,
+        "execs_done": 50824.0,
+        "execs_per_sec": 433.36
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 128.0,
+        "execs_done": 57874.0,
+        "execs_per_sec": 449.31
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 241.0,
+        "execs_done": 102016.0,
+        "execs_per_sec": 421.86
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 128.0,
+        "execs_done": 54151.0,
+        "execs_per_sec": 421.89
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 169.0,
+        "execs_done": 75049.0,
+        "execs_per_sec": 442.99
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 187.0,
+        "execs_done": 74391.0,
+        "execs_per_sec": 396.22
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 155.0,
+        "execs_done": 66978.0,
+        "execs_per_sec": 431.8
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 146.0,
+        "execs_done": 70249.0,
+        "execs_per_sec": 479.66
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 270.0,
+        "execs_done": 113556.0,
+        "execs_per_sec": 419.79
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 116.0,
+        "execs_done": 48990.0,
+        "execs_per_sec": 419.91
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 162.0,
+        "execs_done": 68305.0,
+        "execs_per_sec": 421.08
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 280.0,
+        "execs_done": 117937.0,
+        "execs_per_sec": 420.68
+    },
+    {
+        "binary": "./binaries/svg2ass_frida-new",
+        "run_time": 170.0,
+        "execs_done": 74551.0,
+        "execs_per_sec": 436.47
+    }
+]

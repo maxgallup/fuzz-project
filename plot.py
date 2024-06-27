@@ -1,306 +1,258 @@
 #!/usr/bin/python
-
 import os
 import json
 
 import polars as pl
+
 import plotly.graph_objects as go
 import plotly.express as px
+from plotly.subplots import make_subplots
+import plotly.io as pio
+import numpy as np
 
 
-prog_names = [
-    'mario-easy',
-    'mario-mid',
-    'mario-hard',
-    'maze-small',
-    'maze-big',
-]
+def load_latest_game_results(res_dir, prog_names):
 
-def human_to_sec(human_string: str):
-    minutes, seconds = human_string.split(":")
-    minutes = float(minutes[:-1])
-    seconds = float(seconds[:-1])
+    def name_to_id(some_name):
+        for p in prog_names:
+            if p in some_name:
+                return p
+        return ""
 
-    return float(seconds + (minutes * 60))
-
-
-def string_to_float(s):
-    return float(s)
+    def name_to_type(name):
+        if "afl" in name:
+            return "AFL++ Frida"
+        if "ijon" in name:
+            return "IJON-Original"
+        if "new" in name:
+            return "AFL++ Frida IJON"
 
 
-def name_to_id(some_name):
-    for p in prog_names:
-        if p in some_name:
-            return p
-    return null
+    files = os.listdir(res_dir)
+    # Sort the files by modification time
+    files.sort(key=lambda x: os.path.getmtime(os.path.join(res_dir, x)))
 
+    if not files:
+        print("./results is empty!")
+        exit(1)
 
-def load_results(dir_path):
-    # # Get a list of files in the directory
-    # files = os.listdir(dir_path)
-    # # Sort the files by modification time
-    # files.sort(key=lambda x: os.path.getmtime(os.path.join(dir_path, x)))
-    # # Open the most recently modified file
-    # most_recent_file = files[-1]
-    # df = pl.read_json(os.path.join(dir_path, most_recent_file))
+    # Open the most recently modified file
+    most_recent_file = files[-1]
 
-    df = pl.read_json(dir_path)
-
-    df = df.with_columns(pl.col('run_time_hms').map_elements(human_to_sec, return_dtype=float).alias('run_time'))
+    df = pl.read_json(os.path.join(res_dir, most_recent_file))
 
     df = df.with_columns(pl.col('binary').map_elements(name_to_id, return_dtype=str).alias('identifier'))
+    df = df.with_columns(pl.col('binary').map_elements(name_to_type, return_dtype=str).alias('type'))
 
     df = df.with_columns(pl.col('execs_done').cast(pl.Float64))
     df = df.with_columns(pl.col('execs_per_sec').cast(pl.Float64))
+    df = df.with_columns(pl.col('run_time').cast(pl.Float64))
 
-    df = df.group_by(pl.col('identifier')).agg(pl.col(['run_time', 'execs_per_sec', 'execs_done']).mean())
+    interested_cols = ['run_time', 'execs_per_sec', 'execs_done']
 
-    custom_order = {val: idx for idx, val in enumerate(prog_names)}
+    df_avg = df.group_by(pl.col(['binary', 'identifier', 'type'])).agg(pl.col(interested_cols).mean())
+    df_std = df.group_by(pl.col(['binary', 'identifier', 'type'])).agg(pl.col(interested_cols).std())
+    df_len = df.group_by(pl.col(['binary', 'identifier', 'type'])).agg(pl.col(interested_cols).len())
+
+    return df_avg, df_std, df_len
+
+
+
+def plot_game_bar(df_avg, df_std, df_len, col_name):
+    fig = px.bar(df_avg, x="identifier", y=col_name, color=df_avg['type'],
+    error_x=df_std['identifier'], error_y=df_std[col_name])
+
+    custom_title = f'Fuzzing terminated upon first crash'
+    if col_name == 'execs_done':
+        custom_title = 'Average Total Executions' 
+    elif col_name == 'execs_per_sec':
+        custom_title = 'Average Executions per Second'
+    elif col_name == 'run_time':
+        custom_title = 'Average Run Time (until first crash)'
+
+    # Customizing the layout
+    fig.update_layout(title=custom_title, xaxis_title='Programs', yaxis_title=col_name, barmode='group', bargap=0.15, bargroupgap=0.1)
+
+    # fig.show()
+
+    print(f"Making plot ./plots/game-{col_name}.png")    
+    pio.write_image(fig, f"./plots/game-{col_name}.png",scale=6, width=1155, height=600)
+    # fig.write_image(f"./plots/game-{col_name}.png")
+
+
+
+def plot_games():
+
+    prog_names = [
+        'mario-easy',
+        'mario-mid',
+        'mario-hard',
+        'maze-small',
+        'maze-big'
+    ]
+
+    order_array = [
+        'maze-small-ijon',
+        './binaries/maze-small-afl',
+        './binaries/maze-small-new',
+        'maze-big-ijon',
+        './binaries/maze-big-afl',
+        './binaries/maze-big-new',
+        'mario-easy-ijon',
+        './binaries/mario-easy-afl',
+        './binaries/mario-easy-new',
+        'mario-mid-ijon',
+        './binaries/mario-mid-new',
+        'mario-hard-ijon',
+        './binaries/mario-hard-new',
+    ]
+
+
+    old_avg, old_std, old_len = load_latest_game_results("./eval-old-ijon/results", prog_names)
+    new_avg, new_std, new_len = load_latest_game_results("./eval-new-ijon/results", prog_names)
+
+    df_avg = pl.concat([old_avg, new_avg])
+    df_std = pl.concat([old_std, new_std])
+    df_len = pl.concat([old_len, new_len])
+
+    custom_order = {val: idx for idx, val in enumerate(order_array)}
+    df_avg = df_avg.sort(pl.col("binary").map_dict(custom_order), descending=[True])
+    df_std = df_std.sort(pl.col("binary").map_dict(custom_order), descending=[True])
+    df_len = df_len.sort(pl.col("binary").map_dict(custom_order), descending=[True])
+
+
+    plot_game_bar(df_avg, df_std, df_len, 'run_time')
+    plot_game_bar(df_avg, df_std, df_len, 'execs_per_sec')
+    plot_game_bar(df_avg, df_std, df_len, 'execs_done')
+
+
+
+def load_latest_svg_results(res_dir):
+    prog_names = [
+        'svg2ass-afl',
+        'svg2ass-new',
+    ]
+
+    def name_to_id(some_name):
+        for p in prog_names:
+            if p in some_name:
+                return p
+        return ""
+
+
+    def name_to_type(name):
+        if "afl" in name:
+            return "AFL"
+        if "ijon" in name:
+            return "IJON Original"
+        if "new" in name:
+            return "IJON New"
+
+
+    files = os.listdir(res_dir)
+    # Sort the files by modification time
+    files.sort(key=lambda x: os.path.getmtime(os.path.join(res_dir, x)))
+
+    if not files:
+        print("./results is empty!")
+        exit(1)
+
+    # Open the most recently modified file
+    most_recent_file = files[-1]
+
+    most_recent_file = "latest.json"
+
+    df = pl.read_json(os.path.join(res_dir, most_recent_file))
+    df = df.with_columns(pl.col('binary').map_elements(name_to_id, return_dtype=str).alias('identifier'))    
+    df = df.with_columns(pl.col('binary').map_elements(name_to_type, return_dtype=str).alias('type'))
+    df = df.with_columns(pl.col('execs_done').cast(pl.Float64))
+    df = df.with_columns(pl.col('execs_per_sec').cast(pl.Float64))
+    df = df.with_columns(pl.col('run_time').cast(pl.Float64))
+
+    interested_cols = ['run_time', 'execs_per_sec', 'execs_done']
+
+    df_avg = df.group_by(pl.col(['binary', 'identifier', 'type'])).agg(pl.col(interested_cols).mean()).to_pandas()
+    df_std = df.group_by(pl.col(['binary', 'identifier', 'type'])).agg(pl.col(interested_cols).std()).to_pandas()
+    df_len = df.group_by(pl.col(['binary', 'identifier', 'type'])).agg(pl.col(interested_cols).len()).to_pandas()
+
+    return df_avg, df_std, df_len
+
+
+
+def plot_svg2ass():
+    svg_avg, svg_std, svg_len = load_latest_svg_results("./eval-svg2ass/results")
+    # fig = go.Figure()
+
+    fig = make_subplots(rows=1, cols=3)
+
+    def get_color(type_name):
+        if 'AFL' in type_name:
+            return 'red'
+        else:
+            return 'blue'
+
+
+    for i, row in svg_avg.iterrows():
+        fig.add_trace(go.Bar(
+            x=['Run Time (Seconds)'],
+            y=[row['run_time']],
+            marker_color=get_color(row['type']),
+            error_y=dict(
+                type='data',
+                symmetric=True,
+                array=[svg_std.loc[i, 'run_time']]
+            ), showlegend=False
+        ),  row=1, col=1)
     
+    for i, row in svg_avg.iterrows():
+        fig.add_trace(go.Bar(
+            x=['Total Executions'],
+            y=[row['execs_done']],
+            marker_color=get_color(row['type']),
+            error_y=dict(
+                type='data',
+                symmetric=True,
+                array=[svg_std.loc[i, 'execs_done']]
+            ), showlegend=False
+        ),  row=1, col=2)
+    
+    for i, row in svg_avg.iterrows():
+        fig.add_trace(go.Bar(
+            x=['Executions / Second'],
+            y=[row['execs_per_sec']],
+            marker_color=get_color(row['type']),
+            error_y=dict(
+                type='data',
+                symmetric=True,
+                array=[svg_std.loc[i, 'execs_per_sec']]
+            ), showlegend=False
+        ),  row=1, col=3)
 
-    # Sorting the DataFrame
-    df = df.sort(pl.col("identifier").map_dict(custom_order), descending=[True])
+    # fig.update_yaxes(type="log")
 
-    return df
-
-
-
-
-def plot_runtime(our_ijon, og_ijon, afl):
-    fig = go.Figure()
-
-    fig.add_trace(go.Bar(x=our_ijon['identifier'], y=our_ijon['run_time'], name='Our IJON', marker_color='red'))
-    fig.add_trace(go.Bar(x=og_ijon['identifier'], y=og_ijon['run_time'], name='Original IJON', marker_color='blue'))
-    fig.add_trace(go.Bar(x=afl['identifier'], y=afl['run_time'], name='AFL++', marker_color='green'))
-
-    # Customizing the layout
-    fig.update_layout(title='Comparison of Average Runtimes', xaxis_title='Binary', yaxis_title='Average Runtime in Seconds', barmode='group', bargap=0.15, bargroupgap=0.1)
-
-    fig.show()
-
-def plot_execs(our_ijon, og_ijon, afl):
-    fig = go.Figure()
-
-    fig.add_trace(go.Bar(x=our_ijon['identifier'], y=our_ijon['execs_done'], name='Our IJON', marker_color='red'))
-    fig.add_trace(go.Bar(x=og_ijon['identifier'], y=og_ijon['execs_done'], name='Original IJON', marker_color='blue'))
-    fig.add_trace(go.Bar(x=afl['identifier'], y=afl['execs_done'], name='AFL++', marker_color='green'))
-
-    # Customizing the layout
-    fig.update_layout(title='Comparison of Average Total Executions', xaxis_title='Binary', yaxis_title='Average Total Executions', barmode='group', bargap=0.15, bargroupgap=0.1)
-
-    fig.show()
-
-def plot_eps(our_ijon, og_ijon, afl):
-    fig = go.Figure()
-
-    fig.add_trace(go.Bar(x=our_ijon['identifier'], y=our_ijon['execs_per_sec'], name='Our IJON', marker_color='red'))
-    fig.add_trace(go.Bar(x=og_ijon['identifier'], y=og_ijon['execs_per_sec'], name='Original IJON', marker_color='blue'))
-    fig.add_trace(go.Bar(x=afl['identifier'], y=afl['execs_per_sec'], name='AFL++', marker_color='green'))
-
-    # Customizing the layout
-    fig.update_layout(title='Comparison of Average Execs/Second', xaxis_title='Binary', yaxis_title='Average Execs/Second', barmode='group', bargap=0.15, bargroupgap=0.1)
-
-    fig.show()
+    fig.add_annotation(
+        x=1.0,  # Same position as the first legend entry
+        y=1.16,  # Different vertical position for the second legend entry
+        showarrow=False,
+        text="<span style='color:red;'>AFL++ Frida</span><br><span style='color:blue;'>AFL++ Frida IJON-SET</span>",
+        font=dict(size=15),
+        bgcolor="white",
+        bordercolor="black",
+        borderwidth=0.2,
+        borderpad=4,
+        align="left",
+        xref="paper",
+        yref="paper"
+    )
 
 
+    fig.update_layout(barmode='group', title_text='Comparison to standard AFL++')
 
-
-def main():
-    afl = load_results("./afl++/results/afl.json")
-    our_ijon = load_results("./afl++/results/our_ijon.json")
-    og_ijon = load_results("./ijon-original/ijon-experiment/results/original_ijon.json")
-
-
-    # print(afl)
-    plot_runtime(our_ijon.to_pandas(), og_ijon.to_pandas(), afl.to_pandas())
-    plot_execs(our_ijon.to_pandas(), og_ijon.to_pandas(), afl.to_pandas())
-    plot_eps(our_ijon.to_pandas(), og_ijon.to_pandas(), afl.to_pandas())
+    print("Making plot ./plots/svg2ass.png")
+    pio.write_image(fig, f"./plots/svg2ass.png",scale=6, width=600, height=550)
+    # fig.show()
 
 
 if __name__ == '__main__':
-    main()
-
-
-
-
-
-# #!/usr/bin/python
-
-# import os
-# import json
-
-# import polars as pl
-# import plotly.graph_objects as go
-# import plotly.express as px
-
-# from plotly.subplots import make_subplots
-
-# prog_names = [
-#     'mario-easy',
-#     'mario-mid',
-#     'mario-hard',
-#     'maze-small',
-#     'maze-big',
-# ]
-
-# def human_to_sec(human_string: str):
-#     minutes, seconds = human_string.split(":")
-#     minutes = float(minutes[:-1])
-#     seconds = float(seconds[:-1])
-
-#     return float(seconds + (minutes * 60))
-
-
-# def string_to_float(s):
-#     return float(s)
-
-
-# def name_to_id(some_name):
-#     for p in prog_names:
-#         if p in some_name:
-#             return p
-#     return null
-
-
-# def load_results(dir_path):
-#     # # Get a list of files in the directory
-#     # files = os.listdir(dir_path)
-#     # # Sort the files by modification time
-#     # files.sort(key=lambda x: os.path.getmtime(os.path.join(dir_path, x)))
-#     # # Open the most recently modified file
-#     # most_recent_file = files[-1]
-#     # df = pl.read_json(os.path.join(dir_path, most_recent_file))
-
-#     df = pl.read_json(dir_path)
-
-#     df = df.with_columns(pl.col('run_time_hms').map_elements(human_to_sec, return_dtype=float).alias('run_time'))
-
-#     df = df.with_columns(pl.col('binary').map_elements(name_to_id, return_dtype=str).alias('identifier'))
-
-#     df = df.with_columns(pl.col('execs_done').cast(pl.Float64))
-#     df = df.with_columns(pl.col('execs_per_sec').cast(pl.Float64))
-
-#     df = df.group_by(pl.col('identifier')).agg(pl.col(['run_time', 'execs_per_sec', 'execs_done']).mean())
-
-#     custom_order = {val: idx for idx, val in enumerate(prog_names)}
-
-#     # Sorting the DataFrame
-#     df = df.sort(pl.col("identifier").map_dict(custom_order), descending=[True])
-
-#     return df
-
-
-# def load_raw(dir_path):
-#     df = pl.read_json(dir_path)
-
-#     df = df.with_columns(pl.col('run_time_hms').map_elements(human_to_sec, return_dtype=float).alias('run_time'))
-
-#     df = df.with_columns(pl.col('binary').map_elements(name_to_id, return_dtype=str).alias('identifier'))
-
-#     df = df.with_columns(pl.col('execs_done').cast(pl.Float64))
-#     df = df.with_columns(pl.col('execs_per_sec').cast(pl.Float64))
-
-#     custom_order = {val: idx for idx, val in enumerate(prog_names)}
-
-#     # Sorting the DataFrame
-#     df = df.sort(pl.col("identifier").map_dict(custom_order), descending=[True])
-#     return df
-
-
-# def plot(our_ijon, og_ijon, afl):
-#     fig = make_subplots(rows=3, cols=1)
-
-#     fig.add_trace(go.Bar(x=our_ijon['identifier'], y=our_ijon['run_time'], name='Our IJON run_time', marker_color='red'), row=1, col=1)
-#     fig.add_trace(go.Bar(x=og_ijon['identifier'], y=og_ijon['run_time'], name='Original IJON run_time', marker_color='blue'), row=1, col=1)
-#     fig.add_trace(go.Bar(x=afl['identifier'], y=afl['run_time'], name='AFL++ run_time', marker_color='green'), row=1, col=1)
-
-
-#     # fig.update_layout(title='Comparison Runtime', xaxis_title='Binary', yaxis_title='Runtime', barmode='group', bargap=0.15, bargroupgap=0.1)
-
-#     fig.add_trace(go.Bar(x=our_ijon['identifier'], y=our_ijon['execs_done'], name='Our IJON execs_done', marker_color='red'), row=2, col=1)
-#     fig.add_trace(go.Bar(x=og_ijon['identifier'], y=og_ijon['execs_done'], name='Original IJON execs_done', marker_color='blue'), row=2, col=1)
-#     fig.add_trace(go.Bar(x=afl['identifier'], y=afl['execs_done'], name='AFL++ execs_done', marker_color='green'), row=2, col=1)
-
-
-#     # fig.update_layout(title='Comparison Total Executions', xaxis_title='Binary', yaxis_title='Total Executions', barmode='group', bargap=0.15, bargroupgap=0.1)
-
-#     fig.add_trace(go.Bar(x=our_ijon['identifier'], y=our_ijon['execs_per_sec'], name='Our IJON execs_per_sec', marker_color='red'), row=3, col=1)
-#     fig.add_trace(go.Bar(x=og_ijon['identifier'], y=og_ijon['execs_per_sec'], name='Original IJON execs_per_sec', marker_color='blue'), row=3, col=1)
-#     fig.add_trace(go.Bar(x=afl['identifier'], y=afl['execs_per_sec'], name='AFL++ execs_per_sec', marker_color='green'), row=3, col=1)
-
-#     # Customizing the layout
-#     # fig.update_layout(title='Comparison of Average Execs/Second', xaxis_title='Binary', yaxis_title='Executions/Second', barmode='group', bargap=0.15, bargroupgap=0.1)
-
-#     fig.show()
-
-
-
-# def plot_histograms(afl, our_ijon):
-#     fig = make_subplots(rows=3, cols=3)
-
-#     fig.add_trace(
-#         go.Histogram(x=afl['run_time'], nbinsx=100, name=f"afl-run_time {len(afl['run_time'])}"),
-#         row=1, col=1
-#     )
-
-#     fig.add_trace(
-#         go.Histogram(x=afl['execs_per_sec'], nbinsx=100, name=f"afl-execs_per_sec {len(afl['run_time'])}"),
-#         row=2, col=1
-#     )
-
-#     fig.add_trace(
-#         go.Histogram(x=afl['execs_done'], nbinsx=100, name=f"afl-execs_done {len(afl['run_time'])}"),
-#         row=3, col=1
-#     )
-
-#     fig.add_trace(
-#         go.Histogram(x=our_ijon['run_time'], nbinsx=100, name=f"our_ijon-run_time {len(our_ijon['run_time'])}"),
-#         row=1, col=2
-#     )
-
-#     fig.add_trace(
-#         go.Histogram(x=our_ijon['execs_per_sec'], nbinsx=100, name=f"our_ijon-execs_per_sec {len(our_ijon['run_time'])}"),
-#         row=2, col=2
-#     )
-
-#     fig.add_trace(
-#         go.Histogram(x=our_ijon['execs_done'], nbinsx=100, name=f"our_ijon-execs_done {len(our_ijon['run_time'])}"),
-#         row=3, col=2
-#     )
-
-
-#     fig.update_layout(height=600, width=800, title_text="Histograms")
-#     fig.show()
-
-
-# def plot_histogram(df):
-
-#     fig = px.histogram(df, x=df['run_time'])
-#     fig.show()
-
-
-# def main():
-#     afl = load_results("./afl++/results/afl.json")
-#     our_ijon = load_results("./afl++/results/our_ijon.json")
-#     og_ijon = load_results("./ijon-original/ijon-experiment/results/original_ijon.json")
-
-#     afl_raw = load_raw("./afl++/results/afl.json")
-#     our_ijon_raw = load_raw("./afl++/results/our_ijon.json")
-#     og_ijon_raw = load_raw("./ijon-original/ijon-experiment/results/original_ijon.json")
-
-
-#     # print(afl)
-
-#     # plot_histograms(afl_raw.filter(pl.col('identifier') == "mario-easy"), our_ijon_raw.filter(pl.col('identifier') == "mario-easy"))
-#     # plot_histograms(afl_raw.filter(pl.col('identifier') == "mario-mid"), our_ijon_raw.filter(pl.col('identifier') == "mario-mid"))
-#     # plot_histograms(afl_raw.filter(pl.col('identifier') == "mario-hard"), our_ijon_raw.filter(pl.col('identifier') == "mario-hard"))
-#     # plot_histograms(afl_raw.filter(pl.col('identifier') == "maze-small"), our_ijon_raw.filter(pl.col('identifier') == "maze-small"))
-#     # plot_histograms(afl_raw.filter(pl.col('identifier') == "maze-big"), our_ijon_raw.filter(pl.col('identifier') == "maze-big"))
-
-
-#     plot(our_ijon.to_pandas(), og_ijon.to_pandas(), afl.to_pandas())
-    
-
-
-# if __name__ == '__main__':
-#     main()
+    plot_games()
+    plot_svg2ass()
