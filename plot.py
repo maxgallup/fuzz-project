@@ -1,9 +1,9 @@
-
+#!/usr/bin/python
 import os
 import json
 
 import polars as pl
-#!/usr/bin/python
+
 import plotly.graph_objects as go
 import plotly.express as px
 from plotly.subplots import make_subplots
@@ -74,7 +74,8 @@ def plot_game_bar(df_avg, df_std, df_len, col_name):
     fig.update_layout(title=custom_title, xaxis_title='Programs', yaxis_title=col_name, barmode='group', bargap=0.15, bargroupgap=0.1)
 
     # fig.show()
-    
+
+    print(f"Making plot ./plots/game-{col_name}.png")    
     pio.write_image(fig, f"./plots/game-{col_name}.png",scale=6, width=1155, height=600)
     # fig.write_image(f"./plots/game-{col_name}.png")
 
@@ -119,7 +120,6 @@ def plot_games():
     df_std = df_std.sort(pl.col("binary").map_dict(custom_order), descending=[True])
     df_len = df_len.sort(pl.col("binary").map_dict(custom_order), descending=[True])
 
-    print(df_avg, df_std, df_len)
 
     plot_game_bar(df_avg, df_std, df_len, 'run_time')
     plot_game_bar(df_avg, df_std, df_len, 'execs_per_sec')
@@ -181,8 +181,6 @@ def load_latest_svg_results(res_dir):
 
 def plot_svg2ass():
     svg_avg, svg_std, svg_len = load_latest_svg_results("./eval-svg2ass/results")
-
-    print(svg_avg)
     # fig = go.Figure()
 
     fig = make_subplots(rows=1, cols=3)
@@ -250,10 +248,11 @@ def plot_svg2ass():
 
     fig.update_layout(barmode='group', title_text='Comparison to standard AFL++')
 
+    print("Making plot ./plots/svg2ass.png")
     pio.write_image(fig, f"./plots/svg2ass.png",scale=6, width=600, height=550)
     # fig.show()
 
 
 if __name__ == '__main__':
     plot_games()
-    # plot_svg2ass()
+    plot_svg2ass()

@@ -7,9 +7,4 @@ of the cloned fork, make sure to not include the trailing slash:
 
 After this is done, starting the fuzzers for testing can be done with `python test.py`.
 
-The following binaries were not included in testing, because the time until they find the first
-crash took too long:
-* mario-mid-afl
-* mario-hard-afl
-* maze-big-afl
 
