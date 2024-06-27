@@ -1,1 +1,0 @@
-C:\Users\alexb\Documents\GitHub\fuzz-project\tests\Jackalope\build\Release\fuzzer.exe -in in -out out -t 1000 -dict wasd.txt -delivery file -instrument_module maze.exe -target_module maze.exe -target_method process -nargs 1 -iterations 10000 -persist -loop -cmp_coverage -- C:\Users\alexb\source\repos\maze\x64\Release\maze.exe @@
