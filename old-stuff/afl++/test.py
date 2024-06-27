@@ -15,11 +15,11 @@ DATA_DIR = "data"
 
 NUM_CORES = multiprocessing.cpu_count() - 1
 prog_names = [
-    # 'mario-easy',
-    # 'mario-mid',
+    'mario-easy',
+    'mario-mid',
     # 'mario-hard',
     'maze-small',
-    'maze-big',
+    # 'maze-big',
 ]
 
 TIMEOUT = 1200
