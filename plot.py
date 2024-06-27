@@ -21,11 +21,11 @@ def load_latest_game_results(res_dir, prog_names):
 
     def name_to_type(name):
         if "afl" in name:
-            return "AFL++"
+            return "AFL++ Frida"
         if "ijon" in name:
             return "IJON-Original"
         if "new" in name:
-            return "IJON-Frida"
+            return "AFL++ Frida IJON"
 
 
     files = os.listdir(res_dir)
@@ -160,6 +160,8 @@ def load_latest_svg_results(res_dir):
     # Open the most recently modified file
     most_recent_file = files[-1]
 
+    most_recent_file = "latest.json"
+
     df = pl.read_json(os.path.join(res_dir, most_recent_file))
     df = df.with_columns(pl.col('binary').map_elements(name_to_id, return_dtype=str).alias('identifier'))    
     df = df.with_columns(pl.col('binary').map_elements(name_to_type, return_dtype=str).alias('type'))
@@ -253,5 +255,5 @@ def plot_svg2ass():
 
 
 if __name__ == '__main__':
-    # plot_games()
-    plot_svg2ass()
+    plot_games()
+    # plot_svg2ass()
